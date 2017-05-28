@@ -1,18 +1,23 @@
 <?
+		
+	$beenhere = false;
 	
-	$queryEpisodes = "SELECT * from Episodes where uid = '" . $_REQUEST['id'] . "'";
+	if (isset($_REQUEST['ShowID']) && trim($_REQUEST['ShowID']) != "")
+		$queryEpisodes = "SELECT Shows.Name as ShowName, Episodes.* from Episodes, Shows where Shows.uid = Episodes.ShowID and ShowID='" . trim($_REQUEST['ShowID']) . "' order by PublishDate DESC";
+	else
+		$queryEpisodes = "SELECT Shows.Name as ShowName, Episodes.* from Episodes, Shows where Shows.uid = Episodes.ShowID order by PublishDate DESC";
 		
 	//echo $queryEpisodes;
 	$request = mysql_query($queryEpisodes);
 		
-	echo "{success: true, data:";
+	echo "{\"totalCount\":[" . mysql_num_rows($request) . "],\"episodes\":[";
 	
 	while ($rs = mysql_fetch_array($request)) {
 		
-		$queryshowname = "SELECT * FROM Shows where uid='" . $rs['ShowID'] . "'";
-		$showrequest = mysql_query($queryshowname);
-		$showrs = mysql_fetch_array($showrequest);
-		$ShowName = $showrs['Name'];
+		if ($beenhere)
+			echo ",";
+			
+		$beenhere = true;
 		
 		if ($rs['Status'] == "1") {
 			if ($rs['PublishDate'] <= date("Y-m-d")) {
@@ -30,12 +35,12 @@
 		echo "{";
 		echo "\"uid\":" . $rs['uid'] . ",";
 		echo "\"ShowID\":\"" . $rs['ShowID'] . "\",";	
-		echo "\"ShowName\":" . json_encode($ShowName) . ",";	
+		echo "\"ShowName\":" . json_encode($rs['ShowName']) . ",";	
 		echo "\"Description\":" . json_encode($rs['Description']) . ",";	
 		echo "\"Hosts\":" . json_encode($rs['Hosts']) . ",";	
 		echo "\"Guests\":" . json_encode($rs['Guests']) . ",";	
 		echo "\"Duration\":" . json_encode($rs['Duration']) . ",";	
-		echo "\"RecordedDateTime\":" . json_encode(date("Y-m-d", strtotime($rs['RecordedDateTime']))) . ",";	
+		echo "\"RecordedDateTime\":" . json_encode($rs['RecordedDateTime']) . ",";	
 		echo "\"LinkToShowNotes\":" . json_encode($rs['LinkToShowNotes']) . ",";
 		echo "\"Keywords\":" . json_encode($rs['Keywords']) . ",";
 		echo "\"Title\":" . json_encode($rs['Title']) . ",";	
@@ -50,6 +55,6 @@
 		echo "\"StatusText\":\"" . $StatusText . "\"";
 		echo "}";
 	}
-	echo "}";
+	echo "]}";
 	
 		?> 

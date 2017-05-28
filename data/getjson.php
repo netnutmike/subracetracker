@@ -1,6 +1,6 @@
-<? 
+<?php 
 	include('common.php');
-	//include('../functions.php');
+	include('functions.php');
 
 	$ds = $_REQUEST['dataset'];
 	//echo $ds;

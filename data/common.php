@@ -1,4 +1,4 @@
-<?
+<?php
   $DBHost = "localhost";
   $DBUser = "SubTrackerUsr";
   $DBPass = "7hf87ty34978D";
@@ -10,7 +10,4 @@
   
   date_default_timezone_set("America/New_York");
   
-  function toGig($flsz) {
-	return intval($flsz / 1073741824);
-}
   ?>
