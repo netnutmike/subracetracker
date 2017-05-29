@@ -1,0 +1,60 @@
+{
+    "name": "SubRaceTracker",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.2.2.36",
+            "frameworkVersion": "6.2.1.167"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:61473/subracetracker/SubRaceTracker",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext62",
+    "viewOrderMap": {
+        "view": [],
+        "store": [
+            "971a9ad0-a578-4fdc-b643-ca8b84bbffe3",
+            "aa73aa87-c7e1-44d8-9a53-ea09b1efb840",
+            "fb60ceb6-f03d-4ffe-96bc-fc8c462cc08a",
+            "4332b412-077d-4af0-b8b8-55e5b5c05c16",
+            "466c93b9-302e-45f3-9f6d-6019df3bb6f2",
+            "30b69304-e7d2-4eb9-ade0-70f862794dd7"
+        ],
+        "controller": [],
+        "model": [
+            "4aea36ff-7645-4661-a603-753eafe16310",
+            "40d0114f-e498-492d-8159-8130a1017ff6",
+            "746cae20-6aa1-4a2d-95b6-ab7ba66abf25",
+            "d1ac4c85-d053-43c6-bca1-8c03c3c79117",
+            "75bd5a7a-d525-415a-a570-4edd86b0374c",
+            "d9936987-cd18-4766-b0ab-fff871aba94a"
+        ],
+        "resource": [
+            "7dc4e9bb-db3d-4628-adde-0e5cc7f8233e",
+            "9454b171-2481-408f-b138-4681fa4ed33b"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

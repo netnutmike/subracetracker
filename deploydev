@@ -1,0 +1,3 @@
+sencha app build -c testing
+#scp -r /home/mike/dev/sencha/ext/build/examples/admin-dashboard/* jmyer118@lnxprd0306:/var/mosis/sail/user2
+rsync -r \$\{ext.dir\}//build/examples/admin-dashboard/* jmyer118@lnxprd0306:/var/mosis/sail/user2

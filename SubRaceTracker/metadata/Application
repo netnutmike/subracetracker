@@ -1,0 +1,34 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "ParticipantHistory",
+            "ListData",
+            "Lists",
+            "Participants",
+            "Races",
+            "Teams"
+        ],
+        "name": "Admin",
+        "stores": [
+            "ListDataStore",
+            "ListsStore",
+            "ParticipantHistoryStore",
+            "ParticipantsStore",
+            "RacesStore",
+            "TeamsStore"
+        ]
+    },
+    "configAlternates": {
+        "models": "typedarray",
+        "name": "string",
+        "stores": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}
