@@ -1,4 +1,4 @@
-<? 
+<?php 
 	include('functions.php'); 
 	include('common.php'); 
 
@@ -12,10 +12,14 @@
 	
 	//UserLogEntry($_POST['EID'], LOG_TRACKING, $logtext, LOG_API);
 	//echo $ds;
+        
+        if ($_POST['ak'] != $auk)
+            $ds = "Invalid Session";
+        
 	switch ($ds) {
 	
 		case "Invalid Session":
-			UserLogEntry($_REQUEST['EID'], LOG_SECURITYFAILURE, "Invalid Session", LOG_API);
+			//UserLogEntry($_REQUEST['EID'], LOG_SECURITYFAILURE, "Invalid Session", LOG_API);
 			echo "Invalid Session";
 			break;
 		
