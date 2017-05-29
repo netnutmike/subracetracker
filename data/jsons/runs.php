@@ -1,59 +1,81 @@
-<?
+<?php
 		
 	$beenhere = false;
 	
-	if (isset($_REQUEST['ShowID']) && trim($_REQUEST['ShowID']) != "")
-		$queryEpisodes = "SELECT Shows.Name as ShowName, Episodes.* from Episodes, Shows where Shows.uid = Episodes.ShowID and ShowID='" . trim($_REQUEST['ShowID']) . "' order by PublishDate DESC";
-	else
-		$queryEpisodes = "SELECT Shows.Name as ShowName, Episodes.* from Episodes, Shows where Shows.uid = Episodes.ShowID order by PublishDate DESC";
+	if (isset($_REQUEST['uid']) && trim($_REQUEST['uid']) != "")
+		$query = "SELECT * from Races where uid='" . trim($_REQUEST['uid']) . "'";
+	else if (isset($_REQUEST['class']) && trim($_REQUEST['class']) != "")
+		$query = "SELECT * from Races where Class='" . trim($_REQUEST['class']) . "'";
+        else if (isset($_REQUEST['status']) && trim($_REQUEST['status']) != "")
+		$query = "SELECT * from Races where Status='" . trim($_REQUEST['status']) . "'";
+        else if (isset($_REQUEST['teamID']) && trim($_REQUEST['teamID']) != "")
+		$query = "SELECT * from Races where TeamID='" . trim($_REQUEST['teamID']) . "'";
+        else if (isset($_REQUEST['date']) && trim($_REQUEST['date']) != "")
+		$query = "SELECT * from Races where RaceDate='" . trim($_REQUEST['date']) . "'";
+        else
+		$query = "SELECT * from Races";
+                
+        if (isset($_REQUEST['sortBy']) && trim($_REQUEST['sortBy']) != "") {
+            switch (trim($_REQUEST['sortBy'])) {
+                case 'team':
+                    $query .= " ORDER BY TeamID";
+                    break;
+                    
+                case 'status':
+                    $query .= " ORDER BY Status";
+                    break;
+                
+                case 'class':
+                    $query .= " ORDER BY Class";
+                    break;
+                
+                case 'startTime':
+                    $query .= " ORDER BY StartTime";
+                    break;
+                    
+                default:
+                    $query .= " ORDER BY RaceID";
+                    break;
+            }
+        } else {
+            $query .= " ORDER BY RaceID";
+        }
 		
-	//echo $queryEpisodes;
-	$request = mysql_query($queryEpisodes);
+	//echo $query;
+	$request = mysql_query($query);
 		
-	echo "{\"totalCount\":[" . mysql_num_rows($request) . "],\"episodes\":[";
+	echo "{\"totalCount\":[" . mysql_num_rows($request) . "],\"runs\":[";
 	
 	while ($rs = mysql_fetch_array($request)) {
 		
-		if ($beenhere)
-			echo ",";
-			
-		$beenhere = true;
-		
-		if ($rs['Status'] == "1") {
-			if ($rs['PublishDate'] <= date("Y-m-d")) {
-				$StatusText = "Published";
-				$StatusVal = "1";
-			} else {
-				$StatusText = "Scheduled";
-				$StatusVal = "2";
-			}
-		} else {
-			$StatusText = "Not Published";
-			$StatusVal = "0";
-		}
-		
-		echo "{";
-		echo "\"uid\":" . $rs['uid'] . ",";
-		echo "\"ShowID\":\"" . $rs['ShowID'] . "\",";	
-		echo "\"ShowName\":" . json_encode($rs['ShowName']) . ",";	
-		echo "\"Description\":" . json_encode($rs['Description']) . ",";	
-		echo "\"Hosts\":" . json_encode($rs['Hosts']) . ",";	
-		echo "\"Guests\":" . json_encode($rs['Guests']) . ",";	
-		echo "\"Duration\":" . json_encode($rs['Duration']) . ",";	
-		echo "\"RecordedDateTime\":" . json_encode($rs['RecordedDateTime']) . ",";	
-		echo "\"LinkToShowNotes\":" . json_encode($rs['LinkToShowNotes']) . ",";
-		echo "\"Keywords\":" . json_encode($rs['Keywords']) . ",";
-		echo "\"Title\":" . json_encode($rs['Title']) . ",";	
-		echo "\"Subtitle\":" . json_encode($rs['Subtitle']) . ",";
-		echo "\"ImageURL\":" . json_encode($rs['ImageURL']) . ",";
-		echo "\"Explicit\":\"" . $rs['Explicit'] . "\",";
-		echo "\"PublishDate\":" . json_encode($rs['PublishDate']) . ",";
-		echo "\"EpisodeNumber\":\"" . $rs['EpisodeNumber'] . "\",";
-		echo "\"RokuGraphic\":" . json_encode($rs['RokuGraphic']) . ",";
-		echo "\"NetworkID\":\"" . $rs['NetworkID'] . "\",";
-		echo "\"Status\":\"" . $StatusVal . "\",";
-		echo "\"StatusText\":\"" . $StatusText . "\"";
-		echo "}";
+            $teamquery = "select TeamName from Teams where uid = '" . $rs['TeamID'] . "'";
+            //echo $teamquery;
+            $teamRequest = mysql_query($teamquery);
+            $teamRS = mysql_fetch_array($teamRequest);
+            
+            if ($beenhere)
+                    echo ",";
+
+            $beenhere = true;
+
+            echo "{";
+            echo "\"uid\":" . $rs['uid'] . ",";
+            echo "\"RaceID\":\"" . $rs['RaceID'] . "\",";
+            echo "\"TeamID\":\"" . $rs['TeamID'] . "\",";	
+            echo "\"TeamName\":" . json_encode($teamRS['TeamName']) . ",";	
+            echo "\"StartTime\":" . $rs['StartTime'] . ",";	
+            echo "\"FinishTime\":\"" . $rs['FinishTime'] . "\",";	
+            echo "\"Time1\":\"" . $rs['Time1'] . "\",";
+            echo "\"Time2\":\"" . $rs['Time2'] . "\",";
+            echo "\"Time3\":\"" . $rs['Time3'] . "\",";
+            echo "\"Time4\":\"" . $rs['Time4'] . "\",";
+            echo "\"Status\":\"" . $rs['Status'] . "\",";
+            echo "\"StatusText\":\"" . GetListData(3, $rs['Status']) . "\",";
+            echo "\"Class\":\"" . $rs['Class'] . "\",";
+            echo "\"ClassText\":\"" . GetListData(5, $rs['Class']) . "\",";
+            echo "\"RaceDate\":\"" . $rs['RaceDate'] . "\",";
+            echo "\"Notes\":\"" . $rs['Notes'] . "\"";
+            echo "}";
 	}
 	echo "]}";
 	

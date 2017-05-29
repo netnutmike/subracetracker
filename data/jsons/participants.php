@@ -2,8 +2,8 @@
 		
 	$beenhere = false;
 	
-	if (isset($_REQUEST['teamID']) && trim($_REQUEST['teamID']) != "")
-		$query = "SELECT * from Teams where uid='" . trim($_REQUEST['participntID']) . "'";
+	if (isset($_REQUEST['participantID']) && trim($_REQUEST['participantID']) != "")
+		$query = "SELECT * from Participants where uid='" . trim($_REQUEST['participantID']) . "'";
 	else
 		$query = "SELECT * from Participants";
                 
@@ -48,7 +48,7 @@
             echo "\"TeamName\":" . json_encode($teamRS['TeamName']) . ",";	
             echo "\"DiverName\":" . json_encode($rs['DiverName']) . ",";	
             echo "\"Status\":\"" . $rs['Status'] . "\",";	
-            echo "\"StatusText\":\"" . GetListData(2, $rs['Status']) . "\",";
+            echo "\"StatusText\":\"" . GetListData(2, $rs['Status']) . "\"";
             echo "}";
 	}
 	echo "]}";
