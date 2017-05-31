@@ -1,0 +1,166 @@
+{
+    "type": "Ext.menu.Menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "runspanelmenu",
+        "designer|userClassName": "RunsPanelMenu",
+        "height": 123,
+        "width": 192
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "ParticipantsPanelMenu3",
+    "designerId": "6a7f7378-ef75-40e6-b662-b90d55dc4967",
+    "viewControllerInstanceId": "eadddca3-7cc3-414e-85af-c43c8a6bb93d",
+    "viewModelInstanceId": "609ad6cc-04b1-4032-a615-e3bdb6550c5a",
+    "cn": [
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/edit.png",
+                "text": "View / Edit Run"
+            },
+            "configAlternates": {
+                "text": "string",
+                "icon": "string"
+            },
+            "name": "MyMenuItem",
+            "designerId": "2c9849ce-c76f-4e80-9e63-a4c9a8e0b733",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "Ext.create('Admin.view.ViewRun').show();"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "98fd374c-d305-4629-9a9b-1a6d99fb8550"
+                }
+            ]
+        },
+        {
+            "type": "Ext.menu.Separator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Menu Item"
+            },
+            "configAlternates": {
+                "text": "string"
+            },
+            "name": "MySeparator2",
+            "designerId": "f24048f3-9e64-4368-b041-d418e9d8d072"
+        },
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/add.png",
+                "text": "New Run"
+            },
+            "configAlternates": {
+                "icon": "string",
+                "text": "string"
+            },
+            "name": "MyMenuItem1",
+            "designerId": "61254458-fa7f-4a6e-b3cc-01ff1afef283",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "Ext.create('Admin.view.NewRun').show();"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "d1021820-92c0-439b-a365-aa724054e264"
+                }
+            ]
+        },
+        {
+            "type": "Ext.menu.Separator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Menu Item"
+            },
+            "configAlternates": {
+                "text": "string"
+            },
+            "name": "MySeparator3",
+            "designerId": "af8533b6-c909-4aea-bc42-74387d0f4e2c"
+        },
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/delete.png",
+                "text": "Delete Run"
+            },
+            "configAlternates": {
+                "icon": "string",
+                "text": "string"
+            },
+            "name": "MyMenuItem2",
+            "designerId": "671b24e5-f883-44fa-92da-dc06dcf50c5c"
+        }
+    ]
+}

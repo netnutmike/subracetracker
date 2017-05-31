@@ -1,0 +1,166 @@
+{
+    "type": "Ext.menu.Menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "teamspanelmenu",
+        "designer|userClassName": "TeamsPanelMenu",
+        "height": 123,
+        "width": 192
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "ParticipantsPanelMenu1",
+    "designerId": "cc4903ef-344b-4947-a3ae-80e62b519658",
+    "viewControllerInstanceId": "7a711f3f-c7f3-48bf-afe1-f7b702577cab",
+    "viewModelInstanceId": "7c87d995-3629-4cbf-b9e2-94051ff63972",
+    "cn": [
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/edit.png",
+                "text": "View / Edit Team"
+            },
+            "configAlternates": {
+                "text": "string",
+                "icon": "string"
+            },
+            "name": "MyMenuItem",
+            "designerId": "a653d5d5-e168-4cab-90cc-1a011caeeb40",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "Ext.create('Admin.view.ViewParticipant').show();"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "cedb0a2a-eaa8-4f32-b8dc-207966366ad3"
+                }
+            ]
+        },
+        {
+            "type": "Ext.menu.Separator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Menu Item"
+            },
+            "configAlternates": {
+                "text": "string"
+            },
+            "name": "MySeparator2",
+            "designerId": "7bff9ecb-c50f-424d-b9de-5065a0b2ece9"
+        },
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/add.png",
+                "text": "New Team"
+            },
+            "configAlternates": {
+                "icon": "string",
+                "text": "string"
+            },
+            "name": "MyMenuItem1",
+            "designerId": "87ba4c22-808c-4012-9deb-fed0dd3837de",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "Ext.create('Admin.view.NewTeam').show();"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "5babdf37-6509-4a86-8721-33315a0939a1"
+                }
+            ]
+        },
+        {
+            "type": "Ext.menu.Separator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Menu Item"
+            },
+            "configAlternates": {
+                "text": "string"
+            },
+            "name": "MySeparator3",
+            "designerId": "f97a582a-7cbe-4dff-a83b-dfa8fef3006b"
+        },
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/delete.png",
+                "text": "Delete Team"
+            },
+            "configAlternates": {
+                "icon": "string",
+                "text": "string"
+            },
+            "name": "MyMenuItem2",
+            "designerId": "bc9ec32d-c745-4133-8e78-4f3a6a7c76ba"
+        }
+    ]
+}

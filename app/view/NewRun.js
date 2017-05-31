@@ -82,6 +82,7 @@ Ext.define('Admin.view.NewRun', {
                 },
                 {
                     xtype: 'combobox',
+                    width: 392,
                     fieldLabel: 'Team:',
                     labelWidth: 75,
                     name: 'TeamID',
@@ -91,6 +92,7 @@ Ext.define('Admin.view.NewRun', {
                 },
                 {
                     xtype: 'combobox',
+                    width: 392,
                     fieldLabel: 'Class:',
                     labelWidth: 75,
                     name: 'Class',
@@ -100,6 +102,7 @@ Ext.define('Admin.view.NewRun', {
                 },
                 {
                     xtype: 'combobox',
+                    width: 392,
                     fieldLabel: 'Status:',
                     labelWidth: 75,
                     name: 'Status',
@@ -110,7 +113,7 @@ Ext.define('Admin.view.NewRun', {
                 {
                     xtype: 'textareafield',
                     height: 156,
-                    width: 391,
+                    width: 392,
                     fieldLabel: 'Notes:',
                     labelWidth: 75,
                     name: 'Notes'

@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "runspanelmenu",
+        "designer|userClassName": "RunsPanelMenuViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "ParticipantsPanelMenuViewController3",
+    "designerId": "eadddca3-7cc3-414e-85af-c43c8a6bb93d"
+}

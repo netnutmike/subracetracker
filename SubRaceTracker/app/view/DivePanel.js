@@ -35,6 +35,7 @@ Ext.define('Admin.view.DivePanel', {
     height: 419,
     width: 719,
     title: 'Dive Master',
+    defaultListenerScope: true,
 
     dockedItems: [
         {
@@ -45,13 +46,15 @@ Ext.define('Admin.view.DivePanel', {
                     xtype: 'button',
                     handler: 'DiverInButtonClick',
                     icon: '/images/download.png',
-                    text: 'Diver In'
+                    text: 'Diver In',
+                    scope: 'controller'
                 },
                 {
                     xtype: 'button',
                     handler: 'DiverOutButtonClick',
                     icon: '/images/up.png',
-                    text: 'Diver Out'
+                    text: 'Diver Out',
+                    scope: 'controller'
                 },
                 {
                     xtype: 'tbseparator'
@@ -60,7 +63,8 @@ Ext.define('Admin.view.DivePanel', {
                     xtype: 'button',
                     handler: 'newRunButtonClick',
                     icon: '/images/add.png',
-                    text: 'New Run'
+                    text: 'New Run',
+                    scope: 'controller'
                 }
             ]
         }
@@ -94,8 +98,24 @@ Ext.define('Admin.view.DivePanel', {
                     dataIndex: 'StatusText',
                     text: 'Status Text'
                 }
-            ]
+            ],
+            listeners: {
+                itemcontextmenu: 'onGridpanelItemContextMenu',
+                rowdblclick: 'onGridpanelRowDblClick'
+            }
         }
-    ]
+    ],
+
+    onGridpanelItemContextMenu: function(dataview, record, item, index, e, eOpts) {
+        e.stopEvent();
+        selectedvalue = record.get('uid');
+        selectedrec = record;
+        popup = Ext.create('Admin.view.DivePanelMenu');
+        popup.showAt(e.getXY());
+    },
+
+    onGridpanelRowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
+        Ext.create('Admin.view.ViewParticipant').show();
+    }
 
 });

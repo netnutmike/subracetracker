@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "divepanelmenu",
+        "designer|userClassName": "DivePanelMenuViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "ParticipantsPanelMenuViewModel2",
+    "designerId": "fb5adecd-a5e0-450a-9e1d-11b6050a8469"
+}

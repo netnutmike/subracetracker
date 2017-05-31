@@ -27,6 +27,7 @@ Ext.define('Admin.store.TeamsStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'TeamsStore',
+            autoLoad: true,
             model: 'Admin.model.Teams',
             proxy: {
                 type: 'ajax',

@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": true,
         "designer|userClassName": "TeamsStore",
         "model": "Teams",
         "storeId": "TeamsStore"
@@ -13,7 +14,8 @@
     "configAlternates": {
         "designer|userClassName": "string",
         "model": "model",
-        "storeId": "string"
+        "storeId": "string",
+        "autoLoad": "boolean"
     },
     "name": "RacesStore1",
     "designerId": "30b69304-e7d2-4eb9-ade0-70f862794dd7",

@@ -1,0 +1,132 @@
+{
+    "type": "Ext.menu.Menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "divepanelmenu",
+        "designer|userClassName": "DivePanelMenu",
+        "height": null,
+        "width": null
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "ParticipantsPanelMenu2",
+    "designerId": "18d5774f-8130-4f46-b9ed-23bd1c3559fc",
+    "viewControllerInstanceId": "498c0905-4e72-4a9a-a345-2bfbb9463ffb",
+    "viewModelInstanceId": "fb5adecd-a5e0-450a-9e1d-11b6050a8469",
+    "cn": [
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/up.png",
+                "text": "Diver Out"
+            },
+            "configAlternates": {
+                "icon": "string",
+                "text": "string"
+            },
+            "name": "MyMenuItem1",
+            "designerId": "9c33c89b-0a28-4d6c-adca-2ebdf86ed15c",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "Ext.create('Admin.view.NewParticipant').show();"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "081deba1-64d5-462b-ab98-79d671942f73"
+                }
+            ]
+        },
+        {
+            "type": "Ext.menu.Separator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Menu Item"
+            },
+            "configAlternates": {
+                "text": "string"
+            },
+            "name": "MySeparator4",
+            "designerId": "bc57aa92-6520-4228-99c1-fc06522a382b"
+        },
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/add.png",
+                "text": "View / Edit Participant"
+            },
+            "configAlternates": {
+                "icon": "string",
+                "text": "string"
+            },
+            "name": "MyMenuItem3",
+            "designerId": "a7d2b452-b7b9-497b-94c5-3f43afe0446b",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "Ext.create('Admin.view.NewParticipant').show();"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "f9145877-cb57-423e-a7d0-081f570a6043"
+                }
+            ]
+        }
+    ]
+}

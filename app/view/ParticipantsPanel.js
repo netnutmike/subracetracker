@@ -35,6 +35,7 @@ Ext.define('Admin.view.ParticipantsPanel', {
     height: 419,
     width: 719,
     title: 'Participants',
+    defaultListenerScope: true,
 
     dockedItems: [
         {
@@ -45,20 +46,25 @@ Ext.define('Admin.view.ParticipantsPanel', {
                     xtype: 'button',
                     handler: 'newParticipantButtonClick',
                     icon: '/images/add.png',
-                    text: 'New Participant'
+                    text: 'New Participant',
+                    scope: 'controller'
                 },
                 {
                     xtype: 'tbseparator'
                 },
                 {
                     xtype: 'button',
+                    handler: 'uploadParticpantsButtonClicked',
                     icon: '/images/database_upload.png',
-                    text: 'Upload Participants'
+                    text: 'Upload Participants',
+                    scope: 'controller'
                 },
                 {
                     xtype: 'button',
-                    icon: '/images/database_download.png',
-                    text: 'Download CSV'
+                    handler: 'downloadParticipantCSVButtonClicked',
+                    icon: '/images/download.png',
+                    text: 'Download CSV',
+                    scope: 'controller'
                 }
             ]
         }
@@ -91,8 +97,24 @@ Ext.define('Admin.view.ParticipantsPanel', {
                     dataIndex: 'StatusText',
                     text: 'Status Text'
                 }
-            ]
+            ],
+            listeners: {
+                rowdblclick: 'RowDblClick',
+                itemcontextmenu: 'onGridpanelItemContextMenu'
+            }
         }
-    ]
+    ],
+
+    RowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
+        Ext.create('Admin.view.ViewParticipant').show();
+    },
+
+    onGridpanelItemContextMenu: function(dataview, record, item, index, e, eOpts) {
+        e.stopEvent();
+        selectedvalue = record.get('uid');
+        selectedrec = record;
+        popup = Ext.create('Admin.view.ParticipantsPanelMenu');
+        popup.showAt(e.getXY());
+    }
 
 });

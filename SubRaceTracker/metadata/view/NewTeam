@@ -182,12 +182,14 @@
             "userConfig": {
                 "bodyPadding": 10,
                 "id": "NewTeamForm",
+                "layout": null,
                 "title": null
             },
             "configAlternates": {
                 "bodyPadding": "auto",
                 "id": "string",
-                "title": "string"
+                "title": "string",
+                "layout": "string"
             },
             "name": "MyForm",
             "designerId": "74b8f42e-d772-45ad-94bf-27b996030200",
@@ -263,11 +265,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "displayField": "TeamName",
+                        "displayField": "ListItem",
                         "fieldLabel": "Lane",
                         "name": "Lane",
-                        "store": "TeamsStore",
-                        "valueField": "uid"
+                        "store": "LaneStore",
+                        "valueField": "IntValue",
+                        "width": 392
                     },
                     "configAlternates": {
                         "displayField": "datafield",
@@ -275,7 +278,8 @@
                         "labelWidth": "number",
                         "name": "string",
                         "store": "store",
-                        "valueField": "datafield"
+                        "valueField": "datafield",
+                        "width": "auto"
                     },
                     "name": "MyComboBox",
                     "designerId": "bb79ad78-b097-41e3-bd8b-4c542f0f34ef"
@@ -292,7 +296,8 @@
                         "fieldLabel": "Class:",
                         "name": "Class",
                         "store": "TeamClassStore",
-                        "valueField": "IntValue"
+                        "valueField": "IntValue",
+                        "width": 392
                     },
                     "configAlternates": {
                         "fieldLabel": "string",
@@ -300,7 +305,8 @@
                         "labelWidth": "number",
                         "name": "string",
                         "store": "store",
-                        "valueField": "datafield"
+                        "valueField": "datafield",
+                        "width": "auto"
                     },
                     "name": "MyComboBox1",
                     "designerId": "e217e865-b0f8-4562-9812-33127668d677"
@@ -317,7 +323,8 @@
                         "fieldLabel": "Status:",
                         "name": "Status",
                         "store": "TeamStatusStore",
-                        "valueField": "uid"
+                        "valueField": "uid",
+                        "width": 391
                     },
                     "configAlternates": {
                         "fieldLabel": "string",
@@ -325,7 +332,8 @@
                         "labelWidth": "number",
                         "name": "string",
                         "store": "store",
-                        "valueField": "datafield"
+                        "valueField": "datafield",
+                        "width": "auto"
                     },
                     "name": "MyComboBox2",
                     "designerId": "54b590fc-1b21-44b7-817e-ea683ec5914b"
@@ -363,7 +371,6 @@
                     "userConfig": {
                         "fieldLabel": "Label",
                         "id": "NewTeamSession",
-                        "layout|anchor": "100%",
                         "name": "SID"
                     },
                     "configAlternates": {
@@ -374,6 +381,16 @@
                     },
                     "name": "MyHiddenField3",
                     "designerId": "73721f92-7dfa-40b1-9d7d-d2b7535f487d"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyContainer1",
+                    "designerId": "7f0b8b95-4d8e-4128-ba3b-197c56347dfe"
                 }
             ]
         }

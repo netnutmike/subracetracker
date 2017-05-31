@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "divepanelmenu",
+        "designer|userClassName": "DivePanelMenuViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "ParticipantsPanelMenuViewController2",
+    "designerId": "498c0905-4e72-4a9a-a345-2bfbb9463ffb"
+}

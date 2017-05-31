@@ -15,12 +15,12 @@ Ext.define('Admin.store.ListValuesStore', {
             model: 'Admin.model.ListValues',
             proxy: {
                 type: 'ajax',
-                extraParams: { dataset: 'tabledata' },
+                extraParams: { dataset: 'listData' },
                 url: '/data/getjson.php',
                 timeout: 60000,
                 reader: {
                     type: 'json',
-                    rootProperty: 'tabledata'
+                    rootProperty: 'listData'
                 }
             }
         }, cfg)]);

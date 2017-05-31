@@ -39,29 +39,24 @@ Ext.define('Admin.view.admin.Lists', {
                                     shrinkWrap: 0,
                                     header: false,
                                     //title: 'My Grid Panel',
-                                    store: Ext.create('Admin.store.ListValuesStore'),
+                                    store: Ext.create('Admin.store.ListDataStore'),
                                     enableColumnHide: false,
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'ItemText',
+                                            dataIndex: 'ListItem',
                                             width: 130,
                                             text: 'Item Text'
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'Value',
+                                            dataIndex: 'IntValue',
                                             text: 'Int Value'
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'ExtraStr',
-                                            text: 'Extra Str'
-                                        },
-                                        {
-                                            xtype: 'gridcolumn',
-                                            dataIndex: 'ExtraInt',
-                                            text: 'Extra Str'
+                                            dataIndex: 'CharValue',
+                                            text: 'Char Value'
                                         },
                                         {
                                             xtype: 'gridcolumn',
@@ -73,7 +68,7 @@ Ext.define('Admin.view.admin.Lists', {
 								    	itemcontextmenu: function (view, rec, node, index, e) {
 								    		e.stopEvent();
 								    		selectedvalue = rec.get('uid');
-								    		selectedvalue2 = rec.get('Name');
+								    		selectedvalue2 = rec.get('ListName');
 								    		selectedrec = rec;
 								    		TableValuesListsMenu.showAt(e.getXY()); 
 								    		
@@ -82,7 +77,7 @@ Ext.define('Admin.view.admin.Lists', {
 								    		e.stopEvent();
 								    		var NewListwin = Ext.create('Admin.view.admin.NewList');
 											NewListwin.show();
-											Ext.getCmp('newlistnameid').setValue(rec.get('Name'));
+											Ext.getCmp('newlistnameid').setValue(rec.get('ListName'));
 											Ext.getCmp('newlistuidid').setValue(rec.get('uid'));
 											Ext.getCmp('newlistactionid').setValue('update');
 								    		
@@ -114,7 +109,7 @@ Ext.define('Admin.view.admin.Lists', {
                                                     id: 'listvaluesselect',
 								                    labelWidth: 50,
 								                    width: 400,
-								                    displayField: 'Name',
+								                    displayField: 'ListName',
 								                    forceSelection: true,
 								                    valueField: 'uid',
 								                    //value: '7',
@@ -164,7 +159,7 @@ Ext.define('Admin.view.admin.Lists', {
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'Name',
+                                            dataIndex: 'ListName',
                                             text: 'List Name',
                                             flex: 1
                                         }
@@ -173,7 +168,7 @@ Ext.define('Admin.view.admin.Lists', {
 								    	itemcontextmenu: function (view, rec, node, index, e) {
 								    		e.stopEvent();
 								    		selectedvalue = rec.get('uid');
-								    		selectedvalue2 = rec.get('Name');
+								    		selectedvalue2 = rec.get('ListName');
 								    		TableListsMenu.showAt(e.getXY()); 
 								    		
 								    	},

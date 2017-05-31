@@ -124,7 +124,36 @@
                         "icon": "string"
                     },
                     "name": "MyButton5",
-                    "designerId": "96b7c734-b17d-45f5-88c8-efa44e07d2f4"
+                    "designerId": "96b7c734-b17d-45f5-88c8-efa44e07d2f4",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "designer|viewControllerFn": "uploadParticpantsButtonClicked",
+                                "fn": "handler",
+                                "implHandler": [
+                                    "Ext.create('Admin.view.UploadParticipants').show();"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "designer|viewControllerFn": "string",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "8bfd720f-e2ef-4454-a7d0-f4e1e7731cc5"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -134,7 +163,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "icon": "/images/database_download.png",
+                        "icon": "/images/download.png",
                         "layout|flex": null,
                         "text": "Download CSV"
                     },
@@ -144,7 +173,34 @@
                         "icon": "string"
                     },
                     "name": "MyButton6",
-                    "designerId": "70ec70a9-590d-4d8f-bb78-ed650ef45bdb"
+                    "designerId": "70ec70a9-590d-4d8f-bb78-ed650ef45bdb",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "designer|viewControllerFn": "downloadParticipantCSVButtonClicked",
+                                "fn": "handler",
+                                "implHandler": null
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "designer|viewControllerFn": "string",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "ef68738d-41e9-46f6-ab69-4b750b89f671"
+                        }
+                    ]
                 }
             ]
         },
@@ -253,6 +309,58 @@
                     },
                     "name": "MyColumn26",
                     "designerId": "ad65434d-cf8d-4cf8-a2b3-45f37db8aa26"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "RowDblClick",
+                        "implHandler": [
+                            "Ext.create('Admin.view.ViewParticipant').show();"
+                        ],
+                        "name": "rowdblclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "RowDblClick",
+                    "designerId": "bb65cc72-94a9-44c3-b49f-42b65778204a"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelItemContextMenu",
+                        "implHandler": [
+                            "e.stopEvent();",
+                            "selectedvalue = record.get('uid');",
+                            "selectedrec = record;",
+                            "popup = Ext.create('Admin.view.ParticipantsPanelMenu');",
+                            "popup.showAt(e.getXY());"
+                        ],
+                        "name": "itemcontextmenu",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelItemContextMenu",
+                    "designerId": "4d97a0d0-fda0-4cc6-ad57-3a309ef86796"
                 }
             ]
         }

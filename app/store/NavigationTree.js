@@ -45,7 +45,7 @@ Ext.define('Admin.store.NavigationTree', {
                 leaf: true
             },
             {
-                text: 'DiveMaster',
+                text: 'Dive Table',
                 iconCls: 'x-fa fa-user',
                 viewType: 'divepanel',
                 leaf: true

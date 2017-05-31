@@ -86,14 +86,16 @@ Ext.define('Admin.view.NewTeam', {
                 },
                 {
                     xtype: 'combobox',
+                    width: 392,
                     fieldLabel: 'Lane',
                     name: 'Lane',
-                    displayField: 'TeamName',
-                    store: 'TeamsStore',
-                    valueField: 'uid'
+                    displayField: 'ListItem',
+                    store: 'LaneStore',
+                    valueField: 'IntValue'
                 },
                 {
                     xtype: 'combobox',
+                    width: 392,
                     fieldLabel: 'Class:',
                     name: 'Class',
                     displayField: 'ListItem',
@@ -102,6 +104,7 @@ Ext.define('Admin.view.NewTeam', {
                 },
                 {
                     xtype: 'combobox',
+                    width: 391,
                     fieldLabel: 'Status:',
                     name: 'Status',
                     displayField: 'ListItem',
@@ -117,10 +120,12 @@ Ext.define('Admin.view.NewTeam', {
                 },
                 {
                     xtype: 'hiddenfield',
-                    anchor: '100%',
                     id: 'NewTeamSession',
                     fieldLabel: 'Label',
                     name: 'SID'
+                },
+                {
+                    xtype: 'container'
                 }
             ]
         }

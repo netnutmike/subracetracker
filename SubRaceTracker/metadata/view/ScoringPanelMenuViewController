@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scoringpanelmenu",
+        "designer|userClassName": "ScoringPanelMenuViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "TeamsPanelMenuViewController1",
+    "designerId": "74bea256-d476-4b36-ab6b-617b49233ea2"
+}

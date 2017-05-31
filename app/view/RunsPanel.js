@@ -34,6 +34,7 @@ Ext.define('Admin.view.RunsPanel', {
     height: 419,
     width: 719,
     title: 'Runs',
+    defaultListenerScope: true,
 
     dockedItems: [
         {
@@ -44,7 +45,8 @@ Ext.define('Admin.view.RunsPanel', {
                     xtype: 'button',
                     handler: 'onNewRunButonClick',
                     icon: '/images/add.png',
-                    text: 'New Run'
+                    text: 'New Run',
+                    scope: 'controller'
                 }
             ]
         }
@@ -123,8 +125,24 @@ Ext.define('Admin.view.RunsPanel', {
                     dataIndex: 'Notes',
                     text: 'Notes'
                 }
-            ]
+            ],
+            listeners: {
+                rowdblclick: 'onGridpanelRowDblClick',
+                rowcontextmenu: 'onGridpanelRowContextMenu'
+            }
         }
-    ]
+    ],
+
+    onGridpanelRowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
+        Ext.create('Admin.view.ViewRun').show();
+    },
+
+    onGridpanelRowContextMenu: function(tableview, record, tr, rowIndex, e, eOpts) {
+        e.stopEvent();
+        selectedvalue = record.get('uid');
+        selectedrec = record;
+        popup = Ext.create('Admin.view.RunsPanelMenu');
+        popup.showAt(e.getXY());
+    }
 
 });

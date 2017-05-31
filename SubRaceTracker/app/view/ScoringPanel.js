@@ -35,6 +35,7 @@ Ext.define('Admin.view.ScoringPanel', {
     height: 419,
     width: 719,
     title: 'Run Scoring',
+    defaultListenerScope: true,
 
     dockedItems: [
         {
@@ -45,7 +46,8 @@ Ext.define('Admin.view.ScoringPanel', {
                     xtype: 'button',
                     handler: 'onNewRunButtonClick',
                     icon: '/images/add.png',
-                    text: 'New Run'
+                    text: 'New Run',
+                    scope: 'controller'
                 }
             ]
         }
@@ -132,7 +134,11 @@ Ext.define('Admin.view.ScoringPanel', {
                                     dataIndex: 'Notes',
                                     text: 'Notes'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                rowdblclick: 'onGridpanelRowDblClick',
+                                rowcontextmenu: 'onGridpanelRowContextMenu'
+                            }
                         }
                     ]
                 },
@@ -213,12 +219,40 @@ Ext.define('Admin.view.ScoringPanel', {
                                     dataIndex: 'Notes',
                                     text: 'Notes'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                rowcontextmenu: 'onGridpanelRowContextMenu1',
+                                rowdblclick: 'onGridpanelRowDblClick1'
+                            }
                         }
                     ]
                 }
             ]
         }
-    ]
+    ],
+
+    onGridpanelRowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
+        Ext.create('Admin.view.Scoring').show();
+    },
+
+    onGridpanelRowContextMenu: function(tableview, record, tr, rowIndex, e, eOpts) {
+        e.stopEvent();
+        selectedvalue = record.get('uid');
+        selectedrec = record;
+        popup = Ext.create('Admin.view.NewScorePanelMenu');
+        popup.showAt(e.getXY());
+    },
+
+    onGridpanelRowContextMenu1: function(tableview, record, tr, rowIndex, e, eOpts) {
+        e.stopEvent();
+        selectedvalue = record.get('uid');
+        selectedrec = record;
+        popup = Ext.create('Admin.view.ScoringPanelMenu');
+        popup.showAt(e.getXY());
+    },
+
+    onGridpanelRowDblClick1: function(tableview, record, tr, rowIndex, e, eOpts) {
+        Ext.create('Admin.view.Scoring').show();
+    }
 
 });

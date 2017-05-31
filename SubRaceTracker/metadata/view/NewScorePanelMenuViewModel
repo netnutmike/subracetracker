@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "newscorepanelmenu",
+        "designer|userClassName": "NewScorePanelMenuViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "ScoringPanelMenuViewModel1",
+    "designerId": "0ef75d63-236d-4940-925d-6c7099e26300"
+}

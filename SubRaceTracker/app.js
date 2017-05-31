@@ -39,7 +39,10 @@ Ext.application({
         'DiverStatusStore',
         'RunStatusStore',
         'TeamStatusStore',
-        'TeamClassStore'
+        'TeamClassStore',
+        'LaneStore',
+        'TeamParticipantsStore',
+        'TeamRacesStore'
     ],
     views: [
         'DivePanel',
@@ -54,7 +57,15 @@ Ext.application({
         'Scoring',
         'NewTeam',
         'DiverIn',
-        'DiverOut'
+        'DiverOut',
+        'UploadParticipants',
+        'ParticipantsPanelMenu',
+        'TeamsPanelMenu',
+        'ScoringPanelMenu',
+        'DivePanelMenu',
+        'RunsPanelMenu',
+        'NewScorePanelMenu',
+        'ViewTeam'
     ],
     name: 'Admin',
 

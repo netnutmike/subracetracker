@@ -27,6 +27,7 @@ Ext.define('Admin.store.RacesStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'RacesStore',
+            autoLoad: true,
             model: 'Admin.model.Races',
             proxy: {
                 type: 'ajax',

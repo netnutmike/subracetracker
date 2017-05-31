@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userAlias": "newparticipant",
         "designer|userClassName": "NewParticipant",
-        "height": 248,
+        "height": 312,
         "margin": 5,
         "padding": 5,
         "title": "New Participant",
@@ -213,6 +213,28 @@
                     },
                     "name": "MyTextField",
                     "designerId": "4c05b36b-cfa9-4807-b5fa-e60fd54753a3"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Diver ID",
+                        "labelWidth": 75,
+                        "name": "DiverID",
+                        "width": 135
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField14",
+                    "designerId": "4c69d9ed-14e3-48f6-9fec-22d03d854e5a"
                 },
                 {
                     "type": "Ext.form.field.ComboBox",

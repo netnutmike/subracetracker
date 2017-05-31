@@ -395,6 +395,58 @@
                                     },
                                     "name": "MyColumn14",
                                     "designerId": "b4596e75-74f3-4d9f-9023-574b98a0edb6"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelRowDblClick",
+                                        "implHandler": [
+                                            "Ext.create('Admin.view.Scoring').show();"
+                                        ],
+                                        "name": "rowdblclick",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onGridpanelRowDblClick",
+                                    "designerId": "1568b9af-e8f2-4b8c-ad43-c80c5488b13e"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelRowContextMenu",
+                                        "implHandler": [
+                                            "e.stopEvent();",
+                                            "selectedvalue = record.get('uid');",
+                                            "selectedrec = record;",
+                                            "popup = Ext.create('Admin.view.NewScorePanelMenu');",
+                                            "popup.showAt(e.getXY());"
+                                        ],
+                                        "name": "rowcontextmenu",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onGridpanelRowContextMenu",
+                                    "designerId": "e0142fcc-40be-4970-a334-f15d207cf8bc"
                                 }
                             ]
                         }
@@ -687,6 +739,58 @@
                                     },
                                     "name": "MyColumn14",
                                     "designerId": "9777e61d-1664-4d10-8023-3bd7c8c029f1"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelRowContextMenu1",
+                                        "implHandler": [
+                                            "e.stopEvent();",
+                                            "selectedvalue = record.get('uid');",
+                                            "selectedrec = record;",
+                                            "popup = Ext.create('Admin.view.ScoringPanelMenu');",
+                                            "popup.showAt(e.getXY());"
+                                        ],
+                                        "name": "rowcontextmenu",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onGridpanelRowContextMenu1",
+                                    "designerId": "e4005b7c-26da-4093-9fa8-879900606664"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelRowDblClick1",
+                                        "implHandler": [
+                                            "Ext.create('Admin.view.Scoring').show();"
+                                        ],
+                                        "name": "rowdblclick",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onGridpanelRowDblClick1",
+                                    "designerId": "b4e5a522-f578-4e1a-aa65-6901fb77607b"
                                 }
                             ]
                         }

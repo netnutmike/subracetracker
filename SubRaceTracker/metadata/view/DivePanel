@@ -312,6 +312,58 @@
                     },
                     "name": "MyColumn4",
                     "designerId": "3750e751-23af-4fc0-93a2-7beba8d49b00"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelItemContextMenu",
+                        "implHandler": [
+                            "e.stopEvent();",
+                            "selectedvalue = record.get('uid');",
+                            "selectedrec = record;",
+                            "popup = Ext.create('Admin.view.DivePanelMenu');",
+                            "popup.showAt(e.getXY());"
+                        ],
+                        "name": "itemcontextmenu",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelItemContextMenu",
+                    "designerId": "7c1ad337-41f5-4818-beef-36431a392525"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelRowDblClick",
+                        "implHandler": [
+                            "Ext.create('Admin.view.ViewParticipant').show();"
+                        ],
+                        "name": "rowdblclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelRowDblClick",
+                    "designerId": "ddbf8733-3d9f-4545-9c12-2f1be3e951cb"
                 }
             ]
         }

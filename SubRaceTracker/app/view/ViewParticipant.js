@@ -27,10 +27,8 @@ Ext.define('Admin.view.ViewParticipant', {
         'Ext.form.field.ComboBox',
         'Ext.form.field.Hidden',
         'Ext.grid.Panel',
-        'Ext.grid.column.Number',
-        'Ext.grid.column.Date',
-        'Ext.grid.column.Boolean',
-        'Ext.view.Table'
+        'Ext.view.Table',
+        'Ext.grid.column.Column'
     ],
 
     controller: 'viewparticipant',
@@ -127,26 +125,22 @@ Ext.define('Admin.view.ViewParticipant', {
             xtype: 'gridpanel',
             columnWidth: 0.48,
             title: 'Participant Activity',
+            store: 'ParticipantHistoryStore',
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'string',
-                    text: 'String'
+                    dataIndex: 'Timestamp',
+                    text: 'Timestamp'
                 },
                 {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'number',
-                    text: 'Number'
+                    xtype: 'gridcolumn',
+                    dataIndex: 'ActionText',
+                    text: 'Action Text'
                 },
                 {
-                    xtype: 'datecolumn',
-                    dataIndex: 'date',
-                    text: 'Date'
-                },
-                {
-                    xtype: 'booleancolumn',
-                    dataIndex: 'bool',
-                    text: 'Boolean'
+                    xtype: 'gridcolumn',
+                    dataIndex: 'TrackedTime',
+                    text: 'Tracked Time'
                 }
             ]
         }

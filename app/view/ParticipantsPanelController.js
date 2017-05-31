@@ -19,6 +19,14 @@ Ext.define('Admin.view.ParticipantsPanelController', {
 
     newParticipantButtonClick: function(button, e) {
         Ext.create('Admin.view.NewParticipant').show();
+    },
+
+    uploadParticpantsButtonClicked: function(button, e) {
+        Ext.create('Admin.view.UploadParticipants').show();
+    },
+
+    downloadParticipantCSVButtonClicked: function(button, e) {
+
     }
 
 });

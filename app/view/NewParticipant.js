@@ -31,7 +31,7 @@ Ext.define('Admin.view.NewParticipant', {
     viewModel: {
         type: 'newparticipant'
     },
-    height: 248,
+    height: 312,
     margin: 5,
     padding: 5,
     width: 284,
@@ -71,6 +71,13 @@ Ext.define('Admin.view.NewParticipant', {
                     fieldLabel: 'Name',
                     labelWidth: 75,
                     name: 'DiverName'
+                },
+                {
+                    xtype: 'textfield',
+                    width: 135,
+                    fieldLabel: 'Diver ID',
+                    labelWidth: 75,
+                    name: 'DiverID'
                 },
                 {
                     xtype: 'combobox',

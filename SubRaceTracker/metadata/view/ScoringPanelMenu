@@ -1,0 +1,87 @@
+{
+    "type": "Ext.menu.Menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scoringpanelmenu",
+        "designer|userClassName": "ScoringPanelMenu",
+        "height": 123,
+        "icon": "/image/edit.png",
+        "width": 192
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto",
+        "icon": "string"
+    },
+    "name": "TeamsPanelMenu1",
+    "designerId": "83c8f4bd-4949-43d3-a207-c7708948d31a",
+    "viewControllerInstanceId": "74bea256-d476-4b36-ab6b-617b49233ea2",
+    "viewModelInstanceId": "13d68364-ed2a-4213-bd5f-631a1c2459dc",
+    "cn": [
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "View / Edit Score"
+            },
+            "configAlternates": {
+                "text": "string"
+            },
+            "name": "MyMenuItem",
+            "designerId": "db60c9e3-821d-4e2f-a77b-7c4521b5122a",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "Ext.create('Admin.view.Scoring').show();"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "f42824f7-08dd-4195-8400-b7596310faff"
+                }
+            ]
+        },
+        {
+            "type": "Ext.menu.Separator",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Menu Item"
+            },
+            "configAlternates": {
+                "text": "string"
+            },
+            "name": "MySeparator2",
+            "designerId": "f642348d-cc1f-47b2-a29d-e86cb0fbf14b"
+        }
+    ]
+}

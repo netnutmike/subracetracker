@@ -185,11 +185,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "TeamName",
-                        "text": "Team Name"
+                        "text": "Team Name",
+                        "width": 148
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyColumn16",
                     "designerId": "1007e567-1ac0-498f-bd4a-01baa87ec7b4"
@@ -203,11 +205,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "SchoolName",
-                        "text": "School Name"
+                        "text": "School Name",
+                        "width": 158
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyColumn17",
                     "designerId": "9cc7e333-985b-4b0e-8fd0-d16be5bc8c67"
@@ -221,11 +225,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "SubName",
-                        "text": "Sub Name"
+                        "text": "Sub Name",
+                        "width": 157
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyColumn18",
                     "designerId": "530fd23b-7c08-4933-a6ea-56fd23559693"
@@ -239,11 +245,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "StatusText",
-                        "text": "Status Text"
+                        "text": "Status",
+                        "width": 125
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyColumn19",
                     "designerId": "c0e10673-dc2b-478d-bff4-d2aa51461c11"
@@ -257,11 +265,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "Lane",
-                        "text": "Lane"
+                        "text": "Lane",
+                        "width": 70
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyColumn20",
                     "designerId": "a3ef56b8-9373-4a96-865b-c34bd109ccfe"
@@ -275,11 +285,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "ClassText",
-                        "text": "Class Text"
+                        "text": "Class Text",
+                        "width": 129
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyColumn21",
                     "designerId": "340f9a06-5dd8-4988-8c18-f7298ed9123c"
@@ -301,6 +313,58 @@
                     },
                     "name": "MyColumn22",
                     "designerId": "6fb4d5fc-8a92-44c0-acb8-1746c9ba41e3"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelRowDblClick",
+                        "implHandler": [
+                            "Ext.create('Admin.view.ViewTeam').show();"
+                        ],
+                        "name": "rowdblclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelRowDblClick",
+                    "designerId": "a2aec95d-a1c6-4cf0-84d7-2df8c52f3d89"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelRowContextMenu",
+                        "implHandler": [
+                            "e.stopEvent();",
+                            "selectedvalue = record.get('uid');",
+                            "selectedrec = record;",
+                            "popup = Ext.create('Admin.view.TeamsPanelMenu');",
+                            "popup.showAt(e.getXY());"
+                        ],
+                        "name": "rowcontextmenu",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelRowContextMenu",
+                    "designerId": "7300f5bd-dee4-4fa7-8ee8-cc1105abb915"
                 }
             ]
         }

@@ -1,0 +1,71 @@
+{
+    "type": "Ext.menu.Menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "newscorepanelmenu",
+        "designer|userClassName": "NewScorePanelMenu",
+        "height": 123,
+        "width": 192
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "ScoringPanelMenu1",
+    "designerId": "ab2f39ee-a7bd-434f-9360-0f70df55676b",
+    "viewControllerInstanceId": "a064bfc1-351e-42d6-8e50-c1cb7aa9401d",
+    "viewModelInstanceId": "0ef75d63-236d-4940-925d-6c7099e26300",
+    "cn": [
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/calculator.png",
+                "text": "Perform Scoring"
+            },
+            "configAlternates": {
+                "text": "string",
+                "icon": "string"
+            },
+            "name": "MyMenuItem",
+            "designerId": "baaba632-02e3-4528-a67d-748c6acd8d2c",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "Ext.create('Admin.view.Scoring').show();"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "0bd8d4d3-cb2f-432c-815c-c4828355fa61"
+                }
+            ]
+        }
+    ]
+}

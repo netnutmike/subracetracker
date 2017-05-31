@@ -247,7 +247,8 @@
                         "labelWidth": 75,
                         "name": "TeamID",
                         "store": "TeamsStore",
-                        "valueField": "uid"
+                        "valueField": "uid",
+                        "width": 392
                     },
                     "configAlternates": {
                         "displayField": "datafield",
@@ -255,7 +256,8 @@
                         "labelWidth": "number",
                         "name": "string",
                         "store": "store",
-                        "valueField": "datafield"
+                        "valueField": "datafield",
+                        "width": "auto"
                     },
                     "name": "MyComboBox",
                     "designerId": "15fd4b81-cd88-43df-b3d5-1c5ffee7c909"
@@ -273,7 +275,8 @@
                         "labelWidth": 75,
                         "name": "Class",
                         "store": "ClassStore",
-                        "valueField": "IntValue"
+                        "valueField": "IntValue",
+                        "width": 392
                     },
                     "configAlternates": {
                         "fieldLabel": "string",
@@ -281,7 +284,8 @@
                         "labelWidth": "number",
                         "name": "string",
                         "store": "store",
-                        "valueField": "datafield"
+                        "valueField": "datafield",
+                        "width": "auto"
                     },
                     "name": "MyComboBox1",
                     "designerId": "d097b8ad-6e87-4743-aff4-3b6563095641"
@@ -299,7 +303,8 @@
                         "labelWidth": 75,
                         "name": "Status",
                         "store": "RunStatusStore",
-                        "valueField": "uid"
+                        "valueField": "uid",
+                        "width": 392
                     },
                     "configAlternates": {
                         "fieldLabel": "string",
@@ -307,7 +312,8 @@
                         "labelWidth": "number",
                         "name": "string",
                         "store": "store",
-                        "valueField": "datafield"
+                        "valueField": "datafield",
+                        "width": "auto"
                     },
                     "name": "MyComboBox2",
                     "designerId": "bb40ac92-61d4-4356-8b67-e823787c517a"
@@ -324,7 +330,7 @@
                         "height": 156,
                         "labelWidth": 75,
                         "name": "Notes",
-                        "width": 391
+                        "width": 392
                     },
                     "configAlternates": {
                         "fieldLabel": "string",

@@ -35,6 +35,7 @@ Ext.define('Admin.view.TeamsPanel', {
     height: 419,
     width: 719,
     title: 'Teams',
+    defaultListenerScope: true,
 
     dockedItems: [
         {
@@ -45,7 +46,8 @@ Ext.define('Admin.view.TeamsPanel', {
                     xtype: 'button',
                     handler: 'newTeamButtonClick',
                     icon: '/images/add.png',
-                    text: 'New Team'
+                    text: 'New Team',
+                    scope: 'controller'
                 },
                 {
                     xtype: 'tbseparator'
@@ -70,31 +72,37 @@ Ext.define('Admin.view.TeamsPanel', {
             columns: [
                 {
                     xtype: 'gridcolumn',
+                    width: 148,
                     dataIndex: 'TeamName',
                     text: 'Team Name'
                 },
                 {
                     xtype: 'gridcolumn',
+                    width: 158,
                     dataIndex: 'SchoolName',
                     text: 'School Name'
                 },
                 {
                     xtype: 'gridcolumn',
+                    width: 157,
                     dataIndex: 'SubName',
                     text: 'Sub Name'
                 },
                 {
                     xtype: 'gridcolumn',
+                    width: 125,
                     dataIndex: 'StatusText',
-                    text: 'Status Text'
+                    text: 'Status'
                 },
                 {
                     xtype: 'gridcolumn',
+                    width: 70,
                     dataIndex: 'Lane',
                     text: 'Lane'
                 },
                 {
                     xtype: 'gridcolumn',
+                    width: 129,
                     dataIndex: 'ClassText',
                     text: 'Class Text'
                 },
@@ -103,8 +111,24 @@ Ext.define('Admin.view.TeamsPanel', {
                     dataIndex: 'Notes',
                     text: 'Notes'
                 }
-            ]
+            ],
+            listeners: {
+                rowdblclick: 'onGridpanelRowDblClick',
+                rowcontextmenu: 'onGridpanelRowContextMenu'
+            }
         }
-    ]
+    ],
+
+    onGridpanelRowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
+        Ext.create('Admin.view.ViewTeam').show();
+    },
+
+    onGridpanelRowContextMenu: function(tableview, record, tr, rowIndex, e, eOpts) {
+        e.stopEvent();
+        selectedvalue = record.get('uid');
+        selectedrec = record;
+        popup = Ext.create('Admin.view.TeamsPanelMenu');
+        popup.showAt(e.getXY());
+    }
 
 });
