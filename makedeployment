@@ -1,0 +1,10 @@
+cd ~/Documents/Development/sencha/subracetracker
+cp -r data deploy
+cp -r images deploy
+cp index.php deploy
+cp deploy.MD deploy
+cp subracetracker.sql deploy
+cp -r ../build/subracetracker/* deploy
+
+tar cvf subracetracker.tar deploy/*
+gzip subracetracker.tar
