@@ -69,7 +69,7 @@ Ext.define('Admin.view.authentication.Login', {
                     listeners: {
                         click: function() {
                         	var form = this.up('form').getForm();
-                        	Ext.Msg.alert('fieldval', form.findField('EID').getValue());
+                        	
                         	form.submit({
                         		url:'/login.php',
                         		waitMsg: 'Logging In, One Moment',
