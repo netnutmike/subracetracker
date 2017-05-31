@@ -1,0 +1,386 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "options",
+        "designer|userClassName": "Options",
+        "height": 510,
+        "margin": 5,
+        "padding": 5,
+        "title": "Options",
+        "width": 429
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "margin": "auto",
+        "padding": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "NewRun2",
+    "designerId": "81d9dc94-6554-4c56-8fbf-bf4f37af21a7",
+    "viewControllerInstanceId": "3a5fb4ff-f974-466f-94be-fcb72c7caa26",
+    "viewModelInstanceId": "d96183d0-cd9c-41aa-b854-718e4a77f327",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "f88e234a-04d5-486a-9de8-a96527004864",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "/images/save.png",
+                        "layout|flex": null,
+                        "text": "Save"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "icon": "string"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "84387192-0d4c-49ff-a756-456d71cbc80d",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "designer|viewControllerFn": "OnSaveButton",
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var form = Ext.getCmp('OptionsForm').getForm();",
+                                    "Ext.getCmp('OptionsSession').setValue(SID);",
+                                    "",
+                                    "if(form.isValid()){",
+                                    "    form.submit({",
+                                    "        url: '/data/actions.php',",
+                                    "        params: {",
+                                    "            action: 'update',",
+                                    "            dataset: 'Options'",
+                                    "        },",
+                                    "        //waitMsg: 'Saving new DLP Exception...',",
+                                    "        success: function(fp, o) {",
+                                    "            Ext.Msg.alert('Success', 'Options have been successfully saved.');",
+                                    "        },",
+                                    "        failure: function(fp, o) {",
+                                    "            switch (action.failureType) {",
+                                    "                case Ext.form.action.Action.CLIENT_INVALID:",
+                                    "                    Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');",
+                                    "                    break;",
+                                    "                case Ext.form.action.Action.CONNECT_FAILURE:",
+                                    "                    Ext.Msg.alert('Failure', 'Ajax communication failed');",
+                                    "                    break;",
+                                    "                case Ext.form.action.Action.SERVER_INVALID:",
+                                    "                    Ext.Msg.alert('Failure', action.result.msg);",
+                                    "            }",
+                                    "        }",
+                                    "    });",
+                                    "    this.up('window').close();",
+                                    "} else {",
+                                    "    Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');",
+                                    "}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "designer|viewControllerFn": "string",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "04b6729b-ca6c-4668-b83f-b9f357992a59"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "/images/delete.png",
+                        "layout|flex": null,
+                        "text": "Cancel"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "icon": "string"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "94444f3e-df05-43b9-b16c-f347ecc5a339",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "this.up('window').close();"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "8f5a4353-72b3-40b7-a2cd-cd84a76f733a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "id": "OptionsForm",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "title": "string",
+                "id": "string"
+            },
+            "name": "MyForm",
+            "designerId": "93d6b82e-23dc-425a-a189-e942baed9861",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "ZipCode",
+                        "name": "ZipCode",
+                        "width": 159
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "0f43f374-9088-481e-9294-97607fbdbdd7"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "FPS",
+                        "name": "FPS",
+                        "width": 159
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "1af70d48-a0b3-4d0f-a885-919890ec69a0"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "English/Metric",
+                        "name": "Metric"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "801d4ce3-f526-4f9e-9be5-0b1f844d56fb"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Total Distance",
+                        "name": "TotalDistance",
+                        "width": 159
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField2",
+                    "designerId": "e60c2172-e181-4f53-b700-1faf244a0e6d"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Time1 Distance",
+                        "name": "Time1",
+                        "width": 159
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField3",
+                    "designerId": "3d8c5817-7ed7-41c9-8128-9083a3cce69e"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Time2 Distance",
+                        "name": "Time2",
+                        "width": 159
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField4",
+                    "designerId": "d4ef0b13-2361-434c-8b43-0ab0dbf3e552"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Time3 Distance",
+                        "name": "Time3",
+                        "width": 159
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField5",
+                    "designerId": "91260e1d-f69e-4a08-95be-7273d95e82e3"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Time4 Distance",
+                        "name": "Time4",
+                        "width": 159
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField6",
+                    "designerId": "f56fb8f3-4f6d-40c0-b578-39b06e104198"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "id": "OptionsSession",
+                        "layout|anchor": "100%",
+                        "name": "SID"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyHiddenField2",
+                    "designerId": "74408fd2-49a7-4943-8d52-8af4d0dba5e9"
+                }
+            ]
+        }
+    ]
+}

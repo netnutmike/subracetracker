@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "diverout",
+        "designer|userClassName": "DiverOutViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "DiverInViewModel1",
+    "designerId": "c7af41d7-f538-43d5-8068-74e71c5c6a09"
+}

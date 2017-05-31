@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "diverin",
+        "designer|userClassName": "DiverInViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "NewParticipantViewModel1",
+    "designerId": "ed810578-1d51-41a4-9c80-6f2b4ee39ee7"
+}

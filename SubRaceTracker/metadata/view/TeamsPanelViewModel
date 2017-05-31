@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "teamspanel",
+        "designer|userClassName": "TeamsPanelViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "DivePanelViewModel3",
+    "designerId": "f90bae3e-aa47-4537-94c3-7c4048e0893b"
+}

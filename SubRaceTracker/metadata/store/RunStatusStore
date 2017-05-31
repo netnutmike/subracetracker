@@ -1,0 +1,60 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RunStatusStore",
+        "model": "ListData",
+        "storeId": "RunStatusStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "DiverStatusStore1",
+    "designerId": "01f62c8c-dedc-41b0-be0b-37f62868ac3f",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "extraParams": [
+                    "{dataset: 'listData', listid: '3'}"
+                ],
+                "url": "/data/getjson.php"
+            },
+            "configAlternates": {
+                "extraParams": "object",
+                "url": "string"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "76ef410f-80d8-432e-8b83-9af8fdaf85fd",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "listData"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "8b7347fb-b604-4ab1-b080-c17ae3d877c9"
+                }
+            ]
+        }
+    ]
+}

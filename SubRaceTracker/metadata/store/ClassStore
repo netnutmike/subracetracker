@@ -1,0 +1,60 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ClassStore",
+        "model": "ListData",
+        "storeId": "ClassStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "ListDataStore1",
+    "designerId": "fe2fbc10-dcb9-444d-b16d-a82c538b33d9",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "extraParams": [
+                    "{dataset: 'listData', listid: '5'}"
+                ],
+                "url": "/data/getjson.php"
+            },
+            "configAlternates": {
+                "extraParams": "object",
+                "url": "string"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "31550605-3ac8-4a36-aac4-a50ddd35f36a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "listData"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "7c44f91a-308a-4777-89ed-1bf1e72d7c50"
+                }
+            ]
+        }
+    ]
+}

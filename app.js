@@ -6,8 +6,31 @@ Ext.application({
     name: 'Admin',
 
     extend: 'Admin.Application',
-    
-    //stores: ['DesktopOSVersionStore'],
+
+    models: [
+        'ParticipantHistory',
+        'ListData',
+        'Lists',
+        'Participants',
+        'Races',
+        'Teams'
+    ],
+    stores: [
+        'ListDataStore',
+        'ListsStore',
+        'ParticipantHistoryStore',
+        'ParticipantsStore',
+        'RacesStore',
+        'TeamsStore',
+        'ClassStore',
+        'DiverStatusStore',
+        'RunStatusStore',
+        'TeamStatusStore',
+        'TeamClassStore'
+    ],
+    views: [
+        'DivePanel'
+    ],
 
     // Simply require all classes in the application. This is sufficient to ensure
     // that all Admin classes will be included in the application build. If classes
@@ -15,7 +38,6 @@ Ext.application({
     // explicitly.
     //
     requires: [
-        'Admin.*',
-        'Ext.window.Window'
+        'Admin.*'
     ]
 });

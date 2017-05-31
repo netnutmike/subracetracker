@@ -23,7 +23,7 @@ Ext.define('Admin.store.NavigationTree', {
 
                 children: [
                     {
-                        text: 'Members',
+                        text: 'Leader Board',
                         iconCls: 'x-fa fa-file-o',
                         //viewType: 'malwaredashboard',
                         viewType: 'pageblank',
@@ -35,7 +35,7 @@ Ext.define('Admin.store.NavigationTree', {
                 text: 'Scoring',
                 iconCls: 'x-fa fa-send',
                 rowCls: 'nav-tree-badge nav-tree-badge-new',		//nav-tree-badge-hot
-                viewType: 'email',
+                viewType: 'scoringpanel',
                 leaf: true
             },
             {
@@ -46,27 +46,9 @@ Ext.define('Admin.store.NavigationTree', {
             },
             {
                 text: 'DiveMaster',
-                iconCls: 'x-fa fa-leanpub',
-                expanded: false,
-                selectable: false,
-                //routeId: 'pages-parent',
-                //id: 'pages-parent',
-
-                children: [
-                    {
-                        text: 'Current Status',
-                        iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
-                        leaf: true
-                    },
-                    
-                    {
-                        text: 'Send Email',
-                        iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
-                        leaf: true
-                    }
-                ]
+                iconCls: 'x-fa fa-user',
+                viewType: 'divepanel',
+                leaf: true
             },
             {
                 text: 'Admin',
@@ -81,19 +63,19 @@ Ext.define('Admin.store.NavigationTree', {
                     {
                         text: 'Race Management',
                         iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
+                        viewType: 'runspanel',
                         leaf: true
                     },
                     {
                         text: 'Team Management',
                         iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
+                        viewType: 'teamspanel',
                         leaf: true
                     },
                     {
                         text: 'Participant Management',
                         iconCls: 'x-fa fa-file-o',
-                        viewType: 'pageblank',
+                        viewType: 'participantspanel',
                         leaf: true
                     }
                 ]
@@ -153,6 +135,12 @@ Ext.define('Admin.store.NavigationTree', {
                         text: 'Lists',
                         iconCls: 'x-fa fa-file-o',
                         viewType: 'adminlists',
+                        leaf: true
+                    },
+                    {
+                        text: 'login',
+                        iconCls: 'x-fa fa-file-o',
+                        viewType: 'login',
                         leaf: true
                     }
                 ]

@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "newparticipant",
+        "designer|userClassName": "NewParticipantViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "NewRunViewModel1",
+    "designerId": "6ac02b84-a629-4d94-b4d7-864442434f90"
+}

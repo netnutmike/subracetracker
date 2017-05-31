@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scoring",
+        "designer|userClassName": "ScoringViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "NewRunViewModel4",
+    "designerId": "5478a9d0-53cb-4cdd-bdb2-bc6a745df6f6"
+}

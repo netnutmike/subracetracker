@@ -21,13 +21,34 @@
             "ParticipantHistoryStore",
             "ParticipantsStore",
             "RacesStore",
-            "TeamsStore"
+            "TeamsStore",
+            "ClassStore",
+            "DiverStatusStore",
+            "RunStatusStore",
+            "TeamStatusStore",
+            "TeamClassStore"
+        ],
+        "views": [
+            "DivePanel",
+            "RunsPanel",
+            "NewRun",
+            "NewParticipant",
+            "ViewParticipant",
+            "ScoringPanel",
+            "TeamsPanel",
+            "ParticipantsPanel",
+            "Options",
+            "Scoring",
+            "NewTeam",
+            "DiverIn",
+            "DiverOut"
         ]
     },
     "configAlternates": {
         "models": "typedarray",
         "name": "string",
-        "stores": "typedarray"
+        "stores": "typedarray",
+        "views": "typedarray"
     },
     "name": "Application",
     "designerId": "application"

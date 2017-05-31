@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "newparticipant",
+        "designer|userClassName": "NewParticipantViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "NewRunViewController1",
+    "designerId": "cc9b4f45-df59-4056-96d6-0a9463cf9052"
+}

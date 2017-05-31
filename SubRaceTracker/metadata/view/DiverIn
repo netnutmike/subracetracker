@@ -1,0 +1,266 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "diverin",
+        "designer|userClassName": "DiverIn",
+        "height": 153,
+        "margin": 5,
+        "padding": 5,
+        "title": "Diver In",
+        "width": 284
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "margin": "auto",
+        "padding": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "NewParticipant2",
+    "designerId": "39e54bc2-3eb6-4fe9-bfaf-2fc2848784eb",
+    "viewControllerInstanceId": "9b48ba81-0769-4ed8-9814-289178623289",
+    "viewModelInstanceId": "ed810578-1d51-41a4-9c80-6f2b4ee39ee7",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "d72e4930-0e5f-4859-a5c2-303724056070",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "/images/save.png",
+                        "layout|flex": null,
+                        "text": "Save"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "icon": "string"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "ac22894b-9562-4399-8a69-f37d150f393e",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "designer|viewControllerFn": "onSaveButtonClick",
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var form = Ext.getCmp('DiverInForm').getForm();",
+                                    "Ext.getCmp('DiverInSession').setValue(SID);",
+                                    "",
+                                    "if(form.isValid()){",
+                                    "    form.submit({",
+                                    "        url: '/data/actions.php',",
+                                    "        params: {",
+                                    "            action: 'new',",
+                                    "            dataset: 'participantHistory'",
+                                    "        },",
+                                    "        //waitMsg: 'Saving new DLP Exception...',",
+                                    "        success: function(fp, o) {",
+                                    "            Ext.getStore('DiverStatusStore').load();",
+                                    "        },",
+                                    "        failure: function(fp, o) {",
+                                    "            switch (action.failureType) {",
+                                    "                case Ext.form.action.Action.CLIENT_INVALID:",
+                                    "                    Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');",
+                                    "                    break;",
+                                    "                case Ext.form.action.Action.CONNECT_FAILURE:",
+                                    "                    Ext.Msg.alert('Failure', 'Ajax communication failed');",
+                                    "                    break;",
+                                    "                case Ext.form.action.Action.SERVER_INVALID:",
+                                    "                    Ext.Msg.alert('Failure', action.result.msg);",
+                                    "            }",
+                                    "        }",
+                                    "    });",
+                                    "    this.up('window').close();",
+                                    "} else {",
+                                    "    Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');",
+                                    "}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "designer|viewControllerFn": "string",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "a07f826d-985d-4154-9cd4-ed697b02b188"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "/images/delete.png",
+                        "layout|flex": null,
+                        "text": "Cancel"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "icon": "string"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "7f81ffdb-3d1c-4304-951c-91153d83cb4d",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "this.up('window').close();"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "15d04d38-b57f-4ce5-b8c6-6b3d239fb4cb"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "id": "DiverInForm",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "title": "string",
+                "id": "string"
+            },
+            "name": "MyForm",
+            "designerId": "4410ecc7-44a3-4dd7-8904-bbb6fab924db",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Diver #",
+                        "labelWidth": 75,
+                        "name": "DiverID",
+                        "width": 251
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "06b730f4-e793-4a2f-9fa4-98b70710427e"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "id": "DiverInSession",
+                        "layout|anchor": "100%",
+                        "name": "SID"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyHiddenField6",
+                    "designerId": "74f17a3a-b362-4d2e-a278-6e930741a37e"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "layout|anchor": "100%",
+                        "name": "action",
+                        "value": [
+                            "DiverIn"
+                        ]
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|anchor": "string",
+                        "name": "string",
+                        "value": "object"
+                    },
+                    "name": "MyHiddenField7",
+                    "designerId": "87d39253-ecb7-4b5e-9978-bf6b2b9b7a6d"
+                }
+            ]
+        }
+    ]
+}

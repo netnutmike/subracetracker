@@ -1,0 +1,381 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "newteam",
+        "designer|userClassName": "NewTeam",
+        "height": 526,
+        "margin": 5,
+        "padding": 5,
+        "title": "New Team",
+        "width": 429
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "margin": "auto",
+        "padding": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "NewRun3",
+    "designerId": "eca05e01-193b-48ea-add7-3dcbb95380a4",
+    "viewControllerInstanceId": "1af89b06-7c42-4fea-ab4a-abcaee3e30ae",
+    "viewModelInstanceId": "c6a8a1b6-d2ad-4f03-916d-1ac42de447d6",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "3ac891ee-bab5-4ed7-a361-52528882bf1b",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "/images/save.png",
+                        "layout|flex": null,
+                        "text": "Save"
+                    },
+                    "configAlternates": {
+                        "icon": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "6c6fb8ad-46b1-49b6-8178-8869dcde39dc",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "designer|viewControllerFn": "OnSaveButtonClick",
+                                "fn": "handler",
+                                "implHandler": [
+                                    "var form = Ext.getCmp('NewTeamForm').getForm();",
+                                    "Ext.getCmp('NewTeamSession').setValue(SID);",
+                                    "",
+                                    "if(form.isValid()){",
+                                    "    form.submit({",
+                                    "        url: '/data/actions.php',",
+                                    "        params: {",
+                                    "            action: 'new',",
+                                    "            dataset: 'teams'",
+                                    "        },",
+                                    "        //waitMsg: 'Saving new DLP Exception...',",
+                                    "        success: function(fp, o) {",
+                                    "            Ext.getStore('TeamsStore').load();",
+                                    "        },",
+                                    "        failure: function(fp, o) {",
+                                    "            switch (action.failureType) {",
+                                    "                case Ext.form.action.Action.CLIENT_INVALID:",
+                                    "                    Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');",
+                                    "                    break;",
+                                    "                case Ext.form.action.Action.CONNECT_FAILURE:",
+                                    "                    Ext.Msg.alert('Failure', 'Ajax communication failed');",
+                                    "                    break;",
+                                    "                case Ext.form.action.Action.SERVER_INVALID:",
+                                    "                    Ext.Msg.alert('Failure', action.result.msg);",
+                                    "            }",
+                                    "        }",
+                                    "    });",
+                                    "    this.up('window').close();",
+                                    "} else {",
+                                    "    Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');",
+                                    "}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "designer|viewControllerFn": "string",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "773f0e7a-f31d-431c-980f-ce32f9a9be55"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "/images/delete.png",
+                        "layout|flex": null,
+                        "text": "Cancel"
+                    },
+                    "configAlternates": {
+                        "icon": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "66211762-a1d0-4c3c-823f-ab55be9f9266",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "this.up('window').close();"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "4a546289-4782-482d-baa6-f3e068f41f75"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "id": "NewTeamForm",
+                "title": null
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "id": "string",
+                "title": "string"
+            },
+            "name": "MyForm",
+            "designerId": "74b8f42e-d772-45ad-94bf-27b996030200",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Team Name",
+                        "name": "TeamName",
+                        "width": 388
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "b53d0b33-6bc1-4e08-926f-83721cdfe019"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "School Name",
+                        "name": "SchoolName",
+                        "width": 388
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField12",
+                    "designerId": "8abc349b-c31e-4dcc-8c91-75727edc1a6a"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Sub Name",
+                        "name": "SubName",
+                        "width": 388
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField13",
+                    "designerId": "78733a36-e16a-4165-93ac-94e31b00ec9d"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "TeamName",
+                        "fieldLabel": "Lane",
+                        "name": "Lane",
+                        "store": "TeamsStore",
+                        "valueField": "uid"
+                    },
+                    "configAlternates": {
+                        "displayField": "datafield",
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "bb79ad78-b097-41e3-bd8b-4c542f0f34ef"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "ListItem",
+                        "fieldLabel": "Class:",
+                        "name": "Class",
+                        "store": "TeamClassStore",
+                        "valueField": "IntValue"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "displayField": "datafield",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox1",
+                    "designerId": "e217e865-b0f8-4562-9812-33127668d677"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "ListItem",
+                        "fieldLabel": "Status:",
+                        "name": "Status",
+                        "store": "TeamStatusStore",
+                        "valueField": "uid"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "displayField": "datafield",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "54b590fc-1b21-44b7-817e-ea683ec5914b"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Notes:",
+                        "height": 156,
+                        "name": "Notes",
+                        "width": 391
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "height": "auto",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "144145d8-f38d-45fb-b2d0-9c7d86d48663"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "id": "NewTeamSession",
+                        "layout|anchor": "100%",
+                        "name": "SID"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "layout|anchor": "string",
+                        "name": "string"
+                    },
+                    "name": "MyHiddenField3",
+                    "designerId": "73721f92-7dfa-40b1-9d7d-d2b7535f487d"
+                }
+            ]
+        }
+    ]
+}

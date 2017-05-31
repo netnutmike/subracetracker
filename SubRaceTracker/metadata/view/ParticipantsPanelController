@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "participantspanel",
+        "designer|userClassName": "ParticipantsPanelController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "DivePanelViewController4",
+    "designerId": "02baf2ea-9154-40f5-b7cc-17194e3918b7"
+}

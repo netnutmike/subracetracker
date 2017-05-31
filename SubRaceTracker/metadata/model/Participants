@@ -31,6 +31,22 @@
             "designerId": "67ea2c3a-c23f-4169-89a2-2db556c57120"
         },
         {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "DiverID"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField36",
+            "designerId": "c708e1cf-8467-426c-b548-bb48ac3cd3ea"
+        },
+        {
             "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
@@ -45,6 +61,22 @@
             },
             "name": "MyInteger7",
             "designerId": "0c49a8a2-09e4-446c-8de6-7d3751d254a4"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "TeamName"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField33",
+            "designerId": "a4b42e13-1b29-40df-9875-b61d555c5b29"
         },
         {
             "type": "Ext.data.field.Field",

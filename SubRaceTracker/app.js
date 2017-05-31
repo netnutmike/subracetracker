@@ -34,7 +34,32 @@ Ext.application({
         'ParticipantHistoryStore',
         'ParticipantsStore',
         'RacesStore',
-        'TeamsStore'
+        'TeamsStore',
+        'ClassStore',
+        'DiverStatusStore',
+        'RunStatusStore',
+        'TeamStatusStore',
+        'TeamClassStore'
     ],
-    name: 'Admin'
+    views: [
+        'DivePanel',
+        'RunsPanel',
+        'NewRun',
+        'NewParticipant',
+        'ViewParticipant',
+        'ScoringPanel',
+        'TeamsPanel',
+        'ParticipantsPanel',
+        'Options',
+        'Scoring',
+        'NewTeam',
+        'DiverIn',
+        'DiverOut'
+    ],
+    name: 'Admin',
+
+    launch: function() {
+        Ext.create('Admin.view.DivePanel', {renderTo: Ext.getBody()});
+    }
+
 });

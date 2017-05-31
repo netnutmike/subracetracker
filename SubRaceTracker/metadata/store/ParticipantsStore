@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": true,
         "designer|userClassName": "ParticipantsStore",
         "model": "Participants",
         "storeId": "ParticipantsStore"
@@ -13,7 +14,8 @@
     "configAlternates": {
         "designer|userClassName": "string",
         "model": "model",
-        "storeId": "string"
+        "storeId": "string",
+        "autoLoad": "boolean"
     },
     "name": "ParticipantHistoryStore1",
     "designerId": "4332b412-077d-4af0-b8b8-55e5b5c05c16",

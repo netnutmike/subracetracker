@@ -390,7 +390,7 @@
      *
      */
     "output": {
-        "base": "${ext.dir}/build/examples/admin-dashboard/${build.id}",
+        "base": "/Users/jmyer118/Documents/Development/sencha/build/subracetracker/${build.id}",
         "page": "../index.html",
         "manifest": "../${build.id}.json",
         "appCache": {
@@ -535,12 +535,12 @@
         "classic": {
             "toolkit": "classic",
             "theme": "theme-triton"
-        },
+        }/*,
 
         "modern": {
             "toolkit": "modern",
             "theme": "theme-triton"
-        }
+        }*/
     },
 
     /**

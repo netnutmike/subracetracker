@@ -10,7 +10,7 @@ Ext.define('Admin.view.authentication.Login', {
         'Ext.button.Button'
     ],
 
-    title: 'S.A.I.L. Administrative Log In',
+    title: 'International Submarine Races Administrative Log In',
     defaultFocus: 'authdialog', // Focus the Auth Form to force field focus as well
 
     items: [
@@ -34,22 +34,7 @@ Ext.define('Admin.view.authentication.Login', {
             items: [
                 {
                     xtype: 'label',
-                    text: 'Sign into your account'
-                },
-                {
-                    xtype: 'textfield',
-                    cls: 'auth-textbox',
-                    name: 'EID',
-                    //bind: '{userid}',
-                    height: 55,
-                    hideLabel: true,
-                    allowBlank : false,
-                    emptyText: 'EID',
-                    triggers: {
-                        glyphed: {
-                            cls: 'trigger-glyph-noop auth-email-trigger'
-                        }
-                    }
+                    text: 'Sign In'
                 },
                 {
                     xtype: 'textfield',
@@ -68,24 +53,9 @@ Ext.define('Admin.view.authentication.Login', {
                     }
                 },
                 {
-                    xtype: 'container',
-                    layout: 'hbox',
-                    items: [
-                        {
-                            xtype: 'checkboxfield',
-                            name: 'remember',
-                            flex : 1,
-                            cls: 'form-panel-font-color rememberMeCheckbox',
-                            height: 30,
-                            //bind: '{persist}',
-                            boxLabel: 'Remember me'
-                        },
-                        {
-                            xtype: 'hidden',
-                            name: 'authenticity_token',
-                            value: 'KG4us46gpY8iuhDuuS/bLPC1yQ/uwBw5FEHr8w93oKs='
-                        }
-                    ]
+                    xtype: 'hidden',
+                    name: 'authenticity_token',
+                    value: 'KG4us46g8uj5tfuhDuuS/bLPC1yQ/uwBw5FEHr8w93oKs='
                 },
                 {
                     xtype: 'button',
@@ -101,11 +71,11 @@ Ext.define('Admin.view.authentication.Login', {
                         	var form = this.up('form').getForm();
                         	Ext.Msg.alert('fieldval', form.findField('EID').getValue());
                         	form.submit({
-                        		url:'/user2/login.php',
+                        		url:'/login.php',
                         		waitMsg: 'Logging In, One Moment',
                         		success: function(form, action) {
 							       //Ext.Msg.alert('Success', action.result.msg);
-							       window.location = "/user2";
+							       window.location = "/";
 							    },
                         		failure: function(form, action) {
                         			switch (action.failureType) {
