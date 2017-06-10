@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": true,
         "designer|userClassName": "LaneStore",
         "model": "ListData",
         "storeId": "LaneStore"
@@ -13,7 +14,8 @@
     "configAlternates": {
         "designer|userClassName": "string",
         "model": "model",
-        "storeId": "string"
+        "storeId": "string",
+        "autoLoad": "boolean"
     },
     "name": "TeamClassStore1",
     "designerId": "0da5f7da-9325-446c-80f5-adfca1e4065f",

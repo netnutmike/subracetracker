@@ -27,6 +27,7 @@ Ext.define('Admin.store.LaneStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'LaneStore',
+            autoLoad: true,
             model: 'Admin.model.ListData',
             proxy: {
                 type: 'ajax',

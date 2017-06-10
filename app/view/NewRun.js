@@ -23,6 +23,7 @@ Ext.define('Admin.view.NewRun', {
         'Ext.toolbar.Toolbar',
         'Ext.button.Button',
         'Ext.form.Panel',
+        'Ext.form.Label',
         'Ext.form.field.Date',
         'Ext.form.field.ComboBox',
         'Ext.form.field.TextArea',
@@ -34,10 +35,12 @@ Ext.define('Admin.view.NewRun', {
         type: 'newrun'
     },
     height: 510,
+    id: 'NewRunWindow',
     margin: 5,
     padding: 5,
     width: 429,
     title: 'New Run',
+    defaultListenerScope: true,
 
     dockedItems: [
         {
@@ -48,7 +51,8 @@ Ext.define('Admin.view.NewRun', {
                     xtype: 'button',
                     handler: 'OnSaveButtonClick',
                     icon: '/images/save.png',
-                    text: 'Save'
+                    text: 'Save',
+                    scope: 'controller'
                 },
                 {
                     xtype: 'button',
@@ -68,14 +72,40 @@ Ext.define('Admin.view.NewRun', {
             bodyPadding: 10,
             items: [
                 {
-                    xtype: 'textfield',
-                    width: 159,
-                    fieldLabel: 'Run ID',
-                    labelWidth: 75,
-                    name: 'RaceID'
+                    xtype: 'container',
+                    padding: 0,
+                    layout: 'column',
+                    items: [
+                        {
+                            xtype: 'textfield',
+                            columnWidth: 0.5,
+                            width: 159,
+                            fieldLabel: 'Run ID',
+                            labelWidth: 75,
+                            name: 'RaceID'
+                        },
+                        {
+                            xtype: 'label',
+                            columnWidth: 0.5,
+                            html: '&nbsp;   (Leave Blank for Automatic #)',
+                            text: ''
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container',
+                    padding: 0,
+                    layout: 'column',
+                    items: [
+                        {
+                            xtype: 'label',
+                            html: '&nbsp;'
+                        }
+                    ]
                 },
                 {
                     xtype: 'datefield',
+                    id: 'newRunRaceDateid',
                     fieldLabel: 'Run Date:',
                     labelWidth: 75,
                     name: 'RaceDate'
@@ -88,10 +118,14 @@ Ext.define('Admin.view.NewRun', {
                     name: 'TeamID',
                     displayField: 'TeamName',
                     store: 'TeamsStore',
-                    valueField: 'uid'
+                    valueField: 'uid',
+                    listeners: {
+                        select: 'onComboboxSelect'
+                    }
                 },
                 {
                     xtype: 'combobox',
+                    id: 'newRunClassid',
                     width: 392,
                     fieldLabel: 'Class:',
                     labelWidth: 75,
@@ -108,7 +142,7 @@ Ext.define('Admin.view.NewRun', {
                     name: 'Status',
                     displayField: 'ListItem',
                     store: 'RunStatusStore',
-                    valueField: 'uid'
+                    valueField: 'IntValue'
                 },
                 {
                     xtype: 'textareafield',
@@ -127,6 +161,17 @@ Ext.define('Admin.view.NewRun', {
                 }
             ]
         }
-    ]
+    ],
+    listeners: {
+        afterrender: 'onWindowAfterRender'
+    },
+
+    onComboboxSelect: function(combo, record, eOpts) {
+        Ext.getCmp('newRunClassid').setValue(record.get('Class'));
+    },
+
+    onWindowAfterRender: function(component, eOpts) {
+        Ext.getCmp('newRunRaceDateid').setValue(GDate);
+    }
 
 });

@@ -36,7 +36,7 @@ Ext.define('Admin.model.ListData', {
             name: 'IntValue'
         },
         {
-            name: 'CharValue'
+            name: 'CharVal'
         },
         {
             type: 'int',

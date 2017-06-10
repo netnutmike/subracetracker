@@ -34,7 +34,8 @@ Ext.define('Admin.view.DivePanel', {
     },
     height: 419,
     width: 719,
-    title: 'Dive Master',
+    layout: 'fit',
+    title: 'Dive Table',
     defaultListenerScope: true,
 
     dockedItems: [
@@ -72,8 +73,9 @@ Ext.define('Admin.view.DivePanel', {
     items: [
         {
             xtype: 'gridpanel',
+            scrollable: 'both',
             title: 'In The Water',
-            store: 'ParticipantsStore',
+            store: 'ParticipantsInWaterStore',
             columns: [
                 {
                     xtype: 'gridcolumn',

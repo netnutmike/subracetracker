@@ -26,11 +26,12 @@ Ext.define('Admin.view.NewParticipantViewController', {
                 url: '/data/actions.php',
                 params: {
                     action: 'new',
-                    dataset: 'participant'
+                    dataset: 'participants'
                 },
                 //waitMsg: 'Saving new DLP Exception...',
                 success: function(fp, o) {
                     Ext.getStore('ParticipantsStore').load();
+                    Ext.getCmp('NewParticipantWindow').close();
                 },
                 failure: function(fp, o) {
                     switch (action.failureType) {
@@ -45,7 +46,7 @@ Ext.define('Admin.view.NewParticipantViewController', {
                     }
                 }
             });
-            this.up('window').close();
+
         } else {
             Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');
         }

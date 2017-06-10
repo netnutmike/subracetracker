@@ -1,0 +1,6 @@
+cd /Users/jmyer118/Documents/Development/sencha/subracetracker
+cp SubRaceTracker/app/model/*.js app/model
+cp SubRaceTracker/app/store/*.js app/store
+cp SubRaceTracker/app/view/*.js app/view
+sencha app build
+scp -r ../build/subracetracker/* root@tech-zen.tv:/usr/share/nginx/payoli.com/subracetracker

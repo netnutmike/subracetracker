@@ -55,7 +55,7 @@ Ext.define('Admin.view.admin.Lists', {
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'CharValue',
+                                            dataIndex: 'CharVal',
                                             text: 'Char Value'
                                         },
                                         {
@@ -116,8 +116,8 @@ Ext.define('Admin.view.admin.Lists', {
 								                    listeners: {
 								                    	select: function(combobox, rcds, opts) {
 								                    			
-								                    		Ext.getStore('ListValuesStore').getProxy().extraParams = { dataset: 'tabledata', tableid: combobox.getValue()};
-								                    		Ext.getStore('ListValuesStore').load();		
+								                    		Ext.getStore('ListDataStore').getProxy().extraParams = { dataset: 'listData', listid: combobox.getValue()};
+								                    		Ext.getStore('ListDataStore').load();		
 								                    		
 								                    		Ext.getCmp('newlistitembutton').enable();						
 								                    		
@@ -209,7 +209,7 @@ Ext.define('Admin.view.admin.Lists', {
                                                     listeners: {
 					                        			change: function() {
 					                        				srchval = Ext.getCmp('filterliststext').getValue();
-					                        				Ext.getStore('ListsStore').filter('Name', srchval);
+					                        				Ext.getStore('ListsStore').filter('ListName', srchval);
 					                        			}
 					                        		}
                                                 },
@@ -286,7 +286,7 @@ TableListsMenu = Ext.create('Ext.menu.Menu',{
 								
 			                	form.submit({
 			                		url:'/data/actions.php',
-			                		params: {dataset: 'tables', EID: EID},
+			                		params: {dataset: 'lists', SID: SID},
 			                		success: function(form, action) {
 			                			Ext.getStore('ListsStore').load();	
 								       	Ext.getCmp('newlistwindow').close();
@@ -383,10 +383,10 @@ TableValuesListsMenu = Ext.create('Ext.menu.Menu',{
 								
 			                	form.submit({
 			                		url:'/data/actions.php',
-			                		params: {dataset: 'tabledata', EID: EID},
+			                		params: {dataset: 'listData', SID: SID},
 			                		success: function(form, action) {
-			                			Ext.getStore('ListValuesStore').load();	
-								       	Ext.getCmp('newlistitemwindow').close();
+			                			Ext.getStore('ListDataStore').load();	
+								       	
 								    },
 			                		failure: function(form, action) {
 			                			switch (action.failureType) {

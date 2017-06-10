@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": true,
         "designer|userClassName": "ListsStore",
         "model": "Lists",
         "storeId": "ListsStore"
@@ -13,7 +14,8 @@
     "configAlternates": {
         "designer|userClassName": "string",
         "model": "model",
-        "storeId": "string"
+        "storeId": "string",
+        "autoLoad": "boolean"
     },
     "name": "ListDataStore1",
     "designerId": "aa73aa87-c7e1-44d8-9a53-ea09b1efb840",

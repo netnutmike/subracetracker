@@ -9,6 +9,7 @@
         "designer|userAlias": "uploadparticipants",
         "designer|userClassName": "UploadParticipants",
         "height": 178,
+        "id": "UploadParticipantsWindow",
         "title": "Upload Participants",
         "width": 400
     },
@@ -17,7 +18,8 @@
         "designer|userClassName": "string",
         "height": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "id": "string"
     },
     "name": "MyWindow",
     "designerId": "13b7e429-983a-41c2-88ba-ab0fcb5c2953",
@@ -188,6 +190,7 @@
                                     "        //waitMsg: 'Saving new DLP Exception...',",
                                     "        success: function(fp, o) {",
                                     "            Ext.getStore('ParticipantsStore').load();",
+                                    "            Ext.getCmp('UploadParticipantsWindow').close();",
                                     "        },",
                                     "        failure: function(fp, o) {",
                                     "            switch (action.failureType) {",
@@ -202,7 +205,6 @@
                                     "            }",
                                     "        }",
                                     "    });",
-                                    "    this.up('window').close();",
                                     "} else {",
                                     "    Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');",
                                     "}"

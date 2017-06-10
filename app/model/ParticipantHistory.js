@@ -54,6 +54,9 @@ Ext.define('Admin.model.ParticipantHistory', {
         {
             type: 'int',
             name: 'RaceID'
+        },
+        {
+            name: 'DiverID'
         }
     ]
 });

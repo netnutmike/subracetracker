@@ -134,6 +134,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "href": "/data/exports/teamsExport.php",
                         "icon": "/images/download.png",
                         "layout|flex": null,
                         "text": "Download CSV"
@@ -141,7 +142,8 @@
                     "configAlternates": {
                         "layout|flex": "number",
                         "text": "string",
-                        "icon": "string"
+                        "icon": "string",
+                        "href": "string"
                     },
                     "name": "MyButton6",
                     "designerId": "3e5e1a69-4098-4429-8d00-14b1ea3e289c"
@@ -264,9 +266,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "Lane",
-                        "text": "Lane",
-                        "width": 70
+                        "dataIndex": "LaneText",
+                        "text": "Default Lane",
+                        "width": 100
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
@@ -285,7 +287,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "ClassText",
-                        "text": "Class Text",
+                        "text": "Default Class",
                         "width": 129
                     },
                     "configAlternates": {

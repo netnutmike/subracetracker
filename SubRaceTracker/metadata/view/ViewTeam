@@ -384,7 +384,7 @@
                                         "labelWidth": 75,
                                         "name": "Lane",
                                         "store": "LaneStore",
-                                        "valueField": "uid"
+                                        "valueField": "IntValue"
                                     },
                                     "configAlternates": {
                                         "fieldLabel": "string",
@@ -410,7 +410,7 @@
                                         "labelWidth": 75,
                                         "name": "Class",
                                         "store": "TeamClassStore",
-                                        "valueField": "uid"
+                                        "valueField": "IntValue"
                                     },
                                     "configAlternates": {
                                         "fieldLabel": "string",

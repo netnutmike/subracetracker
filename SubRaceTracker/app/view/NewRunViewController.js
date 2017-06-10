@@ -28,9 +28,11 @@ Ext.define('Admin.view.NewRunViewController', {
                     action: 'new',
                     dataset: 'runs'
                 },
-                //waitMsg: 'Saving new DLP Exception...',
+
                 success: function(fp, o) {
                     Ext.getStore('RacesStore').load();
+                    Ext.getCmp('NewRunWindow').close();
+
                 },
                 failure: function(fp, o) {
                     switch (action.failureType) {
@@ -45,7 +47,7 @@ Ext.define('Admin.view.NewRunViewController', {
                     }
                 }
             });
-            this.up('window').close();
+
         } else {
             Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');
         }

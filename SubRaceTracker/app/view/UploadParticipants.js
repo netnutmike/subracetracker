@@ -33,6 +33,7 @@ Ext.define('Admin.view.UploadParticipants', {
         type: 'uploadparticipants'
     },
     height: 178,
+    id: 'UploadParticipantsWindow',
     width: 400,
     title: 'Upload Participants',
 

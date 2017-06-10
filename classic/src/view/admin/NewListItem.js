@@ -40,28 +40,22 @@ Ext.define('Admin.view.admin.NewListItem', {
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Item Text',
-                    name: 'ItemText'
+                    fieldLabel: 'List Item',
+                    name: 'ListItem'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
                     fieldLabel: 'Value',
-                    name: 'Value'
+                    name: 'IntValue'
                 },
                 {
                     xtype: 'textfield',
                     anchor: '100%',
-                    fieldLabel: 'Extra String',
-                    name: 'ExtraStr'
+                    fieldLabel: 'String Value',
+                    name: 'CharVal'
                 },
-                {
-                    xtype: 'textfield',
-                    anchor: '100%',
-                    fieldLabel: 'Extra Int',
-                    name: 'ExtraInt',
-                    inputType: 'number'
-                },
+                
                 {
                     xtype: 'combobox',
                     anchor: '100%',
@@ -90,9 +84,9 @@ Ext.define('Admin.view.admin.NewListItem', {
 		            				var form = this.up('form').getForm();
 		                        	form.submit({
 		                        		url:'/data/actions.php',
-		                        		params: {dataset: 'tabledata', EID: EID},
+		                        		params: {dataset: 'listData', SID: SID},
 		                        		success: function(form, action) {
-		                        			Ext.getStore('ListValuesStore').load();	
+                                            Ext.getStore('ListDataStore').load();
 									       	Ext.getCmp('newlistitemwindow').close();
 									    },
 		                        		failure: function(form, action) {

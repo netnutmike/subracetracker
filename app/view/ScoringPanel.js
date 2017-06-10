@@ -34,6 +34,7 @@ Ext.define('Admin.view.ScoringPanel', {
     },
     height: 419,
     width: 719,
+    layout: 'fit',
     title: 'Run Scoring',
     defaultListenerScope: true,
 
@@ -59,11 +60,12 @@ Ext.define('Admin.view.ScoringPanel', {
             items: [
                 {
                     xtype: 'panel',
+                    layout: 'fit',
                     title: 'New Runs',
                     items: [
                         {
                             xtype: 'gridpanel',
-                            store: 'RacesStore',
+                            store: 'RacesStoreNotScored',
                             columns: [
                                 {
                                     xtype: 'numbercolumn',
@@ -77,42 +79,6 @@ Ext.define('Admin.view.ScoringPanel', {
                                     width: 143,
                                     dataIndex: 'TeamName',
                                     text: 'Team Name'
-                                },
-                                {
-                                    xtype: 'gridcolumn',
-                                    width: 80,
-                                    dataIndex: 'StartTime',
-                                    text: 'Start Time'
-                                },
-                                {
-                                    xtype: 'gridcolumn',
-                                    width: 89,
-                                    dataIndex: 'FinishTime',
-                                    text: 'Finish Time'
-                                },
-                                {
-                                    xtype: 'gridcolumn',
-                                    width: 74,
-                                    dataIndex: 'Time1',
-                                    text: 'Time1'
-                                },
-                                {
-                                    xtype: 'gridcolumn',
-                                    width: 69,
-                                    dataIndex: 'Time2',
-                                    text: 'Time2'
-                                },
-                                {
-                                    xtype: 'gridcolumn',
-                                    width: 64,
-                                    dataIndex: 'Time3',
-                                    text: 'Time3'
-                                },
-                                {
-                                    xtype: 'gridcolumn',
-                                    width: 62,
-                                    dataIndex: 'Time4',
-                                    text: 'Time4'
                                 },
                                 {
                                     xtype: 'gridcolumn',
@@ -131,6 +97,7 @@ Ext.define('Admin.view.ScoringPanel', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
+                                    flex: 1,
                                     dataIndex: 'Notes',
                                     text: 'Notes'
                                 }
@@ -144,11 +111,12 @@ Ext.define('Admin.view.ScoringPanel', {
                 },
                 {
                     xtype: 'panel',
+                    layout: 'fit',
                     title: 'Past Runs',
                     items: [
                         {
                             xtype: 'gridpanel',
-                            store: 'RacesStore',
+                            store: 'RacesStoreScored',
                             columns: [
                                 {
                                     xtype: 'numbercolumn',
@@ -232,7 +200,10 @@ Ext.define('Admin.view.ScoringPanel', {
     ],
 
     onGridpanelRowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
-        Ext.create('Admin.view.Scoring').show();
+        e.stopEvent();
+        var ScoringWindow = Ext.create('Admin.view.Scoring');
+        ScoringWindow.show();
+        ScoringWindow.fireEvent(loadRecord,{RunID: record.get('uid')});
     },
 
     onGridpanelRowContextMenu: function(tableview, record, tr, rowIndex, e, eOpts) {

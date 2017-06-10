@@ -647,6 +647,62 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowLoadRecord",
+                "implHandler": [
+                    "//load record",
+                    "var form = Ext.getCmp('scoringForm').getForm();",
+                    "",
+                    "form.load({",
+                    "    url: '/data/getjson.php',",
+                    "    params: {",
+                    "        dataset: 'run',",
+                    "        uid: RunID",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "        Ext.Msg.alert(\"Load failed\", action.result.errorMessage);",
+                    "    }",
+                    "});"
+                ],
+                "name": "loadRecord",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onWindowLoadRecord",
+            "designerId": "e956512b-532c-44ec-835a-d2f92e9bb846"
+        },
+        {
+            "type": "customevent",
+            "reference": {
+                "name": "customEvents",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "loadRecord",
+                "params": [
+                    "RunID"
+                ]
+            },
+            "configAlternates": {
+                "name": "string",
+                "params": "typedarray"
+            },
+            "name": "CustomEvent",
+            "designerId": "b7621626-a53b-4d97-b053-49bf41ba5607"
         }
     ]
 }

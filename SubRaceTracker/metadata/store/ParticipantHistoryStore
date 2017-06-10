@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": true,
         "designer|userClassName": "ParticipantHistoryStore",
         "model": "ParticipantHistory",
         "storeId": "ParticipantHistoryStore"
@@ -13,7 +14,8 @@
     "configAlternates": {
         "designer|userClassName": "string",
         "model": "model",
-        "storeId": "string"
+        "storeId": "string",
+        "autoLoad": "boolean"
     },
     "name": "ListsStore1",
     "designerId": "fb60ceb6-f03d-4ffe-96bc-fc8c462cc08a",
@@ -27,7 +29,7 @@
             "codeClass": null,
             "userConfig": {
                 "extraParams": [
-                    "{dataset: 'participantHistory'}"
+                    "{dataset: 'participantActivity'}"
                 ],
                 "url": "/data/getjson.php"
             },
@@ -46,7 +48,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "rootProperty": "participantHistory"
+                        "rootProperty": "participantActivity"
                     },
                     "configAlternates": {
                         "rootProperty": "string"

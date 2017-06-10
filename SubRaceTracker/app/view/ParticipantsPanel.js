@@ -34,6 +34,7 @@ Ext.define('Admin.view.ParticipantsPanel', {
     },
     height: 419,
     width: 719,
+    layout: 'fit',
     title: 'Participants',
     defaultListenerScope: true,
 
@@ -62,6 +63,7 @@ Ext.define('Admin.view.ParticipantsPanel', {
                 {
                     xtype: 'button',
                     handler: 'downloadParticipantCSVButtonClicked',
+                    href: '/data/exports/participantsExport.php',
                     icon: '/images/download.png',
                     text: 'Download CSV',
                     scope: 'controller'
@@ -72,6 +74,7 @@ Ext.define('Admin.view.ParticipantsPanel', {
     items: [
         {
             xtype: 'gridpanel',
+            scrollable: 'both',
             store: 'ParticipantsStore',
             columns: [
                 {

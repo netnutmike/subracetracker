@@ -10,7 +10,8 @@
         "designer|userAlias": "divepanel",
         "designer|userClassName": "DivePanel",
         "height": 419,
-        "title": "Dive Master",
+        "layout": "fit",
+        "title": "Dive Table",
         "width": 719
     },
     "configAlternates": {
@@ -19,7 +20,8 @@
         "designer|userClassName": "string",
         "height": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "layout": "string"
     },
     "name": "MyPanel",
     "designerId": "c7d8fc3d-240f-4bdf-9da8-fb0020b017a1",
@@ -215,12 +217,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "store": "ParticipantsStore",
+                "scrollable": "both",
+                "store": "ParticipantsInWaterStore",
                 "title": "In The Water"
             },
             "configAlternates": {
                 "store": "store",
-                "title": "string"
+                "title": "string",
+                "scrollable": "auto"
             },
             "name": "MyGridPanel",
             "designerId": "e0f08672-f6fc-49e9-85b9-db92650fadf8",

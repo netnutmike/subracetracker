@@ -55,6 +55,51 @@ Ext.define('Admin.view.ParticipantsPanelMenu', {
         },
         {
             xtype: 'menuitem',
+            handler: function(item, e) {
+                Ext.Msg.show({
+                    title: 'Delete Participant?',
+                    message: 'Are you sure you want to delete this Particpant and the Participant History?  This cannot be undone!',
+                    buttons: Ext.Msg.YESNO,
+                    icon: Ext.Msg.WARNING,
+                    fn: function(btn) {
+                        if (btn === 'yes') {
+
+                            var NewListwin = Ext.create('Admin.view.NewParticipant');
+                            //NewListwin.show();
+                            Ext.getCmp('NewParticipantSession').setValue(SID);
+
+                            var form =Ext.getCmp('NewParticipantForm').getForm();
+
+                            form.submit({
+                                url:'/data/actions.php',
+                                params: {dataset: 'participants', SID: SID, action: 'delete', uid: selectedvalue},
+                                success: function(form, action) {
+                                    Ext.getStore('ParticipantsStore').load();
+
+                                },
+                                failure: function(form, action) {
+                                    switch (action.failureType) {
+                                        case Ext.form.action.Action.CLIENT_INVALID:
+                                        Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+                                        break;
+                                        case Ext.form.action.Action.CONNECT_FAILURE:
+                                        Ext.Msg.alert('Failure', 'Could Not Communicate With Server.');
+                                        break;
+                                        case Ext.form.action.Action.SERVER_INVALID:
+                                        Ext.Msg.alert('Unable To Delete Participant', action.result.msg);
+
+                                    }
+                                }
+                            });
+
+                        } else if (btn === 'no') {
+
+                        } else {
+
+                        }
+                    }
+                });
+            },
             icon: '/images/delete.png',
             text: 'Delete Participant'
         }

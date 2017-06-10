@@ -33,6 +33,7 @@ Ext.define('Admin.view.RunsPanel', {
     },
     height: 419,
     width: 719,
+    layout: 'fit',
     title: 'Runs',
     defaultListenerScope: true,
 
@@ -54,6 +55,7 @@ Ext.define('Admin.view.RunsPanel', {
     items: [
         {
             xtype: 'gridpanel',
+            scrollable: 'both',
             store: 'RacesStore',
             columns: [
                 {

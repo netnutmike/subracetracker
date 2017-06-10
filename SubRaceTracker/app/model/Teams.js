@@ -44,6 +44,9 @@ Ext.define('Admin.model.Teams', {
             name: 'Lane'
         },
         {
+            name: 'LaneText'
+        },
+        {
             type: 'int',
             name: 'Class'
         },

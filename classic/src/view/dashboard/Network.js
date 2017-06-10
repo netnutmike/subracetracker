@@ -16,7 +16,7 @@ Ext.define('Admin.view.dashboard.Network', {
 
     bodyPadding: 15,
 
-    title: 'Unique Malware',
+    title: 'Runs Summary',
     layout: {
         type: 'vbox',
         align: 'stretch'
@@ -78,14 +78,14 @@ Ext.define('Admin.view.dashboard.Network', {
                                     xtype: 'component',
                                     flex: 1,
                                     cls: 'top-info-container',
-                                    html: '<div class="inner"><span class="x-fa fa-pie-chart"></span><span class="dashboard-analytics-percentage"></span>Top Malware: </div>',
+                                    html: '<div class="inner"><span class="x-fa fa-pie-chart"></span><span class="dashboard-analytics-percentage"></span>Classes: </div>',
                                     padding: '15 10 10 0'
                                 },
                                 {
                                     xtype: 'component',
                                     flex: 1,
                                     cls: 'top-info-container',
-                                    html: '<div class="inner"><span class="x-fa fa-user"></span><span class="dashboard-analytics-percentage"> 156 </span> Users Infected</div>',
+                                    html: '<div class="inner"><span class="x-fa fa-user"></span><span class="dashboard-analytics-percentage"> 35 </span> Total Runs</div>',
                                     padding: '15 10 10 0'
                                 }
                             ]
@@ -105,7 +105,7 @@ Ext.define('Admin.view.dashboard.Network', {
                             xtype: 'component',
                             flex: 1,
                             cls: 'left-top-text',
-                            html: 'Tip: Download the analytics mobile app for real time updates on the server.',
+                            html: 'Tip: For faster updates use the refresh button.',
                             padding: '15 5 5 0',
                             layout: {
                                 type: 'hbox',
@@ -139,7 +139,7 @@ Ext.define('Admin.view.dashboard.Network', {
                                     xtype: 'component',
                                     flex: 1,
                                     cls: 'graph-analysis-right-inner-container',
-                                    html: 'Reported'
+                                    html: 'Successful Runs'
                                 },
                                 {
                                     xtype: 'chartvisitors',
@@ -164,7 +164,7 @@ Ext.define('Admin.view.dashboard.Network', {
                                     xtype: 'component',
                                     flex: 1,
                                     cls: 'graph-analysis-right-inner-container',
-                                    html: 'Cleaned'
+                                    html: 'Failed Runs'
                                 },
                                 {
                                     xtype: 'chartbounces',
@@ -189,13 +189,13 @@ Ext.define('Admin.view.dashboard.Network', {
                                     xtype: 'component',
                                     flex: 1,
                                     cls: 'graph-analysis-right-inner-container',
-                                    html: 'Infected Today'
+                                    html: 'Runs Today'
                                 },
                                 {
                                     xtype: 'component',
                                     flex: 1,
                                     cls: 'graph-analysis-right-inner-container right-value',
-                                    html: '189,000'
+                                    html: '10'
                                 }
                             ]
                         },
@@ -212,7 +212,7 @@ Ext.define('Admin.view.dashboard.Network', {
                                     xtype: 'component',
                                     flex: 1,
                                     cls: 'graph-analysis-right-inner-container',
-                                    html: 'Todays Unique'
+                                    html: 'Successful Teams'
                                 },
                                 {
                                     xtype: 'component',

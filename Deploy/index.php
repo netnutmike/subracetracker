@@ -22,6 +22,7 @@ if (trim($_COOKIE['SID']) == "" && !isset($_REQUEST["login"]) ) {
     var SID = '<?= $_COOKIE['SID'] ?>';
     var TimeNow;
     var DateNow;
+    var GDate = '<? date("m/d/Y"); ?>'
 
     </script>
     

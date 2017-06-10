@@ -28,9 +28,10 @@ Ext.define('Admin.view.NewTeamViewController', {
                     action: 'new',
                     dataset: 'teams'
                 },
-                //waitMsg: 'Saving new DLP Exception...',
+
                 success: function(fp, o) {
                     Ext.getStore('TeamsStore').load();
+                    Ext.getCmp('NewTeamWindow').close();
                 },
                 failure: function(fp, o) {
                     switch (action.failureType) {
@@ -45,7 +46,6 @@ Ext.define('Admin.view.NewTeamViewController', {
                     }
                 }
             });
-            this.up('window').close();
         } else {
             Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');
         }

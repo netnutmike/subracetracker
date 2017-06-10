@@ -9,6 +9,7 @@
         "designer|userAlias": "newrun",
         "designer|userClassName": "NewRun",
         "height": 510,
+        "id": "NewRunWindow",
         "margin": 5,
         "padding": 5,
         "title": "New Run",
@@ -21,7 +22,8 @@
         "margin": "auto",
         "padding": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "id": "string"
     },
     "name": "MyWindow",
     "designerId": "26eab3a2-dee6-4769-bd6f-c0360547a8fa",
@@ -89,9 +91,11 @@
                                     "            action: 'new',",
                                     "            dataset: 'runs'",
                                     "        },",
-                                    "        //waitMsg: 'Saving new DLP Exception...',",
+                                    "",
                                     "        success: function(fp, o) {",
                                     "            Ext.getStore('RacesStore').load();",
+                                    "            Ext.getCmp('NewRunWindow').close();",
+                                    "",
                                     "        },",
                                     "        failure: function(fp, o) {",
                                     "            switch (action.failureType) {",
@@ -106,7 +110,7 @@
                                     "            }",
                                     "        }",
                                     "    });",
-                                    "    this.up('window').close();",
+                                    "",
                                     "} else {",
                                     "    Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');",
                                     "}"
@@ -193,26 +197,106 @@
             "designerId": "c58843b7-2a9f-4a86-83c1-102e4b562d03",
             "cn": [
                 {
-                    "type": "Ext.form.field.Text",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Run ID",
-                        "labelWidth": 75,
-                        "name": "RaceID",
-                        "width": 159
+                        "layout": "column",
+                        "padding": 0
                     },
                     "configAlternates": {
-                        "fieldLabel": "string",
-                        "labelWidth": "number",
-                        "name": "string",
-                        "width": "auto"
+                        "layout": "string",
+                        "padding": "auto"
                     },
-                    "name": "MyTextField",
-                    "designerId": "0125bbee-9224-465d-9aaa-97b433a3050e"
+                    "name": "MyContainer1",
+                    "designerId": "db7d1e7d-b03e-44df-9924-8f2a1d60e00b",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Run ID",
+                                "labelWidth": 75,
+                                "layout|columnWidth": 0.5,
+                                "name": "RaceID",
+                                "width": 159
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "name": "string",
+                                "width": "auto",
+                                "layout|columnWidth": "auto"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "0125bbee-9224-465d-9aaa-97b433a3050e"
+                        },
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "&nbsp;   (Leave Blank for Automatic #)",
+                                "layout|columnWidth": 0.5,
+                                "text": ""
+                            },
+                            "configAlternates": {
+                                "html": "string",
+                                "layout|columnWidth": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyLabel2",
+                            "designerId": "1453c48a-0360-4a19-a8f3-6d41d0be4d7a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "column",
+                        "padding": 0
+                    },
+                    "configAlternates": {
+                        "layout": "string",
+                        "padding": "auto"
+                    },
+                    "name": "MyContainer6",
+                    "designerId": "e9972a0e-9962-4b39-9cd2-feb974257eff",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "&nbsp;",
+                                "text": null
+                            },
+                            "configAlternates": {
+                                "html": "string",
+                                "text": "string"
+                            },
+                            "name": "MyLabel3",
+                            "designerId": "0818ded2-cd0d-446e-8252-b06c5ff41804"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.Date",
@@ -223,13 +307,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "fieldLabel": "Run Date:",
+                        "id": "newRunRaceDateid",
                         "labelWidth": 75,
                         "name": "RaceDate"
                     },
                     "configAlternates": {
                         "fieldLabel": "string",
                         "labelWidth": "number",
-                        "name": "string"
+                        "name": "string",
+                        "id": "string"
                     },
                     "name": "MyDateField",
                     "designerId": "ac1020a7-bbcd-45b3-88c4-e00ba5099ba6"
@@ -260,7 +346,33 @@
                         "width": "auto"
                     },
                     "name": "MyComboBox",
-                    "designerId": "15fd4b81-cd88-43df-b3d5-1c5ffee7c909"
+                    "designerId": "15fd4b81-cd88-43df-b3d5-1c5ffee7c909",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onComboboxSelect",
+                                "implHandler": [
+                                    "Ext.getCmp('newRunClassid').setValue(record.get('Class'));"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onComboboxSelect",
+                            "designerId": "18e346f5-a524-4740-8d11-5b22d54df58b"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.form.field.ComboBox",
@@ -272,6 +384,7 @@
                     "userConfig": {
                         "displayField": "ListItem",
                         "fieldLabel": "Class:",
+                        "id": "newRunClassid",
                         "labelWidth": 75,
                         "name": "Class",
                         "store": "ClassStore",
@@ -285,7 +398,8 @@
                         "name": "string",
                         "store": "store",
                         "valueField": "datafield",
-                        "width": "auto"
+                        "width": "auto",
+                        "id": "string"
                     },
                     "name": "MyComboBox1",
                     "designerId": "d097b8ad-6e87-4743-aff4-3b6563095641"
@@ -303,7 +417,7 @@
                         "labelWidth": 75,
                         "name": "Status",
                         "store": "RunStatusStore",
-                        "valueField": "uid",
+                        "valueField": "IntValue",
                         "width": 392
                     },
                     "configAlternates": {
@@ -365,6 +479,30 @@
                     "designerId": "6517860a-1bb2-42e7-a6f9-611eb9a12d8b"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowAfterRender",
+                "implHandler": [
+                    "Ext.getCmp('newRunRaceDateid').setValue(GDate);"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onWindowAfterRender",
+            "designerId": "4a806b62-ad88-49bb-89cc-59529386ac36"
         }
     ]
 }

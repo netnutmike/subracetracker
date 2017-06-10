@@ -29,7 +29,10 @@
             "TeamClassStore",
             "LaneStore",
             "TeamParticipantsStore",
-            "TeamRacesStore"
+            "TeamRacesStore",
+            "RacesStoreNotScored",
+            "RacesStoreScored",
+            "ParticipantsInWaterStore"
         ],
         "views": [
             "DivePanel",
@@ -52,7 +55,10 @@
             "DivePanelMenu",
             "RunsPanelMenu",
             "NewScorePanelMenu",
-            "ViewTeam"
+            "ViewTeam",
+            "DiveMaster",
+            "ParticipantsActivity",
+            "LeaderBoard"
         ]
     },
     "configAlternates": {

@@ -24,7 +24,7 @@ Ext.define('Admin.view.admin.NewList', {
             items: [
                 {
                     xtype: 'textfield',
-                    name: 'Name',
+                    name: 'ListName',
                     anchor: '100%',
                     fieldLabel: 'New List Name',
                     id: 'newlistnameid'
@@ -56,7 +56,7 @@ Ext.define('Admin.view.admin.NewList', {
 		            				var form = this.up('form').getForm();
 		                        	form.submit({
 		                        		url:'/data/actions.php',
-		                        		params: {dataset: 'tables', EID: EID},
+		                        		params: {dataset: 'lists', SID: SID},
 		                        		success: function(form, action) {
 		                        			Ext.getStore('ListsStore').load();	
 									       	Ext.getCmp('newlistwindow').close();

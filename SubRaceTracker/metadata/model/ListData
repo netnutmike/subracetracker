@@ -86,7 +86,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "CharValue"
+                "name": "CharVal"
             },
             "configAlternates": {
                 "name": "string"

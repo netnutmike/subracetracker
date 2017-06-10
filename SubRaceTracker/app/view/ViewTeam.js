@@ -126,7 +126,7 @@ Ext.define('Admin.view.ViewTeam', {
                                     name: 'Lane',
                                     displayField: 'TeamName',
                                     store: 'LaneStore',
-                                    valueField: 'uid'
+                                    valueField: 'IntValue'
                                 },
                                 {
                                     xtype: 'combobox',
@@ -135,7 +135,7 @@ Ext.define('Admin.view.ViewTeam', {
                                     name: 'Class',
                                     displayField: 'TeamName',
                                     store: 'TeamClassStore',
-                                    valueField: 'uid'
+                                    valueField: 'IntValue'
                                 },
                                 {
                                     xtype: 'combobox',

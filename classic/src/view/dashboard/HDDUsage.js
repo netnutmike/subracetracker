@@ -11,9 +11,9 @@ Ext.define('Admin.view.dashboard.HDDUsage', {
 
     ],
 
-    title: 'Logs',
+    title: 'Run Times',
     ui: 'light',
-    iconCls: 'x-fa fa-database',
+    iconCls: 'x-fa fa-clock',
     headerPosition: 'bottom',
 
     cls: 'quick-graph-panel shadow',

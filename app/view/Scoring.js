@@ -216,6 +216,9 @@ Ext.define('Admin.view.Scoring', {
                 }
             ]
         }
-    ]
+    ],
+    listeners: {
+        loadRecord: 'onWindowLoadRecord'
+    }
 
 });

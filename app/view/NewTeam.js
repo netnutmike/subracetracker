@@ -33,6 +33,7 @@ Ext.define('Admin.view.NewTeam', {
         type: 'newteam'
     },
     height: 526,
+    id: 'NewTeamWindow',
     margin: 5,
     padding: 5,
     width: 429,
@@ -109,7 +110,7 @@ Ext.define('Admin.view.NewTeam', {
                     name: 'Status',
                     displayField: 'ListItem',
                     store: 'TeamStatusStore',
-                    valueField: 'uid'
+                    valueField: 'IntValue'
                 },
                 {
                     xtype: 'textareafield',
@@ -123,9 +124,6 @@ Ext.define('Admin.view.NewTeam', {
                     id: 'NewTeamSession',
                     fieldLabel: 'Label',
                     name: 'SID'
-                },
-                {
-                    xtype: 'container'
                 }
             ]
         }

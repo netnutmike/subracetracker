@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": true,
         "designer|userClassName": "TeamClassStore",
         "model": "ListData",
         "storeId": "TeamClassStore"
@@ -13,7 +14,8 @@
     "configAlternates": {
         "designer|userClassName": "string",
         "model": "model",
-        "storeId": "string"
+        "storeId": "string",
+        "autoLoad": "boolean"
     },
     "name": "ClassStore2",
     "designerId": "3f705d0b-cf3c-4ef3-848f-4922f1839dac",

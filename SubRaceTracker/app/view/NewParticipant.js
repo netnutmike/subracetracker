@@ -32,6 +32,7 @@ Ext.define('Admin.view.NewParticipant', {
         type: 'newparticipant'
     },
     height: 312,
+    id: 'NewParticipantWindow',
     margin: 5,
     padding: 5,
     width: 284,

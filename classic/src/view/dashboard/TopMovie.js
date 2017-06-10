@@ -8,7 +8,7 @@ Ext.define('Admin.view.dashboard.TopMovie', {
         'Ext.chart.interactions.Rotate'
     ],
 
-    title: 'Top Malware',
+    title: 'Classes',
     ui: 'light',
     iconCls: 'x-fa fa-video-camera',
     headerPosition: 'bottom',

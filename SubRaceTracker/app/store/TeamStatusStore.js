@@ -27,6 +27,7 @@ Ext.define('Admin.store.TeamStatusStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'TeamStatusStore',
+            autoLoad: true,
             model: 'Admin.model.ListData',
             proxy: {
                 type: 'ajax',

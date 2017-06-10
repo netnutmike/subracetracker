@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": true,
         "designer|userClassName": "TeamStatusStore",
         "model": "ListData",
         "storeId": "TeamStatusStore"
@@ -13,7 +14,8 @@
     "configAlternates": {
         "designer|userClassName": "string",
         "model": "model",
-        "storeId": "string"
+        "storeId": "string",
+        "autoLoad": "boolean"
     },
     "name": "RunStatusStore1",
     "designerId": "ddb1b005-fd10-459d-af12-a524947e7b7f",

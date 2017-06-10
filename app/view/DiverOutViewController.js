@@ -26,11 +26,13 @@ Ext.define('Admin.view.DiverOutViewController', {
                 url: '/data/actions.php',
                 params: {
                     action: 'new',
-                    dataset: 'participantHistory'
+                    DiverAction: '0',
+                    dataset: 'participantsWater'
                 },
-                //waitMsg: 'Saving new DLP Exception...',
+
                 success: function(fp, o) {
-                    Ext.getStore('DiverStatusStore').load();
+                    Ext.getStore('ParticipantsInWaterStore').load();
+                    Ext.getCmp('DiverOutWindow').close();
                 },
                 failure: function(fp, o) {
                     switch (action.failureType) {
@@ -45,7 +47,7 @@ Ext.define('Admin.view.DiverOutViewController', {
                     }
                 }
             });
-            this.up('window').close();
+
         } else {
             Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');
         }

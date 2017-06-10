@@ -1,0 +1,314 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "participantsactivity",
+        "designer|userClassName": "ParticipantsActivity",
+        "height": 419,
+        "layout": "fit",
+        "title": "Activity",
+        "width": 719
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto",
+        "layout": "string"
+    },
+    "name": "ParticipantsPanel1",
+    "designerId": "d3899b32-cdb0-44bc-9cf3-1a3a5845b114",
+    "viewControllerInstanceId": "f56029b0-7be0-4cd5-947f-367b7ea51970",
+    "viewModelInstanceId": "7afccfe5-da35-49bf-87b2-8201a5e13cbc",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "e59188e9-8883-4184-9005-dfac99b6c7b7",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "href": "/data/exports/activityExport.php",
+                        "icon": "/images/download.png",
+                        "layout|flex": null,
+                        "text": "Download CSV"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string",
+                        "icon": "string",
+                        "href": "string"
+                    },
+                    "name": "MyButton6",
+                    "designerId": "64da3a0b-e3e8-41db-9a74-5ef5f364a464",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "e"
+                                ],
+                                "designer|viewControllerFn": "downloadParticipantCSVButtonClicked",
+                                "fn": "handler",
+                                "implHandler": null
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "designer|viewControllerFn": "string",
+                                "fn": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "handler",
+                            "designerId": "61c58500-e35c-4a8b-804d-2062c5752b14"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "scrollable": "both",
+                "store": "ParticipantHistoryStore",
+                "title": null
+            },
+            "configAlternates": {
+                "store": "store",
+                "title": "string",
+                "scrollable": "auto"
+            },
+            "name": "MyGridPanel",
+            "designerId": "990cf48b-a7f7-46cb-a5ed-dd61d051cf2a",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable",
+                    "designerId": "706b3538-8e83-4946-8dec-35b9070aa1ea"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "RowDblClick",
+                        "implHandler": [
+                            "Ext.create('Admin.view.ViewParticipant').show();"
+                        ],
+                        "name": "rowdblclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "RowDblClick",
+                    "designerId": "9f60d29e-e31a-4fa5-b994-43d3e24e4bde"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelItemContextMenu",
+                        "implHandler": [
+                            "e.stopEvent();",
+                            "selectedvalue = record.get('uid');",
+                            "selectedrec = record;",
+                            "popup = Ext.create('Admin.view.ParticipantsPanelMenu');",
+                            "popup.showAt(e.getXY());"
+                        ],
+                        "name": "itemcontextmenu",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelItemContextMenu",
+                    "designerId": "bb34f67d-ce3c-4b84-88b3-3972c4ecb21e"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "DiverID",
+                        "text": "Diver Id"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn44",
+                    "designerId": "86985907-1820-45c9-a049-b15ebc670531"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ParticipantName",
+                        "text": "Participant Name"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn40",
+                    "designerId": "54632c6f-10a1-4751-9bc3-5490a8c84b01"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "TeamName",
+                        "text": "Team Name"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn15",
+                    "designerId": "08d8cafa-b332-4294-9156-5b9bbefec7e9"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "ActionText",
+                        "flex": 1,
+                        "text": "Action Text"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyColumn41",
+                    "designerId": "12b1c0a2-ec77-4d7d-83ed-358a5b3fcf96"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "TrackedTime",
+                        "text": "Tracked Time",
+                        "width": 107
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn42",
+                    "designerId": "97fdb34d-66a6-472a-8e6a-58cedb34c576"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "Timestamp",
+                        "text": "Timestamp",
+                        "width": 157
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn43",
+                    "designerId": "992cbf51-f9c6-486a-b9ac-9e60e6c43b0b"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "RaceID",
+                        "text": "Race Id"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyNumberColumn1",
+                    "designerId": "03822bd5-2b53-49c1-89b3-f1af6ff9bf00"
+                }
+            ]
+        }
+    ]
+}

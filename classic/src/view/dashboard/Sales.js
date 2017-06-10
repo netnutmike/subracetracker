@@ -9,7 +9,7 @@ Ext.define('Admin.view.dashboard.Sales', {
         'Ext.chart.series.Bar'
     ],
 
-    title: 'DLP - New Files',
+    title: 'Runs By Day',
     ui: 'light',
     iconCls: 'x-fa fa-briefcase',
     headerPosition: 'bottom',

@@ -9,6 +9,7 @@
         "designer|userAlias": "diverout",
         "designer|userClassName": "DiverOut",
         "height": 153,
+        "id": "DiverOutWindow",
         "margin": 5,
         "padding": 5,
         "title": "Diver Out",
@@ -21,7 +22,8 @@
         "margin": "auto",
         "padding": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "id": "string"
     },
     "name": "DiverIn1",
     "designerId": "13816919-3507-468b-a8c6-108854cc3254",
@@ -87,11 +89,13 @@
                                     "        url: '/data/actions.php',",
                                     "        params: {",
                                     "            action: 'new',",
-                                    "            dataset: 'participantHistory'",
+                                    "            DiverAction: '0',",
+                                    "            dataset: 'participantsWater'",
                                     "        },",
-                                    "        //waitMsg: 'Saving new DLP Exception...',",
+                                    "",
                                     "        success: function(fp, o) {",
-                                    "            Ext.getStore('DiverStatusStore').load();",
+                                    "            Ext.getStore('ParticipantsInWaterStore').load();",
+                                    "            Ext.getCmp('DiverOutWindow').close();",
                                     "        },",
                                     "        failure: function(fp, o) {",
                                     "            switch (action.failureType) {",
@@ -106,7 +110,7 @@
                                     "            }",
                                     "        }",
                                     "    });",
-                                    "    this.up('window').close();",
+                                    "",
                                     "} else {",
                                     "    Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');",
                                     "}"
@@ -235,30 +239,6 @@
                     },
                     "name": "MyHiddenField6",
                     "designerId": "8f43b5ab-1373-4143-b634-db72b9c35da3"
-                },
-                {
-                    "type": "Ext.form.field.Hidden",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": "Label",
-                        "layout|anchor": "100%",
-                        "name": "action",
-                        "value": [
-                            "DiverIn"
-                        ]
-                    },
-                    "configAlternates": {
-                        "fieldLabel": "string",
-                        "layout|anchor": "string",
-                        "name": "string",
-                        "value": "object"
-                    },
-                    "name": "MyHiddenField7",
-                    "designerId": "0c024ed4-a333-43ee-8274-dbb53bf1fc8b"
                 }
             ]
         }

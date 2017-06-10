@@ -9,6 +9,7 @@
         "designer|userAlias": "participantspanel",
         "designer|userClassName": "ParticipantsPanel",
         "height": 419,
+        "layout": "fit",
         "title": "Participants",
         "width": 719
     },
@@ -18,7 +19,8 @@
         "designer|userClassName": "string",
         "height": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "layout": "string"
     },
     "name": "TeamsPanel1",
     "designerId": "32e31289-35fa-44d1-97c2-3f1ff662a370",
@@ -163,6 +165,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "href": "/data/exports/participantsExport.php",
                         "icon": "/images/download.png",
                         "layout|flex": null,
                         "text": "Download CSV"
@@ -170,7 +173,8 @@
                     "configAlternates": {
                         "layout|flex": "number",
                         "text": "string",
-                        "icon": "string"
+                        "icon": "string",
+                        "href": "string"
                     },
                     "name": "MyButton6",
                     "designerId": "70ec70a9-590d-4d8f-bb78-ed650ef45bdb",
@@ -212,12 +216,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "scrollable": "both",
                 "store": "ParticipantsStore",
                 "title": null
             },
             "configAlternates": {
                 "store": "store",
-                "title": "string"
+                "title": "string",
+                "scrollable": "auto"
             },
             "name": "MyGridPanel",
             "designerId": "d55ae49c-d089-40a6-b417-5853ce50c8e7",

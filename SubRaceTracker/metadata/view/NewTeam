@@ -9,6 +9,7 @@
         "designer|userAlias": "newteam",
         "designer|userClassName": "NewTeam",
         "height": 526,
+        "id": "NewTeamWindow",
         "margin": 5,
         "padding": 5,
         "title": "New Team",
@@ -21,7 +22,8 @@
         "margin": "auto",
         "padding": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "id": "string"
     },
     "name": "NewRun3",
     "designerId": "eca05e01-193b-48ea-add7-3dcbb95380a4",
@@ -89,9 +91,10 @@
                                     "            action: 'new',",
                                     "            dataset: 'teams'",
                                     "        },",
-                                    "        //waitMsg: 'Saving new DLP Exception...',",
+                                    "",
                                     "        success: function(fp, o) {",
                                     "            Ext.getStore('TeamsStore').load();",
+                                    "            Ext.getCmp('NewTeamWindow').close();",
                                     "        },",
                                     "        failure: function(fp, o) {",
                                     "            switch (action.failureType) {",
@@ -106,7 +109,6 @@
                                     "            }",
                                     "        }",
                                     "    });",
-                                    "    this.up('window').close();",
                                     "} else {",
                                     "    Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');",
                                     "}"
@@ -323,7 +325,7 @@
                         "fieldLabel": "Status:",
                         "name": "Status",
                         "store": "TeamStatusStore",
-                        "valueField": "uid",
+                        "valueField": "IntValue",
                         "width": 391
                     },
                     "configAlternates": {
@@ -381,16 +383,6 @@
                     },
                     "name": "MyHiddenField3",
                     "designerId": "73721f92-7dfa-40b1-9d7d-d2b7535f487d"
-                },
-                {
-                    "type": "Ext.container.Container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "name": "MyContainer1",
-                    "designerId": "7f0b8b95-4d8e-4128-ba3b-197c56347dfe"
                 }
             ]
         }

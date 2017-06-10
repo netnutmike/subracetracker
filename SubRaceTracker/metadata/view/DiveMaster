@@ -1,0 +1,227 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "divemaster",
+        "designer|userClassName": "DiveMaster",
+        "height": 419,
+        "layout": "fit",
+        "title": "Dive Master",
+        "width": 719
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "title": "string",
+        "width": "auto",
+        "layout": "string"
+    },
+    "name": "DivePanel1",
+    "designerId": "89c5a2c2-1691-44d0-84be-12e4807843aa",
+    "viewControllerInstanceId": "a79d3d0a-0a45-4371-bf9a-8ed5bf221e24",
+    "viewModelInstanceId": "d2cc5e1d-2fb8-4f93-89d2-714d4c87796f",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "31888c0a-212e-49c5-a380-730a0c043259",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Separator",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number"
+                    },
+                    "name": "MySeparator",
+                    "designerId": "c4842fdb-47ad-4ab1-a39e-58bb48c91d00"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "scrollable": "both",
+                "store": "ParticipantsInWaterStore",
+                "title": "In The Water"
+            },
+            "configAlternates": {
+                "store": "store",
+                "title": "string",
+                "scrollable": "auto"
+            },
+            "name": "MyGridPanel",
+            "designerId": "16a05cb3-0727-449d-9c9e-a7876d6d972c",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable",
+                    "designerId": "7fea9da6-d51d-458f-a3a7-bfa1748a32e4"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "DiverID",
+                        "text": "Diver #"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn1",
+                    "designerId": "ca88acf7-5fa4-4e25-abe5-3fac7be90c77"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "DiverName",
+                        "text": "Diver Name",
+                        "width": 143
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "ade60347-b9ac-44f8-b605-92c879ef2617"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "TeamName",
+                        "text": "Team Name",
+                        "width": 165
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn",
+                    "designerId": "a8210af1-d13d-4f21-b71c-4350c3b7151b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "StatusText",
+                        "flex": 1,
+                        "text": "Status Text"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyColumn4",
+                    "designerId": "fcc19539-c693-40fa-bd5d-8715a312eabf"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelItemContextMenu",
+                        "implHandler": [
+                            "e.stopEvent();",
+                            "selectedvalue = record.get('uid');",
+                            "selectedrec = record;",
+                            "popup = Ext.create('Admin.view.DivePanelMenu');",
+                            "popup.showAt(e.getXY());"
+                        ],
+                        "name": "itemcontextmenu",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelItemContextMenu",
+                    "designerId": "8fd9a00f-4866-4e17-815f-85ab64613191"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelRowDblClick",
+                        "implHandler": [
+                            "Ext.create('Admin.view.ViewParticipant').show();"
+                        ],
+                        "name": "rowdblclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onGridpanelRowDblClick",
+                    "designerId": "743f9430-bf42-4f00-8478-1cc82ccc7cd0"
+                }
+            ]
+        }
+    ]
+}

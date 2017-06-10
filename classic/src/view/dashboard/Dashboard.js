@@ -49,10 +49,10 @@ Ext.define('Admin.view.dashboard.Dashboard', {
         {
             xtype: 'todo',
             userCls: 'big-60 small-100'
-        },
-        {
-            xtype: 'services',
-            userCls: 'big-40 small-100'
-        }
+        }//,
+        //{
+        //    xtype: 'services',
+         //   userCls: 'big-40 small-100'
+        //}
     ]
 });

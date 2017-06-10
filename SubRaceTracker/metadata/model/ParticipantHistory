@@ -173,6 +173,22 @@
             },
             "name": "MyInteger3",
             "designerId": "88295761-6b2a-433a-b8ec-38693716db9f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "DiverID"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField40",
+            "designerId": "a7f41e69-6ad3-42ad-988d-ca113e9bc20a"
         }
     ]
 }

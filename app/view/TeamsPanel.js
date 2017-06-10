@@ -59,6 +59,7 @@ Ext.define('Admin.view.TeamsPanel', {
                 },
                 {
                     xtype: 'button',
+                    href: '/data/exports/teamsExport.php',
                     icon: '/images/download.png',
                     text: 'Download CSV'
                 }
@@ -96,15 +97,15 @@ Ext.define('Admin.view.TeamsPanel', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    width: 70,
-                    dataIndex: 'Lane',
-                    text: 'Lane'
+                    width: 100,
+                    dataIndex: 'LaneText',
+                    text: 'Default Lane'
                 },
                 {
                     xtype: 'gridcolumn',
                     width: 129,
                     dataIndex: 'ClassText',
-                    text: 'Class Text'
+                    text: 'Default Class'
                 },
                 {
                     xtype: 'gridcolumn',

@@ -31,6 +31,7 @@ Ext.define('Admin.view.UploadParticipantsViewController', {
                 //waitMsg: 'Saving new DLP Exception...',
                 success: function(fp, o) {
                     Ext.getStore('ParticipantsStore').load();
+                    Ext.getCmp('UploadParticipantsWindow').close();
                 },
                 failure: function(fp, o) {
                     switch (action.failureType) {
@@ -45,7 +46,6 @@ Ext.define('Admin.view.UploadParticipantsViewController', {
                     }
                 }
             });
-            this.up('window').close();
         } else {
             Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');
         }

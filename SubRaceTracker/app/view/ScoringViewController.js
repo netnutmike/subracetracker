@@ -17,6 +17,21 @@ Ext.define('Admin.view.ScoringViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.scoring',
 
+    loadRun: function(runID) {
+        var form = Ext.getCmp('scoringForm').getForm();
+
+        form.load({
+            url: '/data/getjson.php',
+            params: {
+                dataset: 'run',
+                uid: runID
+            },
+            failure: function(form, action) {
+                Ext.Msg.alert("Load failed", action.result.errorMessage);
+            }
+        });
+    },
+
     onSaveButtonClick: function(button, e) {
         var form = Ext.getCmp('scoringForm').getForm();
         Ext.getCmp('scoringFormSession').setValue(SID);
@@ -49,6 +64,22 @@ Ext.define('Admin.view.ScoringViewController', {
         } else {
             Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');
         }
+    },
+
+    onWindowLoadRecord: function(RunID, eventOptions) {
+        //load record
+        var form = Ext.getCmp('scoringForm').getForm();
+
+        form.load({
+            url: '/data/getjson.php',
+            params: {
+                dataset: 'run',
+                uid: RunID
+            },
+            failure: function(form, action) {
+                Ext.Msg.alert("Load failed", action.result.errorMessage);
+            }
+        });
     }
 
 });

@@ -14,5 +14,42 @@
         "designer|userClassName": "string"
     },
     "name": "NewRunViewController4",
-    "designerId": "6fb7f14a-69c9-4edd-b88d-0e257713133a"
+    "designerId": "6fb7f14a-69c9-4edd-b88d-0e257713133a",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "runID"
+                ],
+                "fn": "loadRun",
+                "implHandler": [
+                    "var form = Ext.getCmp('scoringForm').getForm();",
+                    "",
+                    "form.load({",
+                    "    url: '/data/getjson.php',",
+                    "    params: {",
+                    "        dataset: 'run',",
+                    "        uid: runID",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "        Ext.Msg.alert(\"Load failed\", action.result.errorMessage);",
+                    "    }",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "loadRun",
+            "designerId": "ec797e3d-3105-496a-9fa8-07f7073da970"
+        }
+    ]
 }

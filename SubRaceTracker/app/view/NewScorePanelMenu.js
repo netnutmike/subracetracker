@@ -25,7 +25,7 @@ Ext.define('Admin.view.NewScorePanelMenu', {
     viewModel: {
         type: 'newscorepanelmenu'
     },
-    height: 123,
+    height: 38,
     width: 192,
 
     items: [

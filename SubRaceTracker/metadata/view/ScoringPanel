@@ -9,6 +9,7 @@
         "designer|userAlias": "scoringpanel",
         "designer|userClassName": "ScoringPanel",
         "height": 419,
+        "layout": "fit",
         "title": "Run Scoring",
         "width": 719
     },
@@ -18,7 +19,8 @@
         "designer|userClassName": "string",
         "height": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "layout": "string"
     },
     "name": "RunsPanel1",
     "designerId": "2a58c0c1-cdcf-4427-b6a2-987cc06aa8e9",
@@ -116,10 +118,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout": "fit",
                         "title": "New Runs"
                     },
                     "configAlternates": {
-                        "title": "string"
+                        "title": "string",
+                        "layout": "string"
                     },
                     "name": "MyPanel1",
                     "designerId": "455bf153-d64c-411f-a396-eb245ac4ae2a",
@@ -142,7 +146,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "store": "RacesStore",
+                                "store": "RacesStoreNotScored",
                                 "title": null
                             },
                             "configAlternates": {
@@ -212,126 +216,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "dataIndex": "StartTime",
-                                        "text": "Start Time",
-                                        "width": 80
-                                    },
-                                    "configAlternates": {
-                                        "dataIndex": "datafield",
-                                        "text": "string",
-                                        "width": "auto"
-                                    },
-                                    "name": "MyColumn5",
-                                    "designerId": "b2820594-a78b-4f0f-af0b-f447af0783b5"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "FinishTime",
-                                        "text": "Finish Time",
-                                        "width": 89
-                                    },
-                                    "configAlternates": {
-                                        "dataIndex": "datafield",
-                                        "text": "string",
-                                        "width": "auto"
-                                    },
-                                    "name": "MyColumn6",
-                                    "designerId": "bee83321-70e1-461d-94a7-7b24f6a6765d"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "Time1",
-                                        "text": "Time1",
-                                        "width": 74
-                                    },
-                                    "configAlternates": {
-                                        "dataIndex": "datafield",
-                                        "text": "string",
-                                        "width": "auto"
-                                    },
-                                    "name": "MyColumn7",
-                                    "designerId": "7cadb2ea-3eb6-4563-9801-4a4eaf0c108d"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "Time2",
-                                        "text": "Time2",
-                                        "width": 69
-                                    },
-                                    "configAlternates": {
-                                        "dataIndex": "datafield",
-                                        "text": "string",
-                                        "width": "auto"
-                                    },
-                                    "name": "MyColumn8",
-                                    "designerId": "1d715087-ff08-4f0e-8409-3bb20bb3254d"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "Time3",
-                                        "text": "Time3",
-                                        "width": 64
-                                    },
-                                    "configAlternates": {
-                                        "dataIndex": "datafield",
-                                        "text": "string",
-                                        "width": "auto"
-                                    },
-                                    "name": "MyColumn9",
-                                    "designerId": "221d237a-29c5-4f85-a50a-69d8b6b276ea"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "Time4",
-                                        "text": "Time4",
-                                        "width": 62
-                                    },
-                                    "configAlternates": {
-                                        "dataIndex": "datafield",
-                                        "text": "string",
-                                        "width": "auto"
-                                    },
-                                    "name": "MyColumn10",
-                                    "designerId": "1d3a63b8-f72d-4110-b64a-8f242b914ef5"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
                                         "dataIndex": "StatusText",
                                         "text": "Status"
                                     },
@@ -387,11 +271,13 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "Notes",
+                                        "flex": 1,
                                         "text": "Notes"
                                     },
                                     "configAlternates": {
                                         "dataIndex": "datafield",
-                                        "text": "string"
+                                        "text": "string",
+                                        "flex": "number"
                                     },
                                     "name": "MyColumn14",
                                     "designerId": "b4596e75-74f3-4d9f-9023-574b98a0edb6"
@@ -406,7 +292,10 @@
                                     "userConfig": {
                                         "fn": "onGridpanelRowDblClick",
                                         "implHandler": [
-                                            "Ext.create('Admin.view.Scoring').show();"
+                                            "e.stopEvent();",
+                                            "var ScoringWindow = Ext.create('Admin.view.Scoring');",
+                                            "ScoringWindow.show();",
+                                            "ScoringWindow.fireEvent(loadRecord,{RunID: record.get('uid')});"
                                         ],
                                         "name": "rowdblclick",
                                         "scope": "me"
@@ -460,10 +349,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout": "fit",
                         "title": "Past Runs"
                     },
                     "configAlternates": {
-                        "title": "string"
+                        "title": "string",
+                        "layout": "string"
                     },
                     "name": "MyPanel2",
                     "designerId": "1cabd284-eea7-49f3-a22a-a6ded462b647",
@@ -486,7 +377,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "store": "RacesStore",
+                                "store": "RacesStoreScored",
                                 "title": null
                             },
                             "configAlternates": {

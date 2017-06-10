@@ -32,6 +32,7 @@ Ext.define('Admin.view.DiverIn', {
         type: 'diverin'
     },
     height: 153,
+    id: 'DiverInWindow',
     margin: 5,
     padding: 5,
     width: 284,
@@ -78,13 +79,6 @@ Ext.define('Admin.view.DiverIn', {
                     id: 'DiverInSession',
                     fieldLabel: 'Label',
                     name: 'SID'
-                },
-                {
-                    xtype: 'hiddenfield',
-                    anchor: '100%',
-                    fieldLabel: 'Label',
-                    name: 'action',
-                    value: 'DiverIn'
                 }
             ]
         }

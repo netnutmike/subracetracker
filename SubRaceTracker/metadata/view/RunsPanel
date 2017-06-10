@@ -9,6 +9,7 @@
         "designer|userAlias": "runspanel",
         "designer|userClassName": "RunsPanel",
         "height": 419,
+        "layout": "fit",
         "title": "Runs",
         "width": 719
     },
@@ -18,7 +19,8 @@
         "designer|userClassName": "string",
         "height": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "layout": "string"
     },
     "name": "DivePanel1",
     "designerId": "a9b055bd-ed2a-4f4b-b6c4-7fcfbc611f53",
@@ -100,12 +102,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "height": null,
+                "scrollable": "both",
                 "store": "RacesStore",
                 "title": null
             },
             "configAlternates": {
                 "store": "store",
-                "title": "string"
+                "title": "string",
+                "height": "auto",
+                "scrollable": "auto"
             },
             "name": "MyGridPanel",
             "designerId": "807cf8c6-9d3d-4ce0-837e-eb2f98062052",

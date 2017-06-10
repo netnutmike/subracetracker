@@ -32,7 +32,7 @@ Ext.define('Admin.view.TeamsPanelMenu', {
         {
             xtype: 'menuitem',
             handler: function(item, e) {
-                Ext.create('Admin.view.ViewParticipant').show();
+                Ext.create('Admin.view.ViewTeam').show();
             },
             icon: '/images/edit.png',
             text: 'View / Edit Team'
@@ -55,6 +55,51 @@ Ext.define('Admin.view.TeamsPanelMenu', {
         },
         {
             xtype: 'menuitem',
+            handler: function(item, e) {
+                Ext.Msg.show({
+                    title: 'Delete Team?',
+                    message: 'Are you sure you want to delete this Team, all of it\'s members, the Member History and any Runs history?  This cannot be undone',
+                    buttons: Ext.Msg.YESNO,
+                    icon: Ext.Msg.WARNING,
+                    fn: function(btn) {
+                        if (btn === 'yes') {
+
+                            var NewListwin = Ext.create('Admin.view.NewTeam');
+                            //NewListwin.show();
+                            Ext.getCmp('NewTeamSession').setValue(SID);
+
+                            var form =Ext.getCmp('NewTeamForm').getForm();
+
+                            form.submit({
+                                url:'/data/actions.php',
+                                params: {dataset: 'teams', SID: SID, action: 'delete', uid: selectedvalue},
+                                success: function(form, action) {
+                                    Ext.getStore('TeamsStore').load();
+
+                                },
+                                failure: function(form, action) {
+                                    switch (action.failureType) {
+                                        case Ext.form.action.Action.CLIENT_INVALID:
+                                        Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+                                        break;
+                                        case Ext.form.action.Action.CONNECT_FAILURE:
+                                        Ext.Msg.alert('Failure', 'Could Not Communicate With Server.');
+                                        break;
+                                        case Ext.form.action.Action.SERVER_INVALID:
+                                        Ext.Msg.alert('Unable To Delete Team', action.result.msg);
+
+                                    }
+                                }
+                            })
+
+                        } else if (btn === 'no') {
+
+                        } else {
+
+                        }
+                    }
+                })
+            },
             icon: '/images/delete.png',
             text: 'Delete Team'
         }

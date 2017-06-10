@@ -27,16 +27,17 @@ Ext.define('Admin.store.ParticipantHistoryStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'ParticipantHistoryStore',
+            autoLoad: true,
             model: 'Admin.model.ParticipantHistory',
             proxy: {
                 type: 'ajax',
                 extraParams: {
-                    dataset: 'participantHistory'
+                    dataset: 'participantActivity'
                 },
                 url: '/data/getjson.php',
                 reader: {
                     type: 'json',
-                    rootProperty: 'participantHistory'
+                    rootProperty: 'participantActivity'
                 }
             }
         }, cfg)]);
