@@ -91,7 +91,7 @@
                                     "            action: 'update',",
                                     "            dataset: 'scoring'",
                                     "        },",
-                                    "        //waitMsg: 'Saving new DLP Exception...',",
+                                    "        ",
                                     "        success: function(fp, o) {",
                                     "            Ext.getStore('ParticipantsStore').load();",
                                     "        },",
@@ -561,7 +561,7 @@
                                             "userConfig": {
                                                 "fieldLabel": "Team",
                                                 "labelWidth": 75,
-                                                "name": "TeamID",
+                                                "name": "TeamName",
                                                 "readOnly": true
                                             },
                                             "configAlternates": {
@@ -583,7 +583,7 @@
                                             "userConfig": {
                                                 "fieldLabel": "Class",
                                                 "labelWidth": 75,
-                                                "name": "ClassID",
+                                                "name": "ClassText",
                                                 "readOnly": true
                                             },
                                             "configAlternates": {

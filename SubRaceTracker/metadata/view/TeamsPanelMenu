@@ -54,7 +54,11 @@
                         ],
                         "fn": "handler",
                         "implHandler": [
-                            "Ext.create('Admin.view.ViewTeam').show();"
+                            "e.stopEvent();",
+                            "var TeamWindow = Ext.create('Admin.view.ViewTeam');",
+                            "TeamWindow.show();",
+                            "TeamWindow.fireEvent('loadRecord',{TeamID: selectedvalue});",
+                            ""
                         ]
                     },
                     "configAlternates": {

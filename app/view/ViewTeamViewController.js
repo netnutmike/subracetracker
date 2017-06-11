@@ -32,6 +32,7 @@ Ext.define('Admin.view.ViewTeamViewController', {
                 //waitMsg: 'Saving new DLP Exception...',
                 success: function(fp, o) {
                     Ext.getStore('ParticipantsStore').load();
+                    Ext.getCmp('ViewTeamWindow').close();
                 },
                 failure: function(fp, o) {
                     switch (action.failureType) {
@@ -46,10 +47,30 @@ Ext.define('Admin.view.ViewTeamViewController', {
                     }
                 }
             });
-            this.up('window').close();
+
         } else {
             Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');
         }
+    },
+
+    onWindowLoadRecord: function(TeamID, eventOptions) {
+        //load record
+        var form = Ext.getCmp('viewTeamForm').getForm();
+
+        form.load({
+            url: '/data/getjson.php',
+            params: {
+                dataset: 'team',
+                uid: TeamID
+            },
+            failure: function(form, action) {
+                Ext.Msg.alert("Load failed", action.result.errorMessage);
+            }
+        });
+
+        Ext.getStore('TeamParticipantsStore').load({extraParams: {dataset: 'participants', teamID: TeamID}});
+        Ext.getStore('TeamRacesStore').load({extraParams: {dataset: 'races', teamID: TeamID}});
+        Ext.getStore('TeamParticipantHistoryStore').load({extraParams: {dataset: 'participantActivity', teamID: TeamID}});
     }
 
 });

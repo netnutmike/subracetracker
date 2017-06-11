@@ -38,6 +38,7 @@ Ext.define('Admin.view.ViewTeam', {
         type: 'viewteam'
     },
     height: 721,
+    id: 'ViewTeamWindow',
     margin: 5,
     padding: 5,
     width: 718,
@@ -72,7 +73,7 @@ Ext.define('Admin.view.ViewTeam', {
             items: [
                 {
                     xtype: 'form',
-                    id: 'viewParticipantForm1',
+                    id: 'viewTeamForm',
                     layout: 'column',
                     bodyPadding: 10,
                     items: [
@@ -124,7 +125,7 @@ Ext.define('Admin.view.ViewTeam', {
                                     fieldLabel: 'Lane',
                                     labelWidth: 75,
                                     name: 'Lane',
-                                    displayField: 'TeamName',
+                                    displayField: 'ListItem',
                                     store: 'LaneStore',
                                     valueField: 'IntValue'
                                 },
@@ -133,7 +134,7 @@ Ext.define('Admin.view.ViewTeam', {
                                     fieldLabel: 'Class',
                                     labelWidth: 75,
                                     name: 'Class',
-                                    displayField: 'TeamName',
+                                    displayField: 'ListItem',
                                     store: 'TeamClassStore',
                                     valueField: 'IntValue'
                                 },
@@ -199,7 +200,7 @@ Ext.define('Admin.view.ViewTeam', {
                 },
                 {
                     xtype: 'panel',
-                    title: 'Team Activity',
+                    title: 'Team Runs',
                     items: [
                         {
                             xtype: 'gridpanel',
@@ -257,10 +258,59 @@ Ext.define('Admin.view.ViewTeam', {
                             ]
                         }
                     ]
+                },
+                {
+                    xtype: 'panel',
+                    title: 'Team Activity',
+                    items: [
+                        {
+                            xtype: 'gridpanel',
+                            store: 'TeamParticipantHistoryStore',
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    width: 81,
+                                    dataIndex: 'DiverID',
+                                    text: 'Diver Id'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    width: 124,
+                                    dataIndex: 'ParticipantName',
+                                    text: 'Diver Name'
+                                },
+                                {
+                                    xtype: 'numbercolumn',
+                                    width: 67,
+                                    dataIndex: 'RaceID',
+                                    text: 'Run #'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    flex: 1,
+                                    dataIndex: 'ActionText',
+                                    text: 'Action'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'TrackedTime',
+                                    text: 'Tracked Time'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'Timestamp',
+                                    text: 'Timestamp'
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
     ],
+    listeners: {
+        loadRecord: 'onWindowLoadRecord'
+    },
 
     onSaveButtonClick: function(button, e, eOpts) {
 

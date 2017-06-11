@@ -9,6 +9,7 @@
         "designer|userAlias": "viewteam",
         "designer|userClassName": "ViewTeam",
         "height": 721,
+        "id": "ViewTeamWindow",
         "layout": null,
         "margin": 5,
         "padding": 5,
@@ -23,7 +24,8 @@
         "padding": "auto",
         "title": "string",
         "width": "auto",
-        "layout": "string"
+        "layout": "string",
+        "id": "string"
     },
     "name": "ViewParticipant1",
     "designerId": "e048bfdc-8fa5-431a-8342-dae8d27f6f0e",
@@ -95,6 +97,7 @@
                                     "        //waitMsg: 'Saving new DLP Exception...',",
                                     "        success: function(fp, o) {",
                                     "            Ext.getStore('ParticipantsStore').load();",
+                                    "            Ext.getCmp('ViewTeamWindow').close();",
                                     "        },",
                                     "        failure: function(fp, o) {",
                                     "            switch (action.failureType) {",
@@ -109,7 +112,7 @@
                                     "            }",
                                     "        }",
                                     "    });",
-                                    "    this.up('window').close();",
+                                    "",
                                     "} else {",
                                     "    Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');",
                                     "}"
@@ -201,7 +204,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "bodyPadding": 10,
-                        "id": "viewParticipantForm1",
+                        "id": "viewTeamForm",
                         "layout": "column",
                         "title": null
                     },
@@ -379,7 +382,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "displayField": "TeamName",
+                                        "displayField": "ListItem",
                                         "fieldLabel": "Lane",
                                         "labelWidth": 75,
                                         "name": "Lane",
@@ -405,7 +408,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "displayField": "TeamName",
+                                        "displayField": "ListItem",
                                         "fieldLabel": "Class",
                                         "labelWidth": 75,
                                         "name": "Class",
@@ -632,7 +635,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "title": "Team Activity"
+                        "title": "Team Runs"
                     },
                     "configAlternates": {
                         "title": "string"
@@ -852,6 +855,181 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Team Activity"
+                    },
+                    "configAlternates": {
+                        "title": "string"
+                    },
+                    "name": "MyPanel5",
+                    "designerId": "124304bf-84f7-4724-af0c-6dc6981a38f3",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "TabConfig3",
+                            "designerId": "dcc3df7b-97d5-4a3f-905f-a6d5f85e6754"
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "store": "TeamParticipantHistoryStore",
+                                "title": null
+                            },
+                            "configAlternates": {
+                                "layout|columnWidth": "auto",
+                                "title": "string",
+                                "store": "store"
+                            },
+                            "name": "MyGridPanel3",
+                            "designerId": "629f0aa7-797c-4790-8560-2cfb935fde18",
+                            "cn": [
+                                {
+                                    "type": "Ext.view.Table",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyTable1",
+                                    "designerId": "b0564863-d0c3-4568-a64a-1aea8638894f"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "DiverID",
+                                        "text": "Diver Id",
+                                        "width": 81
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn49",
+                                    "designerId": "70174a63-50d0-4d31-9db2-ecdb15e0570b"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "ParticipantName",
+                                        "text": "Diver Name",
+                                        "width": 124
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn45",
+                                    "designerId": "dbe0e445-cc4e-4779-bf87-24442674408d"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "RaceID",
+                                        "text": "Run #",
+                                        "width": 67
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyNumberColumn3",
+                                    "designerId": "8095c4b0-e4bf-4d4e-b573-7a8e96aa9ebd"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "ActionText",
+                                        "flex": 1,
+                                        "text": "Action"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "flex": "number",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn46",
+                                    "designerId": "abc5dbce-a94a-433d-b021-01593e0d5278"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "TrackedTime",
+                                        "text": "Tracked Time"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn47",
+                                    "designerId": "a94046b3-0ce7-48f5-aa89-17c50e141303"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "Timestamp",
+                                        "text": "Timestamp"
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string"
+                                    },
+                                    "name": "MyColumn48",
+                                    "designerId": "9390a21a-ab48-4c81-8291-f1641b771411"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -878,6 +1056,66 @@
             },
             "name": "onSaveButtonClick",
             "designerId": "a42dcbdd-06f4-4ea8-9c7a-49e767f6a443"
+        },
+        {
+            "type": "customevent",
+            "reference": {
+                "name": "customEvents",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "loadRecord",
+                "params": [
+                    "TeamID"
+                ]
+            },
+            "configAlternates": {
+                "name": "string",
+                "params": "typedarray"
+            },
+            "name": "CustomEvent2",
+            "designerId": "7de91c1c-bd59-4182-91d0-95a420a44c63"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowLoadRecord",
+                "implHandler": [
+                    "//load record",
+                    "var form = Ext.getCmp('viewTeamForm').getForm();",
+                    "",
+                    "form.load({",
+                    "    url: '/data/getjson.php',",
+                    "    params: {",
+                    "        dataset: 'team',",
+                    "        uid: TeamID",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "        Ext.Msg.alert(\"Load failed\", action.result.errorMessage);",
+                    "    }",
+                    "});",
+                    "",
+                    "Ext.getStore('TeamParticipantsStore').load({extraParams: {dataset: 'participants', teamID: TeamID}});",
+                    "Ext.getStore('TeamRacesStore').load({extraParams: {dataset: 'races', teamID: TeamID}});",
+                    "Ext.getStore('TeamParticipantHistoryStore').load({extraParams: {dataset: 'participantActivity', teamID: TeamID}});"
+                ],
+                "name": "loadRecord",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onWindowLoadRecord",
+            "designerId": "c33c468f-6005-48aa-96f7-1b78ed67f0c5"
         }
     ]
 }

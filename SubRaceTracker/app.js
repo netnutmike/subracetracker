@@ -45,7 +45,8 @@ Ext.application({
         'TeamRacesStore',
         'RacesStoreNotScored',
         'RacesStoreScored',
-        'ParticipantsInWaterStore'
+        'ParticipantsInWaterStore',
+        'TeamParticipantHistoryStore'
     ],
     views: [
         'DivePanel',

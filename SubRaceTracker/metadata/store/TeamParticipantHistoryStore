@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": true,
-        "designer|userClassName": "RunStatusStore",
-        "model": "ListData",
-        "storeId": "RunStatusStore"
+        "designer|userClassName": "TeamParticipantHistoryStore",
+        "model": "ParticipantHistory",
+        "storeId": "TeamParticipantHistoryStore"
     },
     "configAlternates": {
         "designer|userClassName": "string",
@@ -17,8 +17,8 @@
         "storeId": "string",
         "autoLoad": "boolean"
     },
-    "name": "DiverStatusStore1",
-    "designerId": "01f62c8c-dedc-41b0-be0b-37f62868ac3f",
+    "name": "ParticipantHistoryStore1",
+    "designerId": "4e00ccb6-3586-4886-80e0-85128a0a76fe",
     "cn": [
         {
             "type": "Ext.data.proxy.Ajax",
@@ -29,7 +29,7 @@
             "codeClass": null,
             "userConfig": {
                 "extraParams": [
-                    "{dataset: 'listData', listid: '3'}"
+                    "{dataset: 'participantActivity'}"
                 ],
                 "url": "/data/getjson.php"
             },
@@ -38,7 +38,7 @@
                 "url": "string"
             },
             "name": "MyAjaxProxy",
-            "designerId": "76ef410f-80d8-432e-8b83-9af8fdaf85fd",
+            "designerId": "34d42275-aa4a-4db8-b541-75960846b4e4",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -48,13 +48,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "rootProperty": "listData"
+                        "rootProperty": "participantActivity"
                     },
                     "configAlternates": {
                         "rootProperty": "string"
                     },
                     "name": "MyJsonReader",
-                    "designerId": "8b7347fb-b604-4ab1-b080-c17ae3d877c9"
+                    "designerId": "e7cf2406-db5f-4113-8c21-d2dd5beec573"
                 }
             ]
         }

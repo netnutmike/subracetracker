@@ -121,7 +121,11 @@ Ext.define('Admin.view.TeamsPanel', {
     ],
 
     onGridpanelRowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
-        Ext.create('Admin.view.ViewTeam').show();
+        e.stopEvent();
+        var TeamWindow = Ext.create('Admin.view.ViewTeam');
+        TeamWindow.show();
+        TeamWindow.fireEvent('loadRecord',{TeamID: record.get('uid')});
+
     },
 
     onGridpanelRowContextMenu: function(tableview, record, tr, rowIndex, e, eOpts) {

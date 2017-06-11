@@ -43,7 +43,8 @@ Ext.application({
         'LaneStore',
         'TeamParticipantsStore',
         'TeamRacesStore',
-        'ParticipantsInWaterStore'
+        'ParticipantsInWaterStore',
+        'TeamParticipantHistoryStore'
     ],
     views: [
         'DivePanel'

@@ -183,14 +183,14 @@ Ext.define('Admin.view.Scoring', {
                                             xtype: 'combobox',
                                             fieldLabel: 'Team',
                                             labelWidth: 75,
-                                            name: 'TeamID',
+                                            name: 'TeamName',
                                             readOnly: true
                                         },
                                         {
                                             xtype: 'combobox',
                                             fieldLabel: 'Class',
                                             labelWidth: 75,
-                                            name: 'ClassID',
+                                            name: 'ClassText',
                                             readOnly: true
                                         }
                                     ]

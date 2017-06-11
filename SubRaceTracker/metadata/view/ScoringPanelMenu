@@ -54,7 +54,11 @@
                         ],
                         "fn": "handler",
                         "implHandler": [
-                            "Ext.create('Admin.view.Scoring').show();"
+                            "e.stopEvent();",
+                            "var ScoringWindow = Ext.create('Admin.view.Scoring');",
+                            "ScoringWindow.show();",
+                            "ScoringWindow.fireEvent('loadRecord',{RunID: selectedvalue});",
+                            ""
                         ]
                     },
                     "configAlternates": {

@@ -32,7 +32,11 @@ Ext.define('Admin.view.ParticipantsPanelMenu', {
         {
             xtype: 'menuitem',
             handler: function(item, e) {
-                Ext.create('Admin.view.ViewParticipant').show();
+                e.stopEvent();
+                var ParticipantWindow = Ext.create('Admin.view.ViewParticipant');
+                ParticipantWindow.show();
+                ParticipantWindow.fireEvent('loadRecord',{ID: selectedvalue});
+
             },
             icon: '/images/edit.png',
             text: 'View / Edit Participant'

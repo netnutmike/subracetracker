@@ -69,7 +69,7 @@ Ext.define('Admin.view.Options', {
                     xtype: 'textfield',
                     width: 159,
                     fieldLabel: 'ZipCode',
-                    name: 'ZipCode'
+                    name: 'Zipcode'
                 },
                 {
                     xtype: 'textfield',
@@ -80,7 +80,7 @@ Ext.define('Admin.view.Options', {
                 {
                     xtype: 'combobox',
                     fieldLabel: 'English/Metric',
-                    name: 'Metric'
+                    name: 'MeasureMethod'
                 },
                 {
                     xtype: 'textfield',
@@ -92,25 +92,25 @@ Ext.define('Admin.view.Options', {
                     xtype: 'textfield',
                     width: 159,
                     fieldLabel: 'Time1 Distance',
-                    name: 'Time1'
+                    name: 'Time1Distance'
                 },
                 {
                     xtype: 'textfield',
                     width: 159,
                     fieldLabel: 'Time2 Distance',
-                    name: 'Time2'
+                    name: 'Time2Distance'
                 },
                 {
                     xtype: 'textfield',
                     width: 159,
                     fieldLabel: 'Time3 Distance',
-                    name: 'Time3'
+                    name: 'Time3Distance'
                 },
                 {
                     xtype: 'textfield',
                     width: 159,
                     fieldLabel: 'Time4 Distance',
-                    name: 'Time4'
+                    name: 'Time4Distance'
                 },
                 {
                     xtype: 'hiddenfield',

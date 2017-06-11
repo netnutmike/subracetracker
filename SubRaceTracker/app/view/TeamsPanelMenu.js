@@ -32,7 +32,11 @@ Ext.define('Admin.view.TeamsPanelMenu', {
         {
             xtype: 'menuitem',
             handler: function(item, e) {
-                Ext.create('Admin.view.ViewTeam').show();
+                e.stopEvent();
+                var TeamWindow = Ext.create('Admin.view.ViewTeam');
+                TeamWindow.show();
+                TeamWindow.fireEvent('loadRecord',{TeamID: selectedvalue});
+
             },
             icon: '/images/edit.png',
             text: 'View / Edit Team'

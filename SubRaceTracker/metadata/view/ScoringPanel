@@ -295,7 +295,7 @@
                                             "e.stopEvent();",
                                             "var ScoringWindow = Ext.create('Admin.view.Scoring');",
                                             "ScoringWindow.show();",
-                                            "ScoringWindow.fireEvent(loadRecord,{RunID: record.get('uid')});"
+                                            "ScoringWindow.fireEvent('loadRecord',{RunID: record.get('uid')});"
                                         ],
                                         "name": "rowdblclick",
                                         "scope": "me"

@@ -33,7 +33,11 @@ Ext.define('Admin.view.ScoringPanelMenu', {
         {
             xtype: 'menuitem',
             handler: function(item, e) {
-                Ext.create('Admin.view.Scoring').show();
+                e.stopEvent();
+                var ScoringWindow = Ext.create('Admin.view.Scoring');
+                ScoringWindow.show();
+                ScoringWindow.fireEvent('loadRecord',{RunID: selectedvalue});
+
             },
             text: 'View / Edit Score'
         },

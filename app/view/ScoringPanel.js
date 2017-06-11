@@ -203,7 +203,7 @@ Ext.define('Admin.view.ScoringPanel', {
         e.stopEvent();
         var ScoringWindow = Ext.create('Admin.view.Scoring');
         ScoringWindow.show();
-        ScoringWindow.fireEvent(loadRecord,{RunID: record.get('uid')});
+        ScoringWindow.fireEvent('loadRecord',{RunID: record.get('uid')});
     },
 
     onGridpanelRowContextMenu: function(tableview, record, tr, rowIndex, e, eOpts) {

@@ -7,7 +7,7 @@
             "frameworkVersion": "6.2.1.167"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:64961/subracetracker/SubRaceTracker",
+        "urlPrefix": "http://localhost:53032/subracetracker/SubRaceTracker",
         "canvasControls": {
             "viewportSize": {
                 "name": "Auto Expand",
@@ -115,6 +115,7 @@
             "ddb1b005-fd10-459d-af12-a524947e7b7f",
             "aa73aa87-c7e1-44d8-9a53-ea09b1efb840",
             "fb60ceb6-f03d-4ffe-96bc-fc8c462cc08a",
+            "4e00ccb6-3586-4886-80e0-85128a0a76fe",
             "53804c26-b580-4524-9921-3e8db3fe7ff9",
             "4332b412-077d-4af0-b8b8-55e5b5c05c16",
             "aafa783b-faff-488a-813d-0587ac1e8859",

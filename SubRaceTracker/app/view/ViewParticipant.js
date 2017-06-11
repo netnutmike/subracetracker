@@ -36,6 +36,7 @@ Ext.define('Admin.view.ViewParticipant', {
         type: 'viewparticipant'
     },
     height: 452,
+    id: 'ViewParticipantWindow',
     margin: 5,
     padding: 5,
     width: 628,
@@ -145,6 +146,9 @@ Ext.define('Admin.view.ViewParticipant', {
             ]
         }
     ],
+    listeners: {
+        loadRecord: 'onWindowLoadRecord'
+    },
 
     onSaveButtonClick: function(button, e, eOpts) {
 

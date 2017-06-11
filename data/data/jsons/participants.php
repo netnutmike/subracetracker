@@ -8,6 +8,9 @@
         else if (isset($_REQUEST['status']) && trim($_REQUEST['status']) != "")
 		$query = "SELECT * from Participants where Status='" . trim($_REQUEST['status']) . "'";
         
+        else if (isset($_REQUEST['teamID']) && trim($_REQUEST['teamID']) != "")
+		$query = "SELECT * from Participants where TeamID='" . trim($_REQUEST['teamID']) . "'";
+        
 	else
 		$query = "SELECT * from Participants";
                 

@@ -32,6 +32,7 @@ Ext.define('Admin.view.ViewParticipantViewController', {
                 //waitMsg: 'Saving new DLP Exception...',
                 success: function(fp, o) {
                     Ext.getStore('ParticipantsStore').load();
+                    Ext.getCmp('ViewParticipantWindow').close();
                 },
                 failure: function(fp, o) {
                     switch (action.failureType) {
@@ -46,10 +47,26 @@ Ext.define('Admin.view.ViewParticipantViewController', {
                     }
                 }
             });
-            this.up('window').close();
+
         } else {
             Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');
         }
+    },
+
+    onWindowLoadRecord: function(ID, eventOptions) {
+        //load record
+        var form = Ext.getCmp('viewParticipantForm').getForm();
+
+        form.load({
+            url: '/data/getjson.php',
+            params: {
+                dataset: 'participant',
+                uid: ID
+            },
+            failure: function(form, action) {
+                Ext.Msg.alert("Load failed", action.result.errorMessage);
+            }
+        });
     }
 
 });

@@ -326,7 +326,11 @@
                     "userConfig": {
                         "fn": "RowDblClick",
                         "implHandler": [
-                            "Ext.create('Admin.view.ViewParticipant').show();"
+                            "e.stopEvent();",
+                            "var ParticipantWindow = Ext.create('Admin.view.ViewParticipant');",
+                            "ParticipantWindow.show();",
+                            "ParticipantWindow.fireEvent('loadRecord',{ID: record.get('uid')});",
+                            ""
                         ],
                         "name": "rowdblclick",
                         "scope": "me"

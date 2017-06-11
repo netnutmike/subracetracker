@@ -27,6 +27,7 @@ Ext.define('Admin.store.RunStatusStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'RunStatusStore',
+            autoLoad: true,
             model: 'Admin.model.ListData',
             proxy: {
                 type: 'ajax',

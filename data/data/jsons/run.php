@@ -22,7 +22,7 @@
                 echo "\"RaceID\":\"" . $rs['RaceID'] . "\",";
                 echo "\"TeamID\":\"" . $rs['TeamID'] . "\",";	
                 echo "\"TeamName\":" . json_encode($teamRS['TeamName']) . ",";	
-                echo "\"StartTime\":" . $rs['StartTime'] . ",";	
+                echo "\"StartTime\":\"" . $rs['StartTime'] . "\",";	
                 echo "\"FinishTime\":\"" . $rs['FinishTime'] . "\",";	
                 echo "\"Time1\":\"" . $rs['Time1'] . "\",";
                 echo "\"Time2\":\"" . $rs['Time2'] . "\",";

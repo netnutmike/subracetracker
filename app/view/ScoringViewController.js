@@ -43,7 +43,7 @@ Ext.define('Admin.view.ScoringViewController', {
                     action: 'update',
                     dataset: 'scoring'
                 },
-                //waitMsg: 'Saving new DLP Exception...',
+
                 success: function(fp, o) {
                     Ext.getStore('ParticipantsStore').load();
                 },
