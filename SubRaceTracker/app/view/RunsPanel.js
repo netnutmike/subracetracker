@@ -136,7 +136,10 @@ Ext.define('Admin.view.RunsPanel', {
     ],
 
     onGridpanelRowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
-        Ext.create('Admin.view.ViewRun').show();
+        e.stopEvent();
+        var ScoringWindow = Ext.create('Admin.view.ViewRun');
+        ScoringWindow.show();
+        ScoringWindow.fireEvent('loadRecord',{RunID: record.get('uid')});
     },
 
     onGridpanelRowContextMenu: function(tableview, record, tr, rowIndex, e, eOpts) {

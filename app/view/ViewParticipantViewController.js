@@ -67,6 +67,8 @@ Ext.define('Admin.view.ViewParticipantViewController', {
                 Ext.Msg.alert("Load failed", action.result.errorMessage);
             }
         });
+
+        Ext.getStore('ParticipantHistoryStore').load({params: {dataset: 'participantActivity', participantID: ID}});
     }
 
 });

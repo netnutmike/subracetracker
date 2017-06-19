@@ -1,0 +1,55 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "viewrun",
+        "designer|userClassName": "ViewRunViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "ScoringViewController1",
+    "designerId": "3e71ae31-2a98-44f2-a2f4-b6c741f0815e",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "runID"
+                ],
+                "fn": "loadRun",
+                "implHandler": [
+                    "var form = Ext.getCmp('viewRunForm').getForm();",
+                    "",
+                    "form.load({",
+                    "    url: '/data/getjson.php',",
+                    "    params: {",
+                    "        dataset: 'run',",
+                    "        uid: runID",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "        Ext.Msg.alert(\"Load failed\", action.result.errorMessage);",
+                    "    }",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "loadRun",
+            "designerId": "c931d9aa-3843-4be9-bae4-ee9fbc229bbc"
+        }
+    ]
+}

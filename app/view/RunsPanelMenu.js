@@ -32,7 +32,10 @@ Ext.define('Admin.view.RunsPanelMenu', {
         {
             xtype: 'menuitem',
             handler: function(item, e) {
-                Ext.create('Admin.view.ViewRun').show();
+                e.stopEvent();
+                var ScoringWindow = Ext.create('Admin.view.ViewRun');
+                ScoringWindow.show();
+                ScoringWindow.fireEvent('loadRecord',{RunID: selectedvalue});
             },
             icon: '/images/edit.png',
             text: 'View / Edit Run'

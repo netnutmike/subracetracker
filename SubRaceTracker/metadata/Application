@@ -59,7 +59,8 @@
             "ViewTeam",
             "DiveMaster",
             "ParticipantsActivity",
-            "LeaderBoard"
+            "LeaderBoard",
+            "ViewRun"
         ]
     },
     "configAlternates": {

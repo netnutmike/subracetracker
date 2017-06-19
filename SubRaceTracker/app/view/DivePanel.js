@@ -21,8 +21,12 @@ Ext.define('Admin.view.DivePanel', {
         'Admin.view.DivePanelViewModel',
         'Admin.view.DivePanelViewController',
         'Ext.toolbar.Toolbar',
+        'Ext.form.Panel',
+        'Ext.form.field.Text',
         'Ext.button.Button',
         'Ext.toolbar.Separator',
+        'Ext.form.Label',
+        'Ext.toolbar.Fill',
         'Ext.grid.Panel',
         'Ext.view.Table',
         'Ext.grid.column.Column'
@@ -44,8 +48,33 @@ Ext.define('Admin.view.DivePanel', {
             dock: 'top',
             items: [
                 {
+                    xtype: 'form',
+                    id: 'DiverNumberForm',
+                    layout: 'column',
+                    bodyPadding: 10,
+                    defaultButton: 'GoButton',
+                    title: '',
+                    items: [
+                        {
+                            xtype: 'textfield',
+                            id: 'DiverIDField',
+                            fieldLabel: 'Diver #',
+                            labelWidth: 50,
+                            name: 'DiverID'
+                        },
+                        {
+                            xtype: 'button',
+                            handler: 'GoButtonHandler',
+                            reference: 'GoButton',
+                            text: 'Go',
+                            scope: 'controller'
+                        }
+                    ]
+                },
+                {
                     xtype: 'button',
                     handler: 'DiverInButtonClick',
+                    hidden: true,
                     icon: '/images/download.png',
                     text: 'Diver In',
                     scope: 'controller'
@@ -53,12 +82,31 @@ Ext.define('Admin.view.DivePanel', {
                 {
                     xtype: 'button',
                     handler: 'DiverOutButtonClick',
+                    hidden: true,
                     icon: '/images/up.png',
                     text: 'Diver Out',
                     scope: 'controller'
                 },
                 {
                     xtype: 'tbseparator'
+                },
+                {
+                    xtype: 'container',
+                    flex: 1,
+                    autoShow: true,
+                    flex: 1,
+                    height: 35,
+                    width: 300,
+                    items: [
+                        {
+                            xtype: 'label',
+                            id: 'DiverDetails'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'tbfill',
+                    hidden: true
                 },
                 {
                     xtype: 'button',

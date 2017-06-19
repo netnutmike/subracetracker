@@ -9,11 +9,12 @@
         "designer|userAlias": "scoring",
         "designer|userClassName": "Scoring",
         "height": 558,
+        "id": "scoringWindowID",
         "layout": null,
         "margin": 5,
         "padding": 5,
         "title": "Run Scoring",
-        "width": 628
+        "width": 649
     },
     "configAlternates": {
         "designer|userAlias": "string",
@@ -23,7 +24,8 @@
         "padding": "auto",
         "title": "string",
         "width": "auto",
-        "layout": "string"
+        "layout": "string",
+        "id": "string"
     },
     "name": "ViewParticipant1",
     "designerId": "c544f0b6-dfa4-460a-a027-18b9c150572d",
@@ -91,9 +93,10 @@
                                     "            action: 'update',",
                                     "            dataset: 'scoring'",
                                     "        },",
-                                    "        ",
+                                    "",
                                     "        success: function(fp, o) {",
-                                    "            Ext.getStore('ParticipantsStore').load();",
+                                    "            Ext.getStore('RacesStore').load();",
+                                    "            Ext.getCmp('scoringWindowID').close();",
                                     "        },",
                                     "        failure: function(fp, o) {",
                                     "            switch (action.failureType) {",
@@ -108,7 +111,7 @@
                                     "            }",
                                     "        }",
                                     "    });",
-                                    "    this.up('window').close();",
+                                    "",
                                     "} else {",
                                     "    Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');",
                                     "}"
@@ -561,7 +564,7 @@
                                             "userConfig": {
                                                 "fieldLabel": "Team",
                                                 "labelWidth": 75,
-                                                "name": "TeamName",
+                                                "name": "TeamID",
                                                 "readOnly": true
                                             },
                                             "configAlternates": {
@@ -583,7 +586,7 @@
                                             "userConfig": {
                                                 "fieldLabel": "Class",
                                                 "labelWidth": 75,
-                                                "name": "ClassText",
+                                                "name": "ClassID",
                                                 "readOnly": true
                                             },
                                             "configAlternates": {

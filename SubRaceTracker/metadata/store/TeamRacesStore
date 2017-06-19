@@ -27,7 +27,7 @@
             "codeClass": null,
             "userConfig": {
                 "extraParams": [
-                    "{dataset: 'participantHistory'}"
+                    "{dataset: 'races'}"
                 ],
                 "url": "/data/getjson.php"
             },
@@ -46,7 +46,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "rootProperty": "participantHistory"
+                        "rootProperty": "races"
                     },
                     "configAlternates": {
                         "rootProperty": "string"

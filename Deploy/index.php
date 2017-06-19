@@ -22,7 +22,7 @@ if (trim($_COOKIE['SID']) == "" && !isset($_REQUEST["login"]) ) {
     var SID = '<?= $_COOKIE['SID'] ?>';
     var TimeNow;
     var DateNow;
-    var GDate = '<? date("m/d/Y"); ?>'
+    var GDate = '<?= date("m/d/Y"); ?>'
 
     </script>
     
@@ -40,6 +40,24 @@ if (trim($_COOKIE['SID']) == "" && !isset($_REQUEST["login"]) ) {
         };
     </script>
     
+    <script type="text/javascript">
+        function handleTimeout() {
+            Ext.getStore('RacesStore').load();
+            Ext.getStore('ParticipantsStore').load();
+            Ext.getStore('TeamsStore').load();
+            Ext.getStore('RacesStoreNotScored').load();
+            Ext.getStore('RacesStoreScored').load();
+            //Ext.getStore('ParticipantsInWaterStore').load();
+        }
+        
+        function handleTimeout2() {
+            Ext.getStore('ParticipantsInWaterStore').load();
+        }
+        
+        setInterval('handleTimeout2()', 10000);
+        setInterval('handleTimeout()', 60000);
+    </script>
+ 
    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
     <script id="microloader" data-app="39acbe74-575a-4e77-8062-a62324a1e58f" type="text/javascript">var Ext=Ext||{};Ext.manifest=Ext.manifest||"classic.json";Ext=Ext||{};
 Ext.Boot=Ext.Boot||function(f){function l(b){if(b.$isRequest)return b;b=b.url?b:{url:b};var e=b.url,e=e.charAt?[e]:e,a=b.charset||d.config.charset;x(this,b);delete this.url;this.urls=e;this.charset=a}function r(b){if(b.$isEntry)return b;var e=b.charset||d.config.charset,a=Ext.manifest,a=a&&a.loader,k=void 0!==b.cache?b.cache:a&&a.cache,c;d.config.disableCaching&&(void 0===k&&(k=!d.config.disableCaching),!1===k?c=+new Date:!0!==k&&(c=k),c&&(a=a&&a.cacheParam||d.config.disableCachingParam,c=a+"\x3d"+

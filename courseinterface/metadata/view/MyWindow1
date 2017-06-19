@@ -1,0 +1,403 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoShow": true,
+        "designer|userAlias": "mywindow1",
+        "designer|userClassName": "MyWindow1",
+        "height": 588,
+        "padding": 5,
+        "title": "Edit Your Course Details",
+        "width": 654
+    },
+    "configAlternates": {
+        "autoShow": "boolean",
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "padding": "auto",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow1",
+    "designerId": "76dd8840-53f0-4d51-957c-b17b6ab3b86a",
+    "viewControllerInstanceId": "d053849d-73eb-4137-ac74-def4b4872a69",
+    "viewModelInstanceId": "0a0b7662-167d-44e0-afd4-81625fa7ff40",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Course Name",
+                "width": 350
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "width": "auto"
+            },
+            "name": "MyTextField",
+            "designerId": "210ce036-f3fc-4516-b080-779640fe1e54"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Address 1",
+                "width": 350
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "width": "auto"
+            },
+            "name": "MyTextField1",
+            "designerId": "f9985730-8c45-42bf-8f32-13ca7a39e17b"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Address 2",
+                "width": 350
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "width": "auto"
+            },
+            "name": "MyTextField2",
+            "designerId": "02ec37d2-79a6-40b3-b08b-4f9e48d36930"
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "title": ""
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "title": "string"
+            },
+            "name": "MyForm",
+            "designerId": "39d8ff67-62f6-4f8a-9a30-1b64a3ea2f52"
+        },
+        {
+            "type": "Ext.form.FieldContainer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "City, St Zip",
+                "height": 40,
+                "layout": "column",
+                "width": 654
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "height": "auto",
+                "layout": "string",
+                "width": "auto"
+            },
+            "name": "MyFieldContainer",
+            "designerId": "35c25d56-8a7e-4db2-bef6-d36df03475c5",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "layout|columnWidth": 0.45
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|columnWidth": "auto"
+                    },
+                    "name": "MyTextField3",
+                    "designerId": "07023a3b-e3a5-4fd2-92b5-9d112496537d"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": [
+                            "&nbsp;"
+                        ],
+                        "layout|columnWidth": 0.05
+                    },
+                    "configAlternates": {
+                        "html": "object",
+                        "layout|columnWidth": "auto"
+                    },
+                    "name": "MyContainer",
+                    "designerId": "2f13714a-3781-4901-879e-4bde48dc252b"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "layout|columnWidth": 0.15,
+                        "width": 72
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|columnWidth": "auto",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField4",
+                    "designerId": "742b972a-f9e3-4cec-af19-00d02c875eb5"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": [
+                            "&nbsp;"
+                        ],
+                        "layout|columnWidth": 0.05
+                    },
+                    "configAlternates": {
+                        "layout|columnWidth": "auto",
+                        "html": "object"
+                    },
+                    "name": "MyContainer1",
+                    "designerId": "818b3ecc-85e2-43b6-bee4-7e9b11ad87c1"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "",
+                        "layout|columnWidth": 0.28,
+                        "width": 164
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "width": "auto",
+                        "layout|columnWidth": "auto"
+                    },
+                    "name": "MyTextField5",
+                    "designerId": "22bc043a-bb65-46f3-851c-189f09f3d4e8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Main Phone",
+                "width": 350
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "width": "auto"
+            },
+            "name": "MyTextField6",
+            "designerId": "9ebcf01f-7521-441c-93d0-606f285af8da"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Booking Phone",
+                "width": 350
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "width": "auto"
+            },
+            "name": "MyTextField7",
+            "designerId": "771753c8-ecbb-4035-b476-5bb89e9be03c"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Main Site URL",
+                "width": 350
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "width": "auto"
+            },
+            "name": "MyTextField8",
+            "designerId": "9197fe97-ba27-4ca1-8717-3e30d24f6875"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Booking URL",
+                "width": 350
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "width": "auto"
+            },
+            "name": "MyTextField9",
+            "designerId": "e713ac35-8ece-4f82-87d6-92c96c479420"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Holes",
+                "width": 159
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "width": "auto"
+            },
+            "name": "MyTextField10",
+            "designerId": "b9c8f020-0a28-4ca1-9621-5dada9287968"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Course Type"
+            },
+            "configAlternates": {
+                "fieldLabel": "string"
+            },
+            "name": "MyComboBox",
+            "designerId": "6cde705a-bbec-4c93-bae7-740ef342fc5f"
+        },
+        {
+            "type": "Ext.form.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Status"
+            },
+            "configAlternates": {
+                "fieldLabel": "string"
+            },
+            "name": "MyComboBox1",
+            "designerId": "96d17a29-4052-4065-b4be-e4e50ebb99d5"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "fb9632c1-e72a-483a-9682-0e195d3e4ebf",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "SAVE"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "4ac4230c-3c49-41dd-8197-95df0650ce46"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "CANCEL"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "c2ece7c2-7812-4df6-9800-3445caa7368e"
+                }
+            ]
+        }
+    ]
+}

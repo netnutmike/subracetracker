@@ -72,7 +72,8 @@ Ext.application({
         'ViewTeam',
         'DiveMaster',
         'ParticipantsActivity',
-        'LeaderBoard'
+        'LeaderBoard',
+        'ViewRun'
     ],
     name: 'Admin',
 

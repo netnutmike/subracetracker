@@ -19,19 +19,19 @@ Ext.define('Admin.view.ViewTeamViewController', {
 
     onSaveButtonClick: function(button, e) {
 
-        var form = Ext.getCmp('viewParticipantForm').getForm();
-        Ext.getCmp('viewParticipantSession').setValue(SID);
+        var form = Ext.getCmp('viewTeamForm').getForm();
+        Ext.getCmp('viewTeamSession').setValue(SID);
 
         if(form.isValid()){
             form.submit({
                 url: '/data/actions.php',
                 params: {
                     action: 'update',
-                    dataset: 'participants'
+                    dataset: 'teams'
                 },
                 //waitMsg: 'Saving new DLP Exception...',
                 success: function(fp, o) {
-                    Ext.getStore('ParticipantsStore').load();
+                    Ext.getStore('TeamsStore').load();
                     Ext.getCmp('ViewTeamWindow').close();
                 },
                 failure: function(fp, o) {
@@ -68,9 +68,9 @@ Ext.define('Admin.view.ViewTeamViewController', {
             }
         });
 
-        Ext.getStore('TeamParticipantsStore').load({extraParams: {dataset: 'participants', teamID: TeamID}});
-        Ext.getStore('TeamRacesStore').load({extraParams: {dataset: 'races', teamID: TeamID}});
-        Ext.getStore('TeamParticipantHistoryStore').load({extraParams: {dataset: 'participantActivity', teamID: TeamID}});
+        Ext.getStore('TeamParticipantsStore').load({params: {dataset: 'participants', teamID: TeamID}});
+        Ext.getStore('TeamRacesStore').load({params: {dataset: 'races', teamID: TeamID}});
+        Ext.getStore('TeamParticipantHistoryStore').load({params: {dataset: 'participantActivity', teamID: TeamID}});
     }
 
 });

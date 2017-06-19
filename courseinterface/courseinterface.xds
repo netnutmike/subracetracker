@@ -1,0 +1,59 @@
+{
+    "name": "courseinterface",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.2.2.36",
+            "frameworkVersion": "6.2.1.167"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:54349/subracetracker/courseinterface",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext62",
+    "viewOrderMap": {
+        "view": [
+            "530fea66-16f0-4c7b-9f78-0e3149948d46",
+            "76dd8840-53f0-4d51-957c-b17b6ab3b86a",
+            "e23ddc74-316b-4cb4-b03d-0612b9716667",
+            "0a0b7662-167d-44e0-afd4-81625fa7ff40",
+            "e0502c4e-77e7-431d-8250-07e58e0bdda8",
+            "d053849d-73eb-4137-ac74-def4b4872a69",
+            "7f80101c-a003-4b50-b648-669d544e2591",
+            "45083a5a-da96-44c7-a2e4-20a4d2ce1db9",
+            "d02928a6-cb68-4131-b1c8-5a163574a408",
+            "9717e5a4-50e0-453b-bb01-26bfc53dc17c",
+            "244d655f-9e42-4f56-a6bf-035e3075fb2c",
+            "aa2f851f-bc7f-4e0e-b5dd-89afd4e7f1e8"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "8d69003f-86f4-463c-a3b0-d9f99834b8dd",
+            "08452fbc-ba7a-41f4-bcd5-fd4ae0050b29"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

@@ -27,6 +27,7 @@ Ext.define('Admin.store.DiverStatusStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'DiverStatusStore',
+            autoLoad: true,
             model: 'Admin.model.ListData',
             proxy: {
                 type: 'ajax',

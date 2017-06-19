@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": true,
         "designer|userClassName": "DiverStatusStore",
         "model": "ListData",
         "storeId": "DiverStatusStore"
@@ -13,7 +14,8 @@
     "configAlternates": {
         "designer|userClassName": "string",
         "model": "model",
-        "storeId": "string"
+        "storeId": "string",
+        "autoLoad": "boolean"
     },
     "name": "ClassStore1",
     "designerId": "e094829a-03e4-423d-ab2a-328c8087f21a",

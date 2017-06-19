@@ -13,8 +13,8 @@
         "layout": "column",
         "margin": 5,
         "padding": 5,
-        "title": "View / Edit  Participant",
-        "width": 628
+        "title": "View / Edit  Diver",
+        "width": 842
     },
     "configAlternates": {
         "designer|userAlias": "string",
@@ -186,7 +186,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|columnWidth": 0.48,
+                "layout|columnWidth": 0.38,
                 "title": "Details"
             },
             "configAlternates": {
@@ -237,6 +237,28 @@
                             },
                             "name": "MyTextField",
                             "designerId": "db50c8d7-b97c-49e0-9892-43b8ff15cca3"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Diver ID",
+                                "labelWidth": 75,
+                                "name": "DiverID",
+                                "width": 251
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "labelWidth": "number",
+                                "name": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyTextField18",
+                            "designerId": "52613b0d-5f88-4cff-8c5e-df9598f086cd"
                         },
                         {
                             "type": "Ext.form.field.ComboBox",
@@ -366,14 +388,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|columnWidth": 0.48,
+                "layout|columnWidth": 0.58,
+                "scrollable": "both",
                 "store": "ParticipantHistoryStore",
-                "title": "Participant Activity"
+                "title": "Diver Activity"
             },
             "configAlternates": {
                 "layout|columnWidth": "auto",
                 "title": "string",
-                "store": "store"
+                "store": "store",
+                "scrollable": "auto"
             },
             "name": "MyGridPanel1",
             "designerId": "551c1c0f-8b55-4e98-8a1e-c44af21d6665",
@@ -397,11 +421,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "Timestamp",
-                        "text": "Timestamp"
+                        "text": "Timestamp",
+                        "width": 142
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "text": "string",
+                        "width": "auto"
                     },
                     "name": "MyColumn39",
                     "designerId": "9a7ef963-0fa3-4dc9-a962-0f9691dc04fb"
@@ -415,11 +441,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "ActionText",
+                        "flex": 1,
                         "text": "Action Text"
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "text": "string",
+                        "flex": "number"
                     },
                     "name": "MyColumn37",
                     "designerId": "c500e29a-c054-4cc3-a9aa-1f7c7283df49"
@@ -510,7 +538,9 @@
                     "    failure: function(form, action) {",
                     "        Ext.Msg.alert(\"Load failed\", action.result.errorMessage);",
                     "    }",
-                    "});"
+                    "});",
+                    "",
+                    "Ext.getStore('ParticipantHistoryStore').load({params: {dataset: 'participantActivity', participantID: ID}});"
                 ],
                 "name": "loadRecord",
                 "scope": "me"

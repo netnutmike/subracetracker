@@ -45,7 +45,8 @@ Ext.define('Admin.view.ScoringViewController', {
                 },
 
                 success: function(fp, o) {
-                    Ext.getStore('ParticipantsStore').load();
+                    Ext.getStore('RacesStore').load();
+                    Ext.getCmp('scoringWindowID').close();
                 },
                 failure: function(fp, o) {
                     switch (action.failureType) {
@@ -60,7 +61,7 @@ Ext.define('Admin.view.ScoringViewController', {
                     }
                 }
             });
-            this.up('window').close();
+
         } else {
             Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');
         }

@@ -17,6 +17,57 @@ Ext.define('Admin.view.DivePanelViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.divepanel',
 
+    GoButtonHandler: function(button, e) {
+        var form = Ext.getCmp('DiverNumberForm').getForm();
+        //Ext.getCmp('DiverNumberSession').setValue(SID);
+
+        if(form.isValid()){
+            form.submit({
+                url: '/data/actions.php',
+                params: {
+                    action: 'update',
+                    SID: SID,
+                    dataset: 'participantsWater'
+                },
+
+                success: function(fp, action) {
+                    Ext.getStore('ParticipantsInWaterStore').load();
+                    switch (action.result.Status) {
+                        case '0':
+                        StsTxt = "<FONT COLOR=green> " + action.result.StatusText;
+                        break;
+
+                        case '1':
+                        StsTxt = "<FONT COLOR=red> " + action.result.StatusText;
+                        break;
+
+                        default:
+                        StsTxt = "<FONT> " + action.result.StatusText;
+                        break;
+                    }
+
+                    Ext.getCmp('DiverDetails').setHtml("<FONT SIZE=+3><B>" + action.result.DiverID + "-" + action.result.DiverName + "</b></FONT>&nbsp;<FONT SIZE=+2>(" + action.result.TeamName + ")</FONT><BR>" + StsTxt);
+                    Ext.getCmp('DiverIDField').setValue('');
+                },
+                failure: function(fp, action) {
+                    switch (action.failureType) {
+                        case Ext.form.action.Action.CLIENT_INVALID:
+                        Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+                        break;
+                        case Ext.form.action.Action.CONNECT_FAILURE:
+                        Ext.Msg.alert('Failure', 'Ajax communication failed');
+                        break;
+                        case Ext.form.action.Action.SERVER_INVALID:
+                        Ext.Msg.alert('Failure', action.result.msg);
+                    }
+                }
+            });
+
+        } else {
+            Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');
+        }
+    },
+
     DiverInButtonClick: function(button, e) {
         Ext.create('Admin.view.DiverIn').show();
     },

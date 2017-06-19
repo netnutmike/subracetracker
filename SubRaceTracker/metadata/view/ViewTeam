@@ -10,7 +10,6 @@
         "designer|userClassName": "ViewTeam",
         "height": 721,
         "id": "ViewTeamWindow",
-        "layout": null,
         "margin": 5,
         "padding": 5,
         "title": "View / Edit  Team",
@@ -84,19 +83,19 @@
                                 "fn": "handler",
                                 "implHandler": [
                                     "",
-                                    "var form = Ext.getCmp('viewParticipantForm').getForm();",
-                                    "Ext.getCmp('viewParticipantSession').setValue(SID);",
+                                    "var form = Ext.getCmp('viewTeamForm').getForm();",
+                                    "Ext.getCmp('viewTeamSession').setValue(SID);",
                                     "",
                                     "if(form.isValid()){",
                                     "    form.submit({",
                                     "        url: '/data/actions.php',",
                                     "        params: {",
                                     "            action: 'update',",
-                                    "            dataset: 'participants'",
+                                    "            dataset: 'teams'",
                                     "        },",
                                     "        //waitMsg: 'Saving new DLP Exception...',",
                                     "        success: function(fp, o) {",
-                                    "            Ext.getStore('ParticipantsStore').load();",
+                                    "            Ext.getStore('TeamsStore').load();",
                                     "            Ext.getCmp('ViewTeamWindow').close();",
                                     "        },",
                                     "        failure: function(fp, o) {",
@@ -226,7 +225,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fieldLabel": null,
-                                "id": "viewParticipantSession1",
+                                "id": "viewTeamSession",
                                 "name": "SID"
                             },
                             "configAlternates": {
@@ -524,10 +523,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "activeTab": 0
+                "activeTab": 0,
+                "height": 240,
+                "scrollable": false
             },
             "configAlternates": {
-                "activeTab": "auto"
+                "activeTab": "auto",
+                "height": "auto",
+                "scrollable": "auto"
             },
             "name": "MyTabPanel1",
             "designerId": "705a53de-c81c-4678-9a2e-81adb2dda0ca",
@@ -540,10 +543,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout": "fit",
                         "title": "Team Members"
                     },
                     "configAlternates": {
-                        "title": "string"
+                        "title": "string",
+                        "layout": "string"
                     },
                     "name": "MyPanel3",
                     "designerId": "90b95d6c-ab6d-4d72-b3a5-c3024e920e3a",
@@ -566,13 +571,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "scrollable": "both",
                                 "store": "TeamParticipantsStore",
                                 "title": null
                             },
                             "configAlternates": {
                                 "layout|columnWidth": "auto",
                                 "title": "string",
-                                "store": "store"
+                                "store": "store",
+                                "scrollable": "auto"
                             },
                             "name": "MyGridPanel1",
                             "designerId": "3ff192df-3f91-4937-ad3f-b55c7b895fed",
@@ -635,10 +642,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout": "fit",
                         "title": "Team Runs"
                     },
                     "configAlternates": {
-                        "title": "string"
+                        "title": "string",
+                        "layout": "string"
                     },
                     "name": "MyPanel4",
                     "designerId": "3a46368a-d6d6-4dbf-8f21-c0be0f8d4d22",
@@ -661,13 +670,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "scrollable": "both",
                                 "store": "TeamRacesStore",
                                 "title": null
                             },
                             "configAlternates": {
                                 "layout|columnWidth": "auto",
                                 "title": "string",
-                                "store": "store"
+                                "store": "store",
+                                "scrollable": "auto"
                             },
                             "name": "MyGridPanel3",
                             "designerId": "d3e2ac56-8a42-4620-a2b4-7399aa29c479",
@@ -864,10 +875,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout": "fit",
                         "title": "Team Activity"
                     },
                     "configAlternates": {
-                        "title": "string"
+                        "title": "string",
+                        "layout": "string"
                     },
                     "name": "MyPanel5",
                     "designerId": "124304bf-84f7-4724-af0c-6dc6981a38f3",
@@ -890,13 +903,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "scrollable": "both",
                                 "store": "TeamParticipantHistoryStore",
                                 "title": null
                             },
                             "configAlternates": {
                                 "layout|columnWidth": "auto",
                                 "title": "string",
-                                "store": "store"
+                                "store": "store",
+                                "scrollable": "auto"
                             },
                             "name": "MyGridPanel3",
                             "designerId": "629f0aa7-797c-4790-8560-2cfb935fde18",
@@ -1101,9 +1116,9 @@
                     "    }",
                     "});",
                     "",
-                    "Ext.getStore('TeamParticipantsStore').load({extraParams: {dataset: 'participants', teamID: TeamID}});",
-                    "Ext.getStore('TeamRacesStore').load({extraParams: {dataset: 'races', teamID: TeamID}});",
-                    "Ext.getStore('TeamParticipantHistoryStore').load({extraParams: {dataset: 'participantActivity', teamID: TeamID}});"
+                    "Ext.getStore('TeamParticipantsStore').load({params: {dataset: 'participants', teamID: TeamID}});",
+                    "Ext.getStore('TeamRacesStore').load({params: {dataset: 'races', teamID: TeamID}});",
+                    "Ext.getStore('TeamParticipantHistoryStore').load({params: {dataset: 'participantActivity', teamID: TeamID}});"
                 ],
                 "name": "loadRecord",
                 "scope": "me"

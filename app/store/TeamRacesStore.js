@@ -31,12 +31,12 @@ Ext.define('Admin.store.TeamRacesStore', {
             proxy: {
                 type: 'ajax',
                 extraParams: {
-                    dataset: 'participantHistory'
+                    dataset: 'races'
                 },
                 url: '/data/getjson.php',
                 reader: {
                     type: 'json',
-                    rootProperty: 'participantHistory'
+                    rootProperty: 'races'
                 }
             }
         }, cfg)]);

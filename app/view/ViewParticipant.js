@@ -39,9 +39,9 @@ Ext.define('Admin.view.ViewParticipant', {
     id: 'ViewParticipantWindow',
     margin: 5,
     padding: 5,
-    width: 628,
+    width: 842,
     layout: 'column',
-    title: 'View / Edit  Participant',
+    title: 'View / Edit  Diver',
 
     dockedItems: [
         {
@@ -68,7 +68,7 @@ Ext.define('Admin.view.ViewParticipant', {
     items: [
         {
             xtype: 'fieldset',
-            columnWidth: 0.48,
+            columnWidth: 0.38,
             title: 'Details',
             items: [
                 {
@@ -82,6 +82,13 @@ Ext.define('Admin.view.ViewParticipant', {
                             fieldLabel: 'Name',
                             labelWidth: 75,
                             name: 'DiverName'
+                        },
+                        {
+                            xtype: 'textfield',
+                            width: 251,
+                            fieldLabel: 'Diver ID',
+                            labelWidth: 75,
+                            name: 'DiverID'
                         },
                         {
                             xtype: 'combobox',
@@ -124,17 +131,20 @@ Ext.define('Admin.view.ViewParticipant', {
         },
         {
             xtype: 'gridpanel',
-            columnWidth: 0.48,
-            title: 'Participant Activity',
+            columnWidth: 0.58,
+            scrollable: 'both',
+            title: 'Diver Activity',
             store: 'ParticipantHistoryStore',
             columns: [
                 {
                     xtype: 'gridcolumn',
+                    width: 142,
                     dataIndex: 'Timestamp',
                     text: 'Timestamp'
                 },
                 {
                     xtype: 'gridcolumn',
+                    flex: 1,
                     dataIndex: 'ActionText',
                     text: 'Action Text'
                 },

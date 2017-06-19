@@ -79,7 +79,7 @@ Ext.define('Admin.view.ViewTeam', {
                     items: [
                         {
                             xtype: 'hiddenfield',
-                            id: 'viewParticipantSession1',
+                            id: 'viewTeamSession',
                             name: 'SID'
                         },
                         {
@@ -174,14 +174,18 @@ Ext.define('Admin.view.ViewTeam', {
         },
         {
             xtype: 'tabpanel',
+            height: 240,
+            scrollable: false,
             activeTab: 0,
             items: [
                 {
                     xtype: 'panel',
+                    layout: 'fit',
                     title: 'Team Members',
                     items: [
                         {
                             xtype: 'gridpanel',
+                            scrollable: 'both',
                             store: 'TeamParticipantsStore',
                             columns: [
                                 {
@@ -200,10 +204,12 @@ Ext.define('Admin.view.ViewTeam', {
                 },
                 {
                     xtype: 'panel',
+                    layout: 'fit',
                     title: 'Team Runs',
                     items: [
                         {
                             xtype: 'gridpanel',
+                            scrollable: 'both',
                             store: 'TeamRacesStore',
                             columns: [
                                 {
@@ -261,10 +267,12 @@ Ext.define('Admin.view.ViewTeam', {
                 },
                 {
                     xtype: 'panel',
+                    layout: 'fit',
                     title: 'Team Activity',
                     items: [
                         {
                             xtype: 'gridpanel',
+                            scrollable: 'both',
                             store: 'TeamParticipantHistoryStore',
                             columns: [
                                 {
