@@ -1,15 +1,17 @@
 {
-    "type": "Ext.window.Window",
+    "type": "Ext.panel.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "options",
-        "designer|userClassName": "Options",
+        "defaultListenerScope": true,
+        "designer|userAlias": "optionspanel",
+        "designer|userClassName": "OptionsPanel",
         "height": 510,
-        "margin": 5,
+        "layout": "fit",
+        "margin": null,
         "padding": 5,
         "title": "Options",
         "width": 429
@@ -21,9 +23,10 @@
         "margin": "auto",
         "padding": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "defaultListenerScope": "boolean",
+        "layout": "string"
     },
-    "name": "NewRun2",
     "designerId": "81d9dc94-6554-4c56-8fbf-bf4f37af21a7",
     "viewControllerInstanceId": "3a5fb4ff-f974-466f-94be-fcb72c7caa26",
     "viewModelInstanceId": "d96183d0-cd9c-41aa-b854-718e4a77f327",
@@ -87,9 +90,9 @@
                                     "        url: '/data/actions.php',",
                                     "        params: {",
                                     "            action: 'update',",
-                                    "            dataset: 'Options'",
+                                    "            dataset: 'options'",
                                     "        },",
-                                    "        //waitMsg: 'Saving new DLP Exception...',",
+                                    "",
                                     "        success: function(fp, o) {",
                                     "            Ext.Msg.alert('Success', 'Options have been successfully saved.');",
                                     "        },",
@@ -106,7 +109,6 @@
                                     "            }",
                                     "        }",
                                     "    });",
-                                    "    this.up('window').close();",
                                     "} else {",
                                     "    Ext.Msg.alert('Errors Detected', 'Errors were detected on the form that need to be fixed before saving');",
                                     "}"
@@ -120,53 +122,6 @@
                             },
                             "name": "handler",
                             "designerId": "04b6729b-ca6c-4668-b83f-b9f357992a59"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "icon": "/images/delete.png",
-                        "layout|flex": null,
-                        "text": "Cancel"
-                    },
-                    "configAlternates": {
-                        "layout|flex": "number",
-                        "text": "string",
-                        "icon": "string"
-                    },
-                    "name": "MyButton4",
-                    "designerId": "94444f3e-df05-43b9-b16c-f347ecc5a339",
-                    "cn": [
-                        {
-                            "type": "fixedfunction",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|params": [
-                                    "button",
-                                    "e"
-                                ],
-                                "fn": "handler",
-                                "implHandler": [
-                                    "this.up('window').close();"
-                                ]
-                            },
-                            "configAlternates": {
-                                "designer|params": "typedarray",
-                                "fn": "string",
-                                "implHandler": "code"
-                            },
-                            "name": "handler",
-                            "designerId": "8f5a4353-72b3-40b7-a2cd-cd84a76f733a"
                         }
                     ]
                 }
@@ -233,25 +188,6 @@
                     },
                     "name": "MyTextField1",
                     "designerId": "1af70d48-a0b3-4d0f-a885-919890ec69a0"
-                },
-                {
-                    "type": "Ext.form.field.ComboBox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": "English/Metric",
-                        "name": "MeasureMethod"
-                    },
-                    "configAlternates": {
-                        "fieldLabel": "string",
-                        "labelWidth": "number",
-                        "name": "string"
-                    },
-                    "name": "MyComboBox",
-                    "designerId": "801d4ce3-f526-4f9e-9be5-0b1f844d56fb"
                 },
                 {
                     "type": "Ext.form.field.Text",
@@ -381,6 +317,41 @@
                     "designerId": "74408fd2-49a7-4943-8d52-8af4d0dba5e9"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "//load record",
+                    "var form = Ext.getCmp('OptionsForm').getForm();",
+                    "",
+                    "form.load({",
+                    "    url: '/data/getjson.php',",
+                    "    params: {",
+                    "        dataset: 'options'",
+                    "    },",
+                    "    failure: function(form, action) {",
+                    "        Ext.Msg.alert(\"Load failed\", action.result.errorMessage);",
+                    "    }",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "4e7793a8-b3de-4598-a1b3-6c3a731af805"
         }
     ]
 }

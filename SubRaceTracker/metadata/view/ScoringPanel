@@ -447,37 +447,17 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "dataIndex": "StartTime",
-                                        "text": "Start Time",
-                                        "width": 80
+                                        "dataIndex": "BestSpeed",
+                                        "text": "Best Speed",
+                                        "width": 74
                                     },
                                     "configAlternates": {
                                         "dataIndex": "datafield",
                                         "text": "string",
                                         "width": "auto"
                                     },
-                                    "name": "MyColumn5",
-                                    "designerId": "4d8a8a21-a72c-44b6-afbf-596efdee29a0"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "FinishTime",
-                                        "text": "Finish Time",
-                                        "width": 89
-                                    },
-                                    "configAlternates": {
-                                        "dataIndex": "datafield",
-                                        "text": "string",
-                                        "width": "auto"
-                                    },
-                                    "name": "MyColumn6",
-                                    "designerId": "75f2d8e8-da47-4162-9890-82c11f5859fb"
+                                    "name": "MyColumn50",
+                                    "designerId": "0972f852-be1f-4c4f-bba4-3b4a5d2da665"
                                 },
                                 {
                                     "type": "Ext.grid.column.Column",
@@ -488,7 +468,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "Time1",
-                                        "text": "Time1",
+                                        "text": "Start Time",
                                         "width": 74
                                     },
                                     "configAlternates": {
@@ -548,7 +528,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "Time4",
-                                        "text": "Time4",
+                                        "text": "Finish Time",
                                         "width": 62
                                     },
                                     "configAlternates": {
@@ -669,7 +649,10 @@
                                     "userConfig": {
                                         "fn": "onGridpanelRowDblClick1",
                                         "implHandler": [
-                                            "Ext.create('Admin.view.Scoring').show();"
+                                            "e.stopEvent();",
+                                            "var ScoringWindow = Ext.create('Admin.view.Scoring');",
+                                            "ScoringWindow.show();",
+                                            "ScoringWindow.fireEvent('loadRecord',{RunID: record.get('uid')});"
                                         ],
                                         "name": "rowdblclick",
                                         "scope": "me"

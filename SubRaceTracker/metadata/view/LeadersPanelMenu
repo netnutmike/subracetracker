@@ -1,0 +1,75 @@
+{
+    "type": "Ext.menu.Menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "leaderspanelmenu",
+        "designer|userClassName": "LeadersPanelMenu",
+        "height": 38,
+        "width": 192
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "TeamsPanelMenu1",
+    "designerId": "fa171bdd-eee1-415c-9937-3d50312c7f4d",
+    "viewControllerInstanceId": "49289460-9259-4169-b8b3-7b6a05bb8beb",
+    "viewModelInstanceId": "5804e11e-84bd-479c-94e8-eda6ebf4b4cc",
+    "cn": [
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/edit.png",
+                "text": "View / Edit Team"
+            },
+            "configAlternates": {
+                "text": "string",
+                "icon": "string"
+            },
+            "name": "MyMenuItem",
+            "designerId": "20f58025-388d-46e3-8478-4ec4262bac1d",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "e.stopEvent();",
+                            "var TeamWindow = Ext.create('Admin.view.ViewTeam');",
+                            "TeamWindow.show();",
+                            "TeamWindow.fireEvent('loadRecord',{TeamID: selectedvalue});",
+                            ""
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "46964a6f-769f-4d7f-a980-17db5e129a11"
+                }
+            ]
+        }
+    ]
+}

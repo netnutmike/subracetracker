@@ -55,6 +55,12 @@ Ext.define('Admin.model.Teams', {
         },
         {
             name: 'Notes'
+        },
+        {
+            name: 'BestSpeed'
+        },
+        {
+            name: 'BestRunID'
         }
     ]
 });

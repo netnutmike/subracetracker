@@ -47,6 +47,14 @@ if (trim($_COOKIE['SID']) == "" && !isset($_REQUEST["login"]) ) {
             Ext.getStore('TeamsStore').load();
             Ext.getStore('RacesStoreNotScored').load();
             Ext.getStore('RacesStoreScored').load();
+            Ext.getStore('LeaderboardStore').load();
+            Ext.getStore('ClassesSummaryStore').load();
+            Ext.getStore('RunsByDayStore').load();
+            Ext.getStore('RunTimesStore').load();
+            Ext.getStore('RunsSummaryStore').load();
+            Ext.getStore('ReadyQueueStore').load();
+            Ext.getStore('ParticipantHistoryStore').load();
+            
             //Ext.getStore('ParticipantsInWaterStore').load();
         }
         

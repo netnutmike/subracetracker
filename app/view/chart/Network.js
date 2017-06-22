@@ -17,7 +17,7 @@ Ext.define('Admin.view.chart.Network', {
         {
             type: 'category',
             fields: [
-                'xvalue'
+                'Time'
             ],
             hidden: true,
             position: 'bottom'
@@ -25,8 +25,8 @@ Ext.define('Admin.view.chart.Network', {
         {
             type: 'numeric',
             fields: [
-                'y1value',
-                'y2value'
+                'GoodRuns',
+                'BadRuns'
             ],
             grid: {
                 odd: {
@@ -45,9 +45,9 @@ Ext.define('Admin.view.chart.Network', {
                 'rgba(103, 144, 199, 0.6)'
             ],
             useDarkerStrokeColor: false,
-            xField: 'xvalue',
+            xField: 'Time',
             yField: [
-                'y1value'
+                'GoodRuns'
             ],
             fill: true,
             smooth: true
@@ -58,9 +58,9 @@ Ext.define('Admin.view.chart.Network', {
                 'rgba(238, 146, 156, 0.6)'
             ],
             useDarkerStrokeColor: false,
-            xField: 'xvalue',
+            xField: 'Time',
             yField: [
-                'y2value'
+                'BadRuns'
             ],
             fill: true,
             smooth: true

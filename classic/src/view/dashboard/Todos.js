@@ -21,18 +21,26 @@ Ext.define('Admin.view.dashboard.Todos', {
             xtype: 'gridpanel',
             cls: 'dashboard-todo-list',
             header: false,
-            title: 'My Grid Panel',
-            hideHeaders: true,
+            //hideHeaders: true,
             scroll: 'none',
             bind: {
-                store: '{todos}'
+                store: 'LeaderboardStore'
             },
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'task',
-                    text: 'Task',
+                    dataIndex: 'Position',
+                    text: 'Position',
+                    width: 65
+                },{
+                    xtype: 'gridcolumn',
+                    dataIndex: 'TeamName',
+                    text: 'Team Name',
                     flex: 1
+                },{
+                    xtype: 'gridcolumn',
+                    dataIndex: 'BestSpeed',
+                    text: 'Speed To Beat'
                 }
             ]//,
 

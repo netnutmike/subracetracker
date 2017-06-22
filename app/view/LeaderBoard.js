@@ -29,14 +29,21 @@ Ext.define('Admin.view.LeaderBoard', {
     },
     height: 419,
     width: 719,
+    layout: 'fit',
     title: 'Leader Board',
     defaultListenerScope: true,
 
     items: [
         {
             xtype: 'gridpanel',
-            store: 'TeamsStore',
+            store: 'LeaderboardStore',
             columns: [
+                {
+                    xtype: 'gridcolumn',
+                    width: 78,
+                    dataIndex: 'Position',
+                    text: 'Position'
+                },
                 {
                     xtype: 'gridcolumn',
                     width: 148,
@@ -54,6 +61,12 @@ Ext.define('Admin.view.LeaderBoard', {
                     width: 157,
                     dataIndex: 'SubName',
                     text: 'Sub Name'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    width: 157,
+                    dataIndex: 'BestSpeed',
+                    text: 'Speed To Beat'
                 }
             ],
             listeners: {
@@ -64,14 +77,18 @@ Ext.define('Admin.view.LeaderBoard', {
     ],
 
     onGridpanelRowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
-        Ext.create('Admin.view.ViewTeam').show();
+        e.stopEvent();
+        var TeamWindow = Ext.create('Admin.view.ViewTeam');
+        TeamWindow.show();
+        TeamWindow.fireEvent('loadRecord',{TeamID: record.get('uid')});
+
     },
 
     onGridpanelRowContextMenu: function(tableview, record, tr, rowIndex, e, eOpts) {
         e.stopEvent();
         selectedvalue = record.get('uid');
         selectedrec = record;
-        popup = Ext.create('Admin.view.TeamsPanelMenu');
+        popup = Ext.create('Admin.view.LeadersPanelMenu');
         popup.showAt(e.getXY());
     }
 

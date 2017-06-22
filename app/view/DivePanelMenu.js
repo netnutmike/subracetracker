@@ -30,7 +30,40 @@ Ext.define('Admin.view.DivePanelMenu', {
         {
             xtype: 'menuitem',
             handler: function(item, e) {
-                Ext.create('Admin.view.NewParticipant').show();
+                //Ext.create('Admin.view.NewParticipant').show();
+
+                var NewListwin = Ext.create('Admin.view.DiverOut');
+                //NewListwin.show();
+                Ext.getCmp('DiverOutSession').setValue(SID);
+                Ext.getCmp('DiverOutID').setValue(selectedrec.get('DiverID'));
+
+                var form =Ext.getCmp('DiverOutForm').getForm();
+
+                form.submit({
+                    url:'/data/actions.php',
+                    params: {
+                        action: 'new',
+                        DiverAction: '0',
+                        dataset: 'participantsWater'
+                    },
+                    success: function(form, action) {
+                        Ext.getStore('ParticipantsInWaterStore').load();
+
+                    },
+                    failure: function(form, action) {
+                        switch (action.failureType) {
+                            case Ext.form.action.Action.CLIENT_INVALID:
+                            Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+                            break;
+                            case Ext.form.action.Action.CONNECT_FAILURE:
+                            Ext.Msg.alert('Failure', 'Could Not Communicate With Server.');
+                            break;
+                            case Ext.form.action.Action.SERVER_INVALID:
+                            Ext.Msg.alert('Unable To Pull Diver Out', action.result.msg);
+
+                        }
+                    }
+                });
             },
             icon: '/images/up.png',
             text: 'Diver Out'
@@ -42,9 +75,12 @@ Ext.define('Admin.view.DivePanelMenu', {
         {
             xtype: 'menuitem',
             handler: function(item, e) {
-                Ext.create('Admin.view.NewParticipant').show();
+                e.stopEvent();
+                var ParticipantWindow = Ext.create('Admin.view.ViewParticipant');
+                ParticipantWindow.show();
+                ParticipantWindow.fireEvent('loadRecord',{ID: selectedvalue});
             },
-            icon: '/images/add.png',
+            icon: '/images/edit.png',
             text: 'View / Edit Participant'
         }
     ]

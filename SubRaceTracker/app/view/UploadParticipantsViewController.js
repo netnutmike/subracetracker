@@ -28,7 +28,7 @@ Ext.define('Admin.view.UploadParticipantsViewController', {
                     action: 'upload',
                     dataset: 'participants'
                 },
-                //waitMsg: 'Saving new DLP Exception...',
+
                 success: function(fp, o) {
                     Ext.getStore('ParticipantsStore').load();
                     Ext.getCmp('UploadParticipantsWindow').close();

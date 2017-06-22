@@ -24,7 +24,13 @@ Ext.application({
         'Lists',
         'Participants',
         'Races',
-        'Teams'
+        'Teams',
+        'Leaderboard',
+        'ClassesSummary',
+        'RunsByDay',
+        'RunTimes',
+        'RunsSummary',
+        'ReadyQueue'
     ],
     stores: [
         'ListDataStore',
@@ -44,7 +50,14 @@ Ext.application({
         'TeamParticipantsStore',
         'TeamRacesStore',
         'ParticipantsInWaterStore',
-        'TeamParticipantHistoryStore'
+        'TeamParticipantHistoryStore',
+        'LeaderboardStore',
+        'ClassesSummaryStore',
+        'RunsByDayStore',
+        'RunTimesStore',
+        'RunsSummaryStore',
+        'ReadyQueueStore',
+        'ParticipantPersonalHistoryStore'
     ],
     views: [
         'DivePanel'

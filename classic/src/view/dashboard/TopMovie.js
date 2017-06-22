@@ -35,20 +35,29 @@ Ext.define('Admin.view.dashboard.TopMovie', {
                 '#a66111'
             ],
             radius: 100,
-            bind: '{topMovies}',
+            bind: 'ClassesSummaryStore',
             series: [
                 {
                     type: 'pie',
                     colors: [
+                        '#115fa6',
+                        '#94ae0a',
+                        '#a61120',
+                        '#ff8809',
+                        '#ffd13e',
+                        '#a61187',
+                        '#24ad9a',
+                        '#7c7474',
+                        '#a66111',
                         '#ffffff'
                     ],
                     label: {
-                        field: 'x',
+                        field: 'ClassText',
                         display: 'rotate',
-                        contrast: true,
+                        //contrast: true,
                         font: '12px Arial'
                     },
-                    xField: 'yvalue'
+                    xField: 'cnt'
                 }
             ],
             interactions: [

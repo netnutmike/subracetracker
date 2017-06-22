@@ -22,7 +22,7 @@ if (isset($_POST['DiverID']) && trim($_POST['DiverID']) != "") {
 
         $querytext = "INSERT INTO ParticipantHistory (TeamID, ParticipantID, Action, Timestamp) "
                 . "VALUES ('" .
-                $rs['TeamID'] . "', '" . $rs['uid'] . "', '" . $_POST['DiverAction'] . "', '" . date("Y-m-d H:i:s")
+                $rs['TeamID'] . "', '" . $rs['uid'] . "', '" . $newstatus . "', '" . date("Y-m-d H:i:s")
                 . "')";
 
         $result3 = mysql_query($querytext) or   die(mysql_error());

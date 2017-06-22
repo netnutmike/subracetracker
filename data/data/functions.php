@@ -108,6 +108,13 @@ function jsonClean($input) {
 }
 
 function TimeToFrames($h, $m, $s, $fps) {
+    
+    //echo "inputs:\r\n";
+    //echo $h . "\r\n";
+    //echo $m . "\r\n";
+    //echo $s . "\r\n";
+    //echo $fps . "\r\n";
+    
     $framecnt = 0;
     
     $framecnt += ($h * ($fps*60*60));
@@ -118,8 +125,9 @@ function TimeToFrames($h, $m, $s, $fps) {
 }
 
 function SeperateTimeHours($tm) {
-    if (substr_count($tm, ",") == 3) {
+    if (substr_count($tm, ":") == 3) {
         $tmar = explode(":", $tm);
+        //print_r($tmar);
         return($tmar[0]);
     } else {
         return 0;
@@ -127,7 +135,16 @@ function SeperateTimeHours($tm) {
 }
 
 function SeperateTimeMinutes($tm) {
-    if (substr_count($tm, ",") >= 2) {
+    if (substr_count($tm, ":") >= 2) {
+        $tmar = explode(":", $tm);
+        return($tmar[count($tmar) - 3]);
+    } else {
+        return 0;
+    }
+}
+
+function SeperateTimeSeconds($tm) {
+    if (substr_count($tm, ":") >= 1) {
         $tmar = explode(":", $tm);
         return($tmar[count($tmar) - 2]);
     } else {
@@ -135,20 +152,11 @@ function SeperateTimeMinutes($tm) {
     }
 }
 
-function SeperateTimeSeconds($tm) {
-    if (substr_count($tm, ",") >= 1) {
-        $tmar = explode(":", $tm);
-        return($tmar[count($tmar) - 1]);
-    } else {
-        return 0;
-    }
-}
-
 function SeperateTimeFrames($tm) {
     if (trim($tm) != "") {
-        if (substr_count($tm, ",") > 0) {
+        if (substr_count($tm, ":") > 0) {
             $tmar = explode(":", $tm);
-            return($tmar[1]);
+            return($tmar[count($tmar) - 1]);
         } else {
             return($tm);
         }

@@ -9,6 +9,7 @@
         "designer|userAlias": "leaderboard",
         "designer|userClassName": "LeaderBoard",
         "height": 419,
+        "layout": "fit",
         "title": "Leader Board",
         "width": 719
     },
@@ -18,7 +19,8 @@
         "designer|userClassName": "string",
         "height": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "layout": "string"
     },
     "name": "TeamsPanel1",
     "designerId": "c5e615a5-9d56-4a55-a507-7fbf6da43cbc",
@@ -33,7 +35,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "store": "TeamsStore",
+                "store": "LeaderboardStore",
                 "title": null
             },
             "configAlternates": {
@@ -61,6 +63,26 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "dataIndex": "Position",
+                        "text": "Position",
+                        "width": 78
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn16",
+                    "designerId": "da0b04a3-337f-4c9c-9501-5e27205f25f4"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "dataIndex": "TeamName",
                         "text": "Team Name",
                         "width": 148
@@ -70,8 +92,8 @@
                         "text": "string",
                         "width": "auto"
                     },
-                    "name": "MyColumn16",
-                    "designerId": "da0b04a3-337f-4c9c-9501-5e27205f25f4"
+                    "name": "MyColumn30",
+                    "designerId": "ed7b63e9-50b7-4b0c-8a24-e174fbeb8fa7"
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -114,6 +136,26 @@
                     "designerId": "dc05f4d5-da6b-46eb-a7b7-2803808b3f92"
                 },
                 {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "BestSpeed",
+                        "text": "Speed To Beat",
+                        "width": 157
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn31",
+                    "designerId": "b0b3c5b8-2874-42cd-ba92-e9b0e8321666"
+                },
+                {
                     "type": "basiceventbinding",
                     "reference": {
                         "name": "listeners",
@@ -123,7 +165,11 @@
                     "userConfig": {
                         "fn": "onGridpanelRowDblClick",
                         "implHandler": [
-                            "Ext.create('Admin.view.ViewTeam').show();"
+                            "e.stopEvent();",
+                            "var TeamWindow = Ext.create('Admin.view.ViewTeam');",
+                            "TeamWindow.show();",
+                            "TeamWindow.fireEvent('loadRecord',{TeamID: record.get('uid')});",
+                            ""
                         ],
                         "name": "rowdblclick",
                         "scope": "me"
@@ -150,7 +196,7 @@
                             "e.stopEvent();",
                             "selectedvalue = record.get('uid');",
                             "selectedrec = record;",
-                            "popup = Ext.create('Admin.view.TeamsPanelMenu');",
+                            "popup = Ext.create('Admin.view.LeadersPanelMenu');",
                             "popup.showAt(e.getXY());"
                         ],
                         "name": "rowcontextmenu",

@@ -19,31 +19,29 @@ Ext.define('Admin.view.ScoringPanelMenu', {
 
     requires: [
         'Admin.view.ScoringPanelMenuViewModel',
-        'Ext.menu.Separator'
+        'Ext.menu.Item'
     ],
 
     viewModel: {
         type: 'scoringpanelmenu'
     },
-    height: 123,
+    height: 38,
     width: 192,
-    icon: '/image/edit.png',
+    icon: '',
 
     items: [
         {
             xtype: 'menuitem',
             handler: function(item, e) {
                 e.stopEvent();
+                //Ext.Msg.alert('Selected Value Debug', selectedvalue);
                 var ScoringWindow = Ext.create('Admin.view.Scoring');
                 ScoringWindow.show();
                 ScoringWindow.fireEvent('loadRecord',{RunID: selectedvalue});
 
             },
+            icon: '/image/edit.png',
             text: 'View / Edit Score'
-        },
-        {
-            xtype: 'menuseparator',
-            text: 'Menu Item'
         }
     ]
 

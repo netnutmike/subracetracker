@@ -130,38 +130,41 @@ Ext.define('Admin.view.ViewParticipant', {
             html: '&nbsp;'
         },
         {
-            xtype: 'gridpanel',
+            xtype: 'panel',
             columnWidth: 0.58,
-            scrollable: 'both',
+            height: 347,
+            layout: 'fit',
             title: 'Diver Activity',
-            store: 'ParticipantHistoryStore',
-            columns: [
+            items: [
                 {
-                    xtype: 'gridcolumn',
-                    width: 142,
-                    dataIndex: 'Timestamp',
-                    text: 'Timestamp'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    flex: 1,
-                    dataIndex: 'ActionText',
-                    text: 'Action Text'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'TrackedTime',
-                    text: 'Tracked Time'
+                    xtype: 'gridpanel',
+                    scrollable: 'both',
+                    store: 'ParticipantPersonalHistoryStore',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            width: 142,
+                            dataIndex: 'Timestamp',
+                            text: 'Timestamp'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            flex: 1,
+                            dataIndex: 'ActionText',
+                            text: 'Action Text'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'TrackedTime',
+                            text: 'Tracked Time'
+                        }
+                    ]
                 }
             ]
         }
     ],
     listeners: {
         loadRecord: 'onWindowLoadRecord'
-    },
-
-    onSaveButtonClick: function(button, e, eOpts) {
-
     }
 
 });

@@ -46,8 +46,9 @@ Ext.define('Admin.store.NavigationTree', {
             {
                 text: 'Scoring',
                 iconCls: 'x-fa fa-film',
-                rowCls: 'nav-tree-badge nav-tree-badge-new',		//nav-tree-badge-hot
+                rowCls: 'nav-tree-badge',		//nav-tree-badge-hot
                 viewType: 'scoringpanel',
+                reference: 'ScoringNavigation',
                 leaf: true
             },
             {
@@ -67,7 +68,7 @@ Ext.define('Admin.store.NavigationTree', {
                 children: [
                     
                     {
-                        text: 'Race Management',
+                        text: 'Run Management',
                         iconCls: 'x-fa fa-file-o',
                         viewType: 'runspanel',
                         leaf: true
@@ -146,13 +147,14 @@ Ext.define('Admin.store.NavigationTree', {
                     {
                         text: 'Options',
                         iconCls: 'x-fa fa-gear',
-                        viewType: 'options',
+                        viewType: 'optionspanel',
                         leaf: true
                     },
                     {
                         text: 'login',
                         iconCls: 'x-fa fa-file-o',
                         viewType: 'login',
+                        hidden: true,
                         leaf: true
                     }
                 ]

@@ -32,7 +32,11 @@ Ext.define('Admin.view.NewScorePanelMenu', {
         {
             xtype: 'menuitem',
             handler: function(item, e) {
-                Ext.create('Admin.view.Scoring').show();
+                e.stopEvent();
+                //Ext.Msg.alert('Selected Value Debug', selectedvalue);
+                var ScoringWindow = Ext.create('Admin.view.Scoring');
+                ScoringWindow.show();
+                ScoringWindow.fireEvent('loadRecord',{RunID: selectedvalue});
             },
             icon: '/images/calculator.png',
             text: 'Perform Scoring'

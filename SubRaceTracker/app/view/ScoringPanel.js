@@ -133,21 +133,15 @@ Ext.define('Admin.view.ScoringPanel', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
-                                    width: 80,
-                                    dataIndex: 'StartTime',
-                                    text: 'Start Time'
-                                },
-                                {
-                                    xtype: 'gridcolumn',
-                                    width: 89,
-                                    dataIndex: 'FinishTime',
-                                    text: 'Finish Time'
+                                    width: 74,
+                                    dataIndex: 'BestSpeed',
+                                    text: 'Best Speed'
                                 },
                                 {
                                     xtype: 'gridcolumn',
                                     width: 74,
                                     dataIndex: 'Time1',
-                                    text: 'Time1'
+                                    text: 'Start Time'
                                 },
                                 {
                                     xtype: 'gridcolumn',
@@ -165,7 +159,7 @@ Ext.define('Admin.view.ScoringPanel', {
                                     xtype: 'gridcolumn',
                                     width: 62,
                                     dataIndex: 'Time4',
-                                    text: 'Time4'
+                                    text: 'Finish Time'
                                 },
                                 {
                                     xtype: 'gridcolumn',
@@ -223,7 +217,10 @@ Ext.define('Admin.view.ScoringPanel', {
     },
 
     onGridpanelRowDblClick1: function(tableview, record, tr, rowIndex, e, eOpts) {
-        Ext.create('Admin.view.Scoring').show();
+        e.stopEvent();
+        var ScoringWindow = Ext.create('Admin.view.Scoring');
+        ScoringWindow.show();
+        ScoringWindow.fireEvent('loadRecord',{RunID: record.get('uid')});
     }
 
 });

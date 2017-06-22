@@ -22,7 +22,17 @@ Ext.define('Admin.view.ParticipantsPanelController', {
     },
 
     uploadParticpantsButtonClicked: function(button, e) {
-        Ext.create('Admin.view.UploadParticipants').show();
+        Ext.Msg.show({
+            title: 'Upload Participants?',
+            message: 'Are you sure you want to upload new a new participant csv file?  This will delete all of the current Participants, Teams, Runs, Run History, Diver History and create a blank database!!  This cannot be undone!!  Be sure you want to do this!!',
+            buttons: Ext.Msg.YESNO,
+            icon: Ext.Msg.WARNING,
+            fn: function(btn) {
+                if (btn === 'yes') {
+                    Ext.create('Admin.view.UploadParticipants').show();
+                }
+            }
+        });
     },
 
     downloadParticipantCSVButtonClicked: function(button, e) {

@@ -94,7 +94,7 @@ Ext.define('Admin.view.TeamsPanelMenu', {
 
                                     }
                                 }
-                            })
+                            });
 
                         } else if (btn === 'no') {
 
@@ -102,7 +102,7 @@ Ext.define('Admin.view.TeamsPanelMenu', {
 
                         }
                     }
-                })
+                });
             },
             icon: '/images/delete.png',
             text: 'Delete Team'

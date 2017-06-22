@@ -205,6 +205,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "fieldLabel": "Diver #",
+                        "id": "DiverOutID",
                         "labelWidth": 75,
                         "name": "DiverID",
                         "width": 251
@@ -213,7 +214,8 @@
                         "fieldLabel": "string",
                         "labelWidth": "number",
                         "name": "string",
-                        "width": "auto"
+                        "width": "auto",
+                        "id": "string"
                     },
                     "name": "MyTextField",
                     "designerId": "1e92f6b7-8771-44fc-af43-bd6662eb3049"

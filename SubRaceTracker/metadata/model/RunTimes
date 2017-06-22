@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RunTimes"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "ClassesSummary2",
+    "designerId": "ee759cd2-2d9b-481e-bf18-2df4f7b97e54",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "RaceID"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField17",
+            "designerId": "703c58f6-0161-4872-8713-c7068c6a0107"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "BestSpeed"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField51",
+            "designerId": "c089d44d-c330-45b2-b4be-4973d25fbcb6"
+        }
+    ]
+}

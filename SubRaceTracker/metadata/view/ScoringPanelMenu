@@ -8,8 +8,8 @@
     "userConfig": {
         "designer|userAlias": "scoringpanelmenu",
         "designer|userClassName": "ScoringPanelMenu",
-        "height": 123,
-        "icon": "/image/edit.png",
+        "height": 38,
+        "icon": "",
         "width": 192
     },
     "configAlternates": {
@@ -32,10 +32,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "icon": "/image/edit.png",
                 "text": "View / Edit Score"
             },
             "configAlternates": {
-                "text": "string"
+                "text": "string",
+                "icon": "string"
             },
             "name": "MyMenuItem",
             "designerId": "db60c9e3-821d-4e2f-a77b-7c4521b5122a",
@@ -55,6 +57,7 @@
                         "fn": "handler",
                         "implHandler": [
                             "e.stopEvent();",
+                            "//Ext.Msg.alert('Selected Value Debug', selectedvalue);",
                             "var ScoringWindow = Ext.create('Admin.view.Scoring');",
                             "ScoringWindow.show();",
                             "ScoringWindow.fireEvent('loadRecord',{RunID: selectedvalue});",
@@ -70,22 +73,6 @@
                     "designerId": "f42824f7-08dd-4195-8400-b7596310faff"
                 }
             ]
-        },
-        {
-            "type": "Ext.menu.Separator",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "text": "Menu Item"
-            },
-            "configAlternates": {
-                "text": "string"
-            },
-            "name": "MySeparator2",
-            "designerId": "f642348d-cc1f-47b2-a29d-e86cb0fbf14b"
         }
     ]
 }

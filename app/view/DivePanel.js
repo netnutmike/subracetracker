@@ -165,7 +165,10 @@ Ext.define('Admin.view.DivePanel', {
     },
 
     onGridpanelRowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
-        Ext.create('Admin.view.ViewParticipant').show();
+        e.stopEvent();
+        var ParticipantWindow = Ext.create('Admin.view.ViewParticipant');
+        ParticipantWindow.show();
+        ParticipantWindow.fireEvent('loadRecord',{ID: record.get('uid')});
     }
 
 });

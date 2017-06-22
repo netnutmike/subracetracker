@@ -25,7 +25,7 @@
 		echo "\"ListID\":\"" . $_REQUEST['listid'] . "\",";	
 		echo "\"ListItem\":\"" . $_REQUEST['defaulttext'] . "\",";
 		echo "\"IntValue\":\"" . $_REQUEST['defaultvalue'] . "\",";
-                echo "\"CharValue\":\"\",";
+                echo "\"CharVal\":\"\",";
                 echo "\"Status\":\"1\",";
                 echo "\"StatusText\":\"Enabled\"";
 		
@@ -43,7 +43,7 @@
 		echo "\"ListID\":\"" . $rs['ListID'] . "\",";	
 		echo "\"ListItem\":\"" . $rs['ListItem'] . "\",";
 		echo "\"IntValue\":\"" . $rs['IntValue'] . "\",";
-		echo "\"CharValue\":\"" . $rs['CharValue'] . "\",";
+		echo "\"CharVal\":\"" . $rs['CharVal'] . "\",";
 		echo "\"Status\":\"" . $rs['Status'] . "\",";
                 echo "\"StatusText\":\"" . GetListData(7, $rs['Status']) . "\"";
 		

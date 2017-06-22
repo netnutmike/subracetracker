@@ -43,6 +43,7 @@ Ext.define('Admin.view.ViewTeam', {
     padding: 5,
     width: 718,
     title: 'View / Edit  Team',
+    defaultListenerScope: true,
 
     dockedItems: [
         {
@@ -53,7 +54,8 @@ Ext.define('Admin.view.ViewTeam', {
                     xtype: 'button',
                     handler: 'onSaveButtonClick',
                     icon: '/images/save.png',
-                    text: 'Save'
+                    text: 'Save',
+                    scope: 'controller'
                 },
                 {
                     xtype: 'button',
@@ -190,15 +192,26 @@ Ext.define('Admin.view.ViewTeam', {
                             columns: [
                                 {
                                     xtype: 'gridcolumn',
+                                    width: 183,
                                     dataIndex: 'DiverName',
                                     text: 'Diver Name'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    width: 92,
+                                    dataIndex: 'DiverID',
+                                    text: 'Diver #'
                                 },
                                 {
                                     xtype: 'gridcolumn',
                                     dataIndex: 'StatusText',
                                     text: 'Status Text'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                rowdblclick: 'onGridpanelRowDblClick',
+                                rowcontextmenu: 'onGridpanelRowContextMenu'
+                            }
                         }
                     ]
                 },
@@ -221,25 +234,8 @@ Ext.define('Admin.view.ViewTeam', {
                                 },
                                 {
                                     xtype: 'gridcolumn',
-                                    dataIndex: 'StartTime',
-                                    text: 'Start Time'
-                                },
-                                {
-                                    xtype: 'gridcolumn',
-                                    dataIndex: 'FinishTime',
-                                    text: 'Finish Time'
-                                },
-                                {
-                                    xtype: 'gridcolumn',
-                                    width: 67,
-                                    dataIndex: 'Time1',
-                                    text: 'Time1'
-                                },
-                                {
-                                    xtype: 'gridcolumn',
-                                    width: 73,
-                                    dataIndex: 'Time2',
-                                    text: 'Time2'
+                                    dataIndex: 'BestSpeed',
+                                    text: 'Best Speed'
                                 },
                                 {
                                     xtype: 'gridcolumn',
@@ -261,7 +257,11 @@ Ext.define('Admin.view.ViewTeam', {
                                     dataIndex: 'Notes',
                                     text: 'Notes'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                rowdblclick: 'onGridpanelRowDblClick1',
+                                rowcontextmenu: 'onGridpanelRowContextMenu1'
+                            }
                         }
                     ]
                 },
@@ -288,7 +288,7 @@ Ext.define('Admin.view.ViewTeam', {
                                     text: 'Diver Name'
                                 },
                                 {
-                                    xtype: 'numbercolumn',
+                                    xtype: 'gridcolumn',
                                     width: 67,
                                     dataIndex: 'RaceID',
                                     text: 'Run #'
@@ -309,7 +309,11 @@ Ext.define('Admin.view.ViewTeam', {
                                     dataIndex: 'Timestamp',
                                     text: 'Timestamp'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                rowdblclick: 'onGridpanelRowDblClick2',
+                                rowcontextmenu: 'onGridpanelRowContextMenu2'
+                            }
                         }
                     ]
                 }
@@ -317,7 +321,48 @@ Ext.define('Admin.view.ViewTeam', {
         }
     ],
     listeners: {
-        loadRecord: 'onWindowLoadRecord'
+        loadRecord: {
+            fn: 'onWindowLoadRecord',
+            scope: 'controller'
+        }
+    },
+
+    onGridpanelRowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
+        e.stopEvent();
+        var ParticipantWindow = Ext.create('Admin.view.ViewParticipant');
+        ParticipantWindow.show();
+        ParticipantWindow.fireEvent('loadRecord',{ID: record.get('uid')});
+    },
+
+    onGridpanelRowContextMenu: function(tableview, record, tr, rowIndex, e, eOpts) {
+        e.stopEvent();
+        selectedvalue = record.get('uid');
+        selectedrec = record;
+        popup = Ext.create('Admin.view.ViewTeamParticipantsPanelMenu');
+        popup.showAt(e.getXY());
+    },
+
+    onGridpanelRowDblClick1: function(tableview, record, tr, rowIndex, e, eOpts) {
+        e.stopEvent();
+        var ScoringWindow = Ext.create('Admin.view.ViewRun');
+        ScoringWindow.show();
+        ScoringWindow.fireEvent('loadRecord',{RunID: record.get('uid')});
+    },
+
+    onGridpanelRowContextMenu1: function(tableview, record, tr, rowIndex, e, eOpts) {
+        e.stopEvent();
+        selectedvalue = record.get('uid');
+        selectedrec = record;
+        popup = Ext.create('Admin.view.ViewTeamRunsPanelMenu');
+        popup.showAt(e.getXY());
+    },
+
+    onGridpanelRowDblClick2: function(tableview, record, tr, rowIndex, e, eOpts) {
+        e.stopEvent();
+    },
+
+    onGridpanelRowContextMenu2: function(tableview, record, tr, rowIndex, e, eOpts) {
+        e.stopEvent();
     },
 
     onSaveButtonClick: function(button, e, eOpts) {

@@ -24,7 +24,7 @@ Ext.define('Admin.view.ParticipantsActivity', {
         'Ext.button.Button',
         'Ext.grid.Panel',
         'Ext.view.Table',
-        'Ext.grid.column.Number'
+        'Ext.grid.column.Column'
     ],
 
     controller: 'participantsactivity',
@@ -97,7 +97,7 @@ Ext.define('Admin.view.ParticipantsActivity', {
                     text: 'Timestamp'
                 },
                 {
-                    xtype: 'numbercolumn',
+                    xtype: 'gridcolumn',
                     dataIndex: 'RaceID',
                     text: 'Race Id'
                 }
@@ -106,14 +106,18 @@ Ext.define('Admin.view.ParticipantsActivity', {
     ],
 
     RowDblClick: function(tableview, record, tr, rowIndex, e, eOpts) {
-        Ext.create('Admin.view.ViewParticipant').show();
+        e.stopEvent();
+        selectedvalue = record.get('uid');
+        selectedrec = record;
+        popup = Ext.create('Admin.view.ActivityPanelMenu');
+        popup.showAt(e.getXY());
     },
 
     onGridpanelItemContextMenu: function(dataview, record, item, index, e, eOpts) {
         e.stopEvent();
         selectedvalue = record.get('uid');
         selectedrec = record;
-        popup = Ext.create('Admin.view.ParticipantsPanelMenu');
+        popup = Ext.create('Admin.view.ActivityPanelMenu');
         popup.showAt(e.getXY());
     }
 

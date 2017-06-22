@@ -20,6 +20,8 @@
                 echo "\"Status\":\"" . $rs['Status'] . "\",";	
                 echo "\"Lane\":\"" . $rs['Lane'] . "\",";	
                 echo "\"Class\":\"" . $rs['Class'] . "\",";
+                echo "\"BestSpeed\":\"" . $rs['BestSpeed'] . "\",";
+                echo "\"BestRunID\":\"" . $rs['BestRunID'] . "\",";
                 echo "\"Notes\":" . json_encode($rs['Notes']);
                 echo "}";
 

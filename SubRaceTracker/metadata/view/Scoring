@@ -96,6 +96,9 @@
                                     "",
                                     "        success: function(fp, o) {",
                                     "            Ext.getStore('RacesStore').load();",
+                                    "            Ext.getStore('RacesStoreNotScored').load();",
+                                    "            Ext.getStore('RacesStoreScored').load();",
+                                    "            Ext.getStore('LeaderboardStore').load();",
                                     "            Ext.getCmp('scoringWindowID').close();",
                                     "        },",
                                     "        failure: function(fp, o) {",
@@ -200,236 +203,450 @@
             "designerId": "e6ec5dee-c2e6-4538-b5a4-b9c44e6eeda1",
             "cn": [
                 {
-                    "type": "Ext.form.FieldSet",
+                    "type": "Ext.container.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|columnWidth": 0.48,
-                        "title": "Scoring"
+                        "layout|columnWidth": 0.48
                     },
                     "configAlternates": {
-                        "layout|columnWidth": "auto",
-                        "title": "string"
+                        "layout|columnWidth": "auto"
                     },
-                    "name": "MyFieldSet",
-                    "designerId": "8b481510-6a5e-4d8d-8381-21b50b8f39a7",
+                    "name": "MyContainer8",
+                    "designerId": "e913223c-533e-41d8-be31-ba633d4fca95",
                     "cn": [
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.form.FieldSet",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Start Time",
-                                "labelWidth": 75,
-                                "name": "StartTime",
-                                "readOnly": false,
-                                "width": 251
+                                "title": "Scoring"
                             },
                             "configAlternates": {
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "name": "string",
-                                "width": "auto",
-                                "readOnly": "boolean"
+                                "layout|columnWidth": "auto",
+                                "title": "string"
                             },
-                            "name": "MyTextField",
-                            "designerId": "1da6369b-eb87-40ac-b050-2d2ef17cbb99"
+                            "name": "MyFieldSet",
+                            "designerId": "8b481510-6a5e-4d8d-8381-21b50b8f39a7",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Start Time",
+                                        "labelWidth": 75,
+                                        "name": "Time1",
+                                        "readOnly": false,
+                                        "width": 251
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "name": "string",
+                                        "width": "auto",
+                                        "readOnly": "boolean"
+                                    },
+                                    "name": "MyTextField",
+                                    "designerId": "1da6369b-eb87-40ac-b050-2d2ef17cbb99"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Time 2",
+                                        "labelWidth": 75,
+                                        "name": "Time2",
+                                        "readOnly": false,
+                                        "width": 251
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "name": "string",
+                                        "width": "auto",
+                                        "readOnly": "boolean"
+                                    },
+                                    "name": "MyTextField8",
+                                    "designerId": "9620be7a-604d-4d44-84b4-f24b2a2ba50b"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Time 3",
+                                        "labelWidth": 75,
+                                        "name": "Time3",
+                                        "readOnly": false,
+                                        "width": 251
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "name": "string",
+                                        "width": "auto",
+                                        "readOnly": "boolean"
+                                    },
+                                    "name": "MyTextField9",
+                                    "designerId": "c12ba18c-46fa-4cb2-aeaf-e471a651b3be"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Finish Time",
+                                        "labelWidth": 75,
+                                        "name": "Time4",
+                                        "readOnly": false,
+                                        "width": 251
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "name": "string",
+                                        "width": "auto",
+                                        "readOnly": "boolean"
+                                    },
+                                    "name": "MyTextField11",
+                                    "designerId": "57009d7e-b471-47b9-a59d-64b4a46d829e"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "ListItem",
+                                        "fieldLabel": "Status",
+                                        "labelWidth": 75,
+                                        "name": "Status",
+                                        "readOnly": false,
+                                        "store": "RunStatusStore",
+                                        "valueField": "IntValue"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "labelWidth": "number",
+                                        "name": "string",
+                                        "readOnly": "boolean",
+                                        "displayField": "datafield",
+                                        "store": "store",
+                                        "valueField": "datafield"
+                                    },
+                                    "name": "MyComboBox7",
+                                    "designerId": "ade2409a-d2b1-47cb-a27f-c857d1f3fb3f"
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Label",
+                                        "layout|anchor": "100%",
+                                        "name": "uid"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "layout|anchor": "string",
+                                        "name": "string"
+                                    },
+                                    "name": "MyHiddenField5",
+                                    "designerId": "07dfb456-1b3d-4f46-bfb6-464a793a437a"
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Label",
+                                        "id": "scoringFormSession",
+                                        "layout|anchor": "100%",
+                                        "name": "SID"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "id": "string",
+                                        "layout|anchor": "string",
+                                        "name": "string"
+                                    },
+                                    "name": "MyHiddenField1",
+                                    "designerId": "adb876c8-6bd1-4ea3-85c2-67c5f4b63fc5"
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Label",
+                                        "id": "TeamID",
+                                        "layout|anchor": "100%",
+                                        "name": "TeamID"
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "id": "string",
+                                        "layout|anchor": "string",
+                                        "name": "string"
+                                    },
+                                    "name": "MyHiddenField7",
+                                    "designerId": "9e13064c-85b6-4cee-b71a-9f6dec30200a"
+                                }
+                            ]
                         },
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.form.FieldSet",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fieldLabel": "Time 1",
-                                "labelWidth": 75,
-                                "name": "Time1",
-                                "readOnly": false,
-                                "width": 251
+                                "hidden": true,
+                                "id": "TimingFieldsID",
+                                "title": "Timing"
                             },
                             "configAlternates": {
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "name": "string",
-                                "width": "auto",
-                                "readOnly": "boolean"
+                                "layout|columnWidth": "auto",
+                                "title": "string",
+                                "hidden": "boolean",
+                                "id": "string"
                             },
-                            "name": "MyTextField7",
-                            "designerId": "18ba86ca-b108-4f93-b2d3-7a0c44ee7419"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Time 2",
-                                "labelWidth": 75,
-                                "name": "Time2",
-                                "readOnly": false,
-                                "width": 251
-                            },
-                            "configAlternates": {
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "name": "string",
-                                "width": "auto",
-                                "readOnly": "boolean"
-                            },
-                            "name": "MyTextField8",
-                            "designerId": "9620be7a-604d-4d44-84b4-f24b2a2ba50b"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Time 3",
-                                "labelWidth": 75,
-                                "name": "Time3",
-                                "readOnly": false,
-                                "width": 251
-                            },
-                            "configAlternates": {
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "name": "string",
-                                "width": "auto",
-                                "readOnly": "boolean"
-                            },
-                            "name": "MyTextField9",
-                            "designerId": "c12ba18c-46fa-4cb2-aeaf-e471a651b3be"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Time 4",
-                                "labelWidth": 75,
-                                "name": "Time4",
-                                "readOnly": false,
-                                "width": 251
-                            },
-                            "configAlternates": {
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "name": "string",
-                                "width": "auto",
-                                "readOnly": "boolean"
-                            },
-                            "name": "MyTextField10",
-                            "designerId": "64641080-3cf1-45df-9adb-8687a38cc121"
-                        },
-                        {
-                            "type": "Ext.form.field.Text",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Finish Time",
-                                "labelWidth": 75,
-                                "name": "FinishTime",
-                                "readOnly": false,
-                                "width": 251
-                            },
-                            "configAlternates": {
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "name": "string",
-                                "width": "auto",
-                                "readOnly": "boolean"
-                            },
-                            "name": "MyTextField11",
-                            "designerId": "57009d7e-b471-47b9-a59d-64b4a46d829e"
-                        },
-                        {
-                            "type": "Ext.form.field.ComboBox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "displayField": "ListItem",
-                                "fieldLabel": "Status",
-                                "labelWidth": 75,
-                                "name": "Status",
-                                "readOnly": false,
-                                "store": "RunStatusStore",
-                                "valueField": "IntValue"
-                            },
-                            "configAlternates": {
-                                "fieldLabel": "string",
-                                "labelWidth": "number",
-                                "name": "string",
-                                "readOnly": "boolean",
-                                "displayField": "datafield",
-                                "store": "store",
-                                "valueField": "datafield"
-                            },
-                            "name": "MyComboBox7",
-                            "designerId": "ade2409a-d2b1-47cb-a27f-c857d1f3fb3f"
-                        },
-                        {
-                            "type": "Ext.form.field.Hidden",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Label",
-                                "layout|anchor": "100%",
-                                "name": "uid"
-                            },
-                            "configAlternates": {
-                                "fieldLabel": "string",
-                                "layout|anchor": "string",
-                                "name": "string"
-                            },
-                            "name": "MyHiddenField5",
-                            "designerId": "07dfb456-1b3d-4f46-bfb6-464a793a437a"
-                        },
-                        {
-                            "type": "Ext.form.field.Hidden",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fieldLabel": "Label",
-                                "id": "scoringFormSession",
-                                "layout|anchor": "100%",
-                                "name": "SID"
-                            },
-                            "configAlternates": {
-                                "fieldLabel": "string",
-                                "id": "string",
-                                "layout|anchor": "string",
-                                "name": "string"
-                            },
-                            "name": "MyHiddenField1",
-                            "designerId": "adb876c8-6bd1-4ea3-85c2-67c5f4b63fc5"
+                            "name": "MyFieldSet4",
+                            "designerId": "4540d2c6-2849-47a6-9820-93786b656911",
+                            "cn": [
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout": "column"
+                                    },
+                                    "configAlternates": {
+                                        "layout": "string"
+                                    },
+                                    "name": "MyContainer9",
+                                    "designerId": "21ebdb21-8e71-40c4-8334-4c869b8ac9a1",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "html": "<p align=\"left\"><-------------------</p>",
+                                                "layout|columnWidth": 0.4,
+                                                "text": null
+                                            },
+                                            "configAlternates": {
+                                                "html": "string",
+                                                "layout|columnWidth": "auto",
+                                                "text": "string"
+                                            },
+                                            "name": "MyLabel5",
+                                            "designerId": "e2bcba64-8eb4-46a6-9d1f-c7f87d73e6d5"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "TotalSpeed",
+                                                "html": "<p align=\"center\">2.76</p>",
+                                                "id": "TotalSpeedID",
+                                                "layout|columnWidth": 0.2,
+                                                "text": null
+                                            },
+                                            "configAlternates": {
+                                                "text": "string",
+                                                "designer|displayName": "string",
+                                                "html": "string",
+                                                "id": "string",
+                                                "layout|columnWidth": "auto"
+                                            },
+                                            "name": "MyLabel8",
+                                            "designerId": "4c556838-f4d6-4e63-933d-2397a7ba3482"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "html": "<p align=\"right\">-------------------></p>",
+                                                "layout|columnWidth": 0.4,
+                                                "text": ""
+                                            },
+                                            "configAlternates": {
+                                                "text": "string",
+                                                "html": "string",
+                                                "layout|columnWidth": "auto"
+                                            },
+                                            "name": "MyLabel9",
+                                            "designerId": "a81a9cbc-2812-422f-8f3c-c184d0c93a44"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyContainer10",
+                                    "designerId": "2a7230da-7a67-482b-b963-a2304a6c5ce7",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "text": "|----------------------|------------|----------------------|"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string"
+                                            },
+                                            "name": "MyLabel5",
+                                            "designerId": "0f98a90f-83db-4c40-b716-991ef7b52e67"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.container.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout": "column"
+                                    },
+                                    "configAlternates": {
+                                        "layout": "string"
+                                    },
+                                    "name": "MyContainer12",
+                                    "designerId": "a529a409-14b4-4c08-a646-4a6f008a788c",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "Speed1",
+                                                "html": "<p align=\"center\">2.76</p>",
+                                                "id": "Speed1ID",
+                                                "layout|columnWidth": 0.4,
+                                                "text": null
+                                            },
+                                            "configAlternates": {
+                                                "html": "string",
+                                                "layout|columnWidth": "auto",
+                                                "text": "string",
+                                                "designer|displayName": "string",
+                                                "id": "string"
+                                            },
+                                            "name": "MyLabel5",
+                                            "designerId": "bb182bca-3041-453c-91eb-2b787ba7edfe"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "Speed2",
+                                                "html": "<p align=\"center\">2.76</p>",
+                                                "id": "Speed2ID",
+                                                "layout|columnWidth": 0.2,
+                                                "text": null
+                                            },
+                                            "configAlternates": {
+                                                "text": "string",
+                                                "html": "string",
+                                                "layout|columnWidth": "auto",
+                                                "designer|displayName": "string",
+                                                "id": "string"
+                                            },
+                                            "name": "MyLabel8",
+                                            "designerId": "f3e4eccf-4290-40e2-ab06-0581412905a5"
+                                        },
+                                        {
+                                            "type": "Ext.form.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "Speed3",
+                                                "html": "<p align=\"center\">2.76</p>",
+                                                "id": "Speed3ID",
+                                                "layout|columnWidth": 0.4,
+                                                "text": ""
+                                            },
+                                            "configAlternates": {
+                                                "text": "string",
+                                                "html": "string",
+                                                "layout|columnWidth": "auto",
+                                                "designer|displayName": "string",
+                                                "id": "string"
+                                            },
+                                            "name": "MyLabel9",
+                                            "designerId": "38054373-e49c-4b33-9016-be385eaa5ff5"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -564,14 +781,16 @@
                                             "userConfig": {
                                                 "fieldLabel": "Team",
                                                 "labelWidth": 75,
-                                                "name": "TeamID",
-                                                "readOnly": true
+                                                "name": "TeamName",
+                                                "readOnly": true,
+                                                "store": "TeamsStore"
                                             },
                                             "configAlternates": {
                                                 "fieldLabel": "string",
                                                 "labelWidth": "number",
                                                 "name": "string",
-                                                "readOnly": "boolean"
+                                                "readOnly": "boolean",
+                                                "store": "store"
                                             },
                                             "name": "MyComboBox",
                                             "designerId": "d7e962fc-46fc-4181-bee5-a78f95da9e42"
@@ -586,14 +805,16 @@
                                             "userConfig": {
                                                 "fieldLabel": "Class",
                                                 "labelWidth": 75,
-                                                "name": "ClassID",
-                                                "readOnly": true
+                                                "name": "ClassText",
+                                                "readOnly": true,
+                                                "store": "ClassStore"
                                             },
                                             "configAlternates": {
                                                 "fieldLabel": "string",
                                                 "labelWidth": "number",
                                                 "name": "string",
-                                                "readOnly": "boolean"
+                                                "readOnly": "boolean",
+                                                "store": "store"
                                             },
                                             "name": "MyComboBox2",
                                             "designerId": "9854b011-d20e-4f0c-93e5-478c10f58604"
@@ -672,6 +893,35 @@
                     "    },",
                     "    failure: function(form, action) {",
                     "        Ext.Msg.alert(\"Load failed\", action.result.errorMessage);",
+                    "    },",
+                    "    success: function(form, action) {",
+                    "        if (action.result.data.Status == 4) {",
+                    "            Ext.getCmp('TimingFieldsID').setHidden(false);",
+                    "",
+                    "            if (action.result.data.TotalSpeed == action.result.data.BestSpeed) {",
+                    "                Ext.getCmp('TotalSpeedID').setHtml(\"<p align=\\\"center\\\"><FONT color=\\\"#00FF00\\\">\" + action.result.data.TotalSpeed + \"</FONT></p>\");",
+                    "            } else {",
+                    "                Ext.getCmp('TotalSpeedID').setHtml(\"<p align=\\\"center\\\">\" + action.result.data.TotalSpeed + \"</p>\");",
+                    "            }",
+                    "",
+                    "            if (action.result.data.Speed1 == action.result.data.BestSpeed) {",
+                    "                Ext.getCmp('Speed1ID').setHtml(\"<p align=\\\"center\\\"><FONT color=\\\"#00FF00\\\">\" + action.result.data.Speed1 + \"</FONT></p>\");",
+                    "            } else {",
+                    "                Ext.getCmp('Speed1ID').setHtml(\"<p align=\\\"center\\\">\" + action.result.data.Speed1 + \"</p>\");",
+                    "            }",
+                    "",
+                    "            if (action.result.data.Speed2 == action.result.data.BestSpeed) {",
+                    "                Ext.getCmp('Speed2ID').setHtml(\"<p align=\\\"center\\\"><FONT color=\\\"#00FF00\\\">\" + action.result.data.Speed2 + \"</FONT></p>\");",
+                    "            } else {",
+                    "                Ext.getCmp('Speed2ID').setHtml(\"<p align=\\\"center\\\">\" + action.result.data.Speed2 + \"</p>\");",
+                    "            }",
+                    "",
+                    "            if (action.result.data.Speed3 == action.result.data.BestSpeed) {",
+                    "                Ext.getCmp('Speed3ID').setHtml(\"<p align=\\\"center\\\"><FONT color=\\\"#00FF00\\\">\" + action.result.data.Speed3 + \"</FONT></p>\");",
+                    "            } else {",
+                    "                Ext.getCmp('Speed3ID').setHtml(\"<p align=\\\"center\\\">\" + action.result.data.Speed3 + \"</p>\");",
+                    "            }",
+                    "        }",
                     "    }",
                     "});"
                 ],

@@ -9,8 +9,9 @@
         "designer|userAlias": "teamspanel",
         "designer|userClassName": "TeamsPanel",
         "height": 419,
+        "layout": "fit",
         "title": "Teams",
-        "width": 719
+        "width": 807
     },
     "configAlternates": {
         "designer|initialView": "boolean",
@@ -18,7 +19,8 @@
         "designer|userClassName": "string",
         "height": "auto",
         "title": "string",
-        "width": "auto"
+        "width": "auto",
+        "layout": "string"
     },
     "name": "RunsPanel2",
     "designerId": "1368b9af-3809-4139-be8c-ca81d8deaa60",
@@ -158,12 +160,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "scrollable": "both",
                 "store": "TeamsStore",
                 "title": null
             },
             "configAlternates": {
                 "store": "store",
-                "title": "string"
+                "title": "string",
+                "scrollable": "auto"
             },
             "name": "MyGridPanel",
             "designerId": "385dc274-557f-4fe1-a522-522519eb1886",
@@ -266,26 +270,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "LaneText",
-                        "text": "Default Lane",
-                        "width": 100
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string",
-                        "width": "auto"
-                    },
-                    "name": "MyColumn20",
-                    "designerId": "a3ef56b8-9373-4a96-865b-c34bd109ccfe"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
                         "dataIndex": "ClassText",
                         "text": "Default Class",
                         "width": 129
@@ -306,12 +290,34 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "dataIndex": "BestSpeed",
+                        "text": "Best Speed",
+                        "width": 100
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyColumn20",
+                    "designerId": "a3ef56b8-9373-4a96-865b-c34bd109ccfe"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
                         "dataIndex": "Notes",
+                        "flex": 1,
                         "text": "Notes"
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",
-                        "text": "string"
+                        "text": "string",
+                        "flex": "number"
                     },
                     "name": "MyColumn22",
                     "designerId": "6fb4d5fc-8a92-44c0-acb8-1746c9ba41e3"

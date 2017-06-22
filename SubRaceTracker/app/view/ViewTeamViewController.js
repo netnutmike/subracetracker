@@ -29,7 +29,7 @@ Ext.define('Admin.view.ViewTeamViewController', {
                     action: 'update',
                     dataset: 'teams'
                 },
-                //waitMsg: 'Saving new DLP Exception...',
+
                 success: function(fp, o) {
                     Ext.getStore('TeamsStore').load();
                     Ext.getCmp('ViewTeamWindow').close();

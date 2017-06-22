@@ -72,6 +72,24 @@ Ext.define('Admin.model.Races', {
         },
         {
             name: 'Notes'
+        },
+        {
+            name: 'Speed1'
+        },
+        {
+            name: 'Speed2'
+        },
+        {
+            name: 'Speed3'
+        },
+        {
+            name: 'TotalSpeed'
+        },
+        {
+            name: 'BestSpeed'
+        },
+        {
+            name: 'LowestSpeed'
         }
     ]
 });

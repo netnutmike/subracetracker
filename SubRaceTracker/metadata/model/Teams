@@ -189,6 +189,38 @@
             },
             "name": "MyField38",
             "designerId": "e993f0bc-6e3c-4d10-a8b1-437728112744"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "BestSpeed"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField47",
+            "designerId": "9cc9541d-733a-4f39-9dde-b148101e8498"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "BestRunID"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyField48",
+            "designerId": "57dd50c4-30a7-4fea-8f68-0ef7b5d8adcf"
         }
     ]
 }

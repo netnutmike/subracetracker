@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "options",
-        "designer|userClassName": "OptionsViewController"
+        "designer|userAlias": "leaderspanelmenu",
+        "designer|userClassName": "TeamsPanelMenuViewController2"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "name": "NewRunViewController3",
-    "designerId": "3a5fb4ff-f974-466f-94be-fcb72c7caa26"
+    "name": "TeamsPanelMenuViewController2",
+    "designerId": "49289460-9259-4169-b8b3-7b6a05bb8beb"
 }

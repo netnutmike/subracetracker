@@ -12,7 +12,13 @@
             "Lists",
             "Participants",
             "Races",
-            "Teams"
+            "Teams",
+            "Leaderboard",
+            "ClassesSummary",
+            "RunsByDay",
+            "RunTimes",
+            "RunsSummary",
+            "ReadyQueue"
         ],
         "name": "Admin",
         "stores": [
@@ -33,7 +39,14 @@
             "RacesStoreNotScored",
             "RacesStoreScored",
             "ParticipantsInWaterStore",
-            "TeamParticipantHistoryStore"
+            "TeamParticipantHistoryStore",
+            "LeaderboardStore",
+            "ClassesSummaryStore",
+            "RunsByDayStore",
+            "RunTimesStore",
+            "RunsSummaryStore",
+            "ParticipantPersonalHistoryStore",
+            "ReadyQueueStore"
         ],
         "views": [
             "DivePanel",
@@ -44,7 +57,7 @@
             "ScoringPanel",
             "TeamsPanel",
             "ParticipantsPanel",
-            "Options",
+            "OptionsPanel",
             "Scoring",
             "NewTeam",
             "DiverIn",
@@ -60,7 +73,11 @@
             "DiveMaster",
             "ParticipantsActivity",
             "LeaderBoard",
-            "ViewRun"
+            "ViewRun",
+            "ViewTeamParticipantsPanelMenu",
+            "ViewTeamRunsPanelMenu",
+            "LeadersPanelMenu",
+            "ActivityPanelMenu"
         ]
     },
     "configAlternates": {

@@ -24,9 +24,11 @@ Ext.define('Admin.view.ViewRun', {
         'Ext.button.Button',
         'Ext.form.Panel',
         'Ext.form.FieldSet',
+        'Ext.form.field.Date',
         'Ext.form.field.ComboBox',
         'Ext.form.field.TextArea',
-        'Ext.form.field.Hidden'
+        'Ext.form.field.Hidden',
+        'Ext.form.Label'
     ],
 
     controller: 'viewrun',
@@ -86,7 +88,7 @@ Ext.define('Admin.view.ViewRun', {
                                     readOnly: false
                                 },
                                 {
-                                    xtype: 'textfield',
+                                    xtype: 'datefield',
                                     width: 251,
                                     fieldLabel: 'Race Date',
                                     labelWidth: 75,
@@ -98,14 +100,20 @@ Ext.define('Admin.view.ViewRun', {
                                     fieldLabel: 'Team',
                                     labelWidth: 75,
                                     name: 'TeamID',
-                                    readOnly: false
+                                    readOnly: false,
+                                    displayField: 'TeamName',
+                                    store: 'TeamsStore',
+                                    valueField: 'uid'
                                 },
                                 {
                                     xtype: 'combobox',
                                     fieldLabel: 'Class',
                                     labelWidth: 75,
                                     name: 'Class',
-                                    readOnly: false
+                                    readOnly: false,
+                                    displayField: 'ListItem',
+                                    store: 'ClassStore',
+                                    valueField: 'IntValue'
                                 },
                                 {
                                     xtype: 'combobox',
@@ -142,70 +150,124 @@ Ext.define('Admin.view.ViewRun', {
                     html: '&nbsp;'
                 },
                 {
-                    xtype: 'fieldset',
+                    xtype: 'container',
                     columnWidth: 0.48,
-                    title: 'Scoring',
                     items: [
                         {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Start Time',
-                            labelWidth: 75,
-                            name: 'StartTime',
-                            readOnly: true
+                            xtype: 'fieldset',
+                            title: 'Scoring',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    width: 251,
+                                    fieldLabel: 'Start Time',
+                                    labelWidth: 75,
+                                    name: 'Time1',
+                                    readOnly: true
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    width: 251,
+                                    fieldLabel: 'Time 1',
+                                    labelWidth: 75,
+                                    name: 'Time2',
+                                    readOnly: true
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    width: 251,
+                                    fieldLabel: 'Time 2',
+                                    labelWidth: 75,
+                                    name: 'Time3',
+                                    readOnly: true
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    width: 251,
+                                    fieldLabel: 'Finish Time',
+                                    labelWidth: 75,
+                                    name: 'Time4',
+                                    readOnly: true
+                                },
+                                {
+                                    xtype: 'hiddenfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Label',
+                                    name: 'uid'
+                                },
+                                {
+                                    xtype: 'hiddenfield',
+                                    anchor: '100%',
+                                    id: 'ViewRunFormSession',
+                                    fieldLabel: 'Label',
+                                    name: 'SID'
+                                }
+                            ]
                         },
                         {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Time 1',
-                            labelWidth: 75,
-                            name: 'Time1',
-                            readOnly: true
-                        },
-                        {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Time 2',
-                            labelWidth: 75,
-                            name: 'Time2',
-                            readOnly: true
-                        },
-                        {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Time 3',
-                            labelWidth: 75,
-                            name: 'Time3',
-                            readOnly: true
-                        },
-                        {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Time 4',
-                            labelWidth: 75,
-                            name: 'Time4',
-                            readOnly: true
-                        },
-                        {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Finish Time',
-                            labelWidth: 75,
-                            name: 'FinishTime',
-                            readOnly: true
-                        },
-                        {
-                            xtype: 'hiddenfield',
-                            anchor: '100%',
-                            fieldLabel: 'Label',
-                            name: 'uid'
-                        },
-                        {
-                            xtype: 'hiddenfield',
-                            anchor: '100%',
-                            id: 'ViewRunFormSession',
-                            fieldLabel: 'Label',
-                            name: 'SID'
+                            xtype: 'fieldset',
+                            hidden: true,
+                            id: 'RunTimingFieldsID',
+                            title: 'Timing',
+                            items: [
+                                {
+                                    xtype: 'container',
+                                    layout: 'column',
+                                    items: [
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.4,
+                                            html: '<p align="left"><-------------------</p>'
+                                        },
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.2,
+                                            html: '<p align="center">2.76</p>',
+                                            id: 'RunTotalSpeedID'
+                                        },
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.4,
+                                            html: '<p align="right">-------------------></p>',
+                                            text: ''
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'container',
+                                    items: [
+                                        {
+                                            xtype: 'label',
+                                            text: '|----------------------|------------|----------------------|'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'container',
+                                    layout: 'column',
+                                    items: [
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.4,
+                                            html: '<p align="center">2.76</p>',
+                                            id: 'RunSpeed1ID'
+                                        },
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.2,
+                                            html: '<p align="center">2.76</p>',
+                                            id: 'RunSpeed2ID'
+                                        },
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.4,
+                                            html: '<p align="center">2.76</p>',
+                                            id: 'RunSpeed3ID',
+                                            text: ''
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

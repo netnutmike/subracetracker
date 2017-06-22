@@ -38,6 +38,7 @@
                 "container|align": "stretch",
                 "id": "uploadParticipantFileForm",
                 "layout": "vbox",
+                "standardSubmit": false,
                 "title": null
             },
             "configAlternates": {
@@ -45,7 +46,8 @@
                 "container|align": "string",
                 "id": "string",
                 "layout": "string",
-                "title": "string"
+                "title": "string",
+                "standardSubmit": "boolean"
             },
             "name": "MyForm1",
             "designerId": "e5d03c7a-823f-4c6b-853b-19c7949f217b",
@@ -93,11 +95,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "fieldLabel": "File",
-                        "labelWidth": 75
+                        "labelWidth": 75,
+                        "name": "filename"
                     },
                     "configAlternates": {
                         "fieldLabel": "string",
-                        "labelWidth": "number"
+                        "labelWidth": "number",
+                        "name": "string"
                     },
                     "name": "MyFileUpload",
                     "designerId": "fcadee2e-4c08-4e3d-ae58-482988965fb0"
@@ -150,7 +154,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "icon": "/images/upload.png",
+                        "icon": "/images/database_upload.png",
                         "layout|flex": null,
                         "text": "Upload"
                     },
@@ -187,7 +191,7 @@
                                     "            action: 'upload',",
                                     "            dataset: 'participants'",
                                     "        },",
-                                    "        //waitMsg: 'Saving new DLP Exception...',",
+                                    "",
                                     "        success: function(fp, o) {",
                                     "            Ext.getStore('ParticipantsStore').load();",
                                     "            Ext.getCmp('UploadParticipantsWindow').close();",

@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "leaderspanelmenu",
+        "designer|userClassName": "TeamsPanelMenuViewModel2"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "TeamsPanelMenuViewModel2",
+    "designerId": "5804e11e-84bd-479c-94e8-eda6ebf4b4cc"
+}

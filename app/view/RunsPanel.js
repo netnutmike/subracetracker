@@ -62,7 +62,7 @@ Ext.define('Admin.view.RunsPanel', {
                     xtype: 'numbercolumn',
                     width: 70,
                     dataIndex: 'RaceID',
-                    text: 'Race Id',
+                    text: 'Run ID',
                     format: '00'
                 },
                 {
@@ -73,39 +73,9 @@ Ext.define('Admin.view.RunsPanel', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    width: 80,
-                    dataIndex: 'StartTime',
-                    text: 'Start Time'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    width: 89,
-                    dataIndex: 'FinishTime',
-                    text: 'Finish Time'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    width: 74,
-                    dataIndex: 'Time1',
-                    text: 'Time1'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    width: 69,
-                    dataIndex: 'Time2',
-                    text: 'Time2'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    width: 64,
-                    dataIndex: 'Time3',
-                    text: 'Time3'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    width: 62,
-                    dataIndex: 'Time4',
-                    text: 'Time4'
+                    width: 82,
+                    dataIndex: 'BestSpeed',
+                    text: 'Speed'
                 },
                 {
                     xtype: 'gridcolumn',

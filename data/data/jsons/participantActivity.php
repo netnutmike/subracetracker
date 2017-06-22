@@ -61,8 +61,8 @@
             echo "\"TeamName\":" . json_encode($teamRS['TeamName']) . ",";	
             echo "\"ParticipantID\":\"" . $rs['ParticipantID'] . "\",";	
             echo "\"ParticipantName\":" . json_encode($diverRS['DiverName']) . ",";
-            echo "\"Action\":\"" . $rs['Status'] . "\",";	
-            echo "\"ActionText\":\"" . GetListData(4, $rs['Status']) . "\",";
+            echo "\"Action\":\"" . $rs['Action'] . "\",";	
+            echo "\"ActionText\":\"" . GetListData(4, $rs['Action']) . "\",";
             echo "\"TrackedTime\":\"" . $rs['TrackedTime'] . "\",";
             echo "\"Timestamp\":\"" . $rs['Timestamp'] . "\",";
             echo "\"RaceID\":\"" . $rs['RaceID'] . "\",";

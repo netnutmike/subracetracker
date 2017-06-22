@@ -33,7 +33,8 @@ Ext.define('Admin.view.TeamsPanel', {
         type: 'teamspanel'
     },
     height: 419,
-    width: 719,
+    width: 807,
+    layout: 'fit',
     title: 'Teams',
     defaultListenerScope: true,
 
@@ -69,6 +70,7 @@ Ext.define('Admin.view.TeamsPanel', {
     items: [
         {
             xtype: 'gridpanel',
+            scrollable: 'both',
             store: 'TeamsStore',
             columns: [
                 {
@@ -97,18 +99,19 @@ Ext.define('Admin.view.TeamsPanel', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    width: 100,
-                    dataIndex: 'LaneText',
-                    text: 'Default Lane'
-                },
-                {
-                    xtype: 'gridcolumn',
                     width: 129,
                     dataIndex: 'ClassText',
                     text: 'Default Class'
                 },
                 {
                     xtype: 'gridcolumn',
+                    width: 100,
+                    dataIndex: 'BestSpeed',
+                    text: 'Best Speed'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    flex: 1,
                     dataIndex: 'Notes',
                     text: 'Notes'
                 }

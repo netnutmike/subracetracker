@@ -26,6 +26,7 @@ Ext.define('Admin.view.Scoring', {
         'Ext.form.FieldSet',
         'Ext.form.field.ComboBox',
         'Ext.form.field.Hidden',
+        'Ext.form.Label',
         'Ext.form.field.TextArea'
     ],
 
@@ -70,80 +71,141 @@ Ext.define('Admin.view.Scoring', {
             bodyPadding: 10,
             items: [
                 {
-                    xtype: 'fieldset',
+                    xtype: 'container',
                     columnWidth: 0.48,
-                    title: 'Scoring',
                     items: [
                         {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Start Time',
-                            labelWidth: 75,
-                            name: 'StartTime',
-                            readOnly: false
+                            xtype: 'fieldset',
+                            title: 'Scoring',
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    width: 251,
+                                    fieldLabel: 'Start Time',
+                                    labelWidth: 75,
+                                    name: 'Time1',
+                                    readOnly: false
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    width: 251,
+                                    fieldLabel: 'Time 2',
+                                    labelWidth: 75,
+                                    name: 'Time2',
+                                    readOnly: false
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    width: 251,
+                                    fieldLabel: 'Time 3',
+                                    labelWidth: 75,
+                                    name: 'Time3',
+                                    readOnly: false
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    width: 251,
+                                    fieldLabel: 'Finish Time',
+                                    labelWidth: 75,
+                                    name: 'Time4',
+                                    readOnly: false
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    fieldLabel: 'Status',
+                                    labelWidth: 75,
+                                    name: 'Status',
+                                    readOnly: false,
+                                    displayField: 'ListItem',
+                                    store: 'RunStatusStore',
+                                    valueField: 'IntValue'
+                                },
+                                {
+                                    xtype: 'hiddenfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Label',
+                                    name: 'uid'
+                                },
+                                {
+                                    xtype: 'hiddenfield',
+                                    anchor: '100%',
+                                    id: 'scoringFormSession',
+                                    fieldLabel: 'Label',
+                                    name: 'SID'
+                                },
+                                {
+                                    xtype: 'hiddenfield',
+                                    anchor: '100%',
+                                    id: 'TeamID',
+                                    fieldLabel: 'Label',
+                                    name: 'TeamID'
+                                }
+                            ]
                         },
                         {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Time 1',
-                            labelWidth: 75,
-                            name: 'Time1',
-                            readOnly: false
-                        },
-                        {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Time 2',
-                            labelWidth: 75,
-                            name: 'Time2',
-                            readOnly: false
-                        },
-                        {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Time 3',
-                            labelWidth: 75,
-                            name: 'Time3',
-                            readOnly: false
-                        },
-                        {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Time 4',
-                            labelWidth: 75,
-                            name: 'Time4',
-                            readOnly: false
-                        },
-                        {
-                            xtype: 'textfield',
-                            width: 251,
-                            fieldLabel: 'Finish Time',
-                            labelWidth: 75,
-                            name: 'FinishTime',
-                            readOnly: false
-                        },
-                        {
-                            xtype: 'combobox',
-                            fieldLabel: 'Status',
-                            labelWidth: 75,
-                            name: 'Status',
-                            readOnly: false,
-                            displayField: 'ListItem',
-                            store: 'RunStatusStore',
-                            valueField: 'IntValue'
-                        },
-                        {
-                            xtype: 'hiddenfield',
-                            anchor: '100%',
-                            fieldLabel: 'Label',
-                            name: 'uid'
-                        },
-                        {
-                            xtype: 'hiddenfield',
-                            anchor: '100%',
-                            id: 'scoringFormSession',
-                            fieldLabel: 'Label',
-                            name: 'SID'
+                            xtype: 'fieldset',
+                            hidden: true,
+                            id: 'TimingFieldsID',
+                            title: 'Timing',
+                            items: [
+                                {
+                                    xtype: 'container',
+                                    layout: 'column',
+                                    items: [
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.4,
+                                            html: '<p align="left"><-------------------</p>'
+                                        },
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.2,
+                                            html: '<p align="center">2.76</p>',
+                                            id: 'TotalSpeedID'
+                                        },
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.4,
+                                            html: '<p align="right">-------------------></p>',
+                                            text: ''
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'container',
+                                    items: [
+                                        {
+                                            xtype: 'label',
+                                            text: '|----------------------|------------|----------------------|'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'container',
+                                    layout: 'column',
+                                    items: [
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.4,
+                                            html: '<p align="center">2.76</p>',
+                                            id: 'Speed1ID'
+                                        },
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.2,
+                                            html: '<p align="center">2.76</p>',
+                                            id: 'Speed2ID'
+                                        },
+                                        {
+                                            xtype: 'label',
+                                            columnWidth: 0.4,
+                                            html: '<p align="center">2.76</p>',
+                                            id: 'Speed3ID',
+                                            text: ''
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -184,15 +246,17 @@ Ext.define('Admin.view.Scoring', {
                                             xtype: 'combobox',
                                             fieldLabel: 'Team',
                                             labelWidth: 75,
-                                            name: 'TeamID',
-                                            readOnly: true
+                                            name: 'TeamName',
+                                            readOnly: true,
+                                            store: 'TeamsStore'
                                         },
                                         {
                                             xtype: 'combobox',
                                             fieldLabel: 'Class',
                                             labelWidth: 75,
-                                            name: 'ClassID',
-                                            readOnly: true
+                                            name: 'ClassText',
+                                            readOnly: true,
+                                            store: 'ClassStore'
                                         }
                                     ]
                                 }

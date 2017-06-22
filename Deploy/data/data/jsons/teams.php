@@ -52,6 +52,8 @@
                 echo "\"LaneText\":\"" . GetListData(8, $rs['Lane']) . "\",";
 		echo "\"Class\":\"" . $rs['Class'] . "\",";	
 		echo "\"ClassText\":\"" . GetListData(6,$rs['Class']) . "\",";
+                echo "\"BestSpeed\":\"" . $rs['BestSpeed'] . "\",";
+                echo "\"BestRunID\":\"" . $rs['BestRunID'] . "\",";
 		echo "\"Notes\":" . json_encode($rs['Notes']);
 		echo "}";
 	}

@@ -107,3 +107,61 @@ function jsonClean($input) {
 	return $newvar;
 }
 
+function TimeToFrames($h, $m, $s, $fps) {
+    
+    //echo "inputs:\r\n";
+    //echo $h . "\r\n";
+    //echo $m . "\r\n";
+    //echo $s . "\r\n";
+    //echo $fps . "\r\n";
+    
+    $framecnt = 0;
+    
+    $framecnt += ($h * ($fps*60*60));
+    $framecnt += ($m * ($fps*60));
+    $framecnt += ($s * $fps);
+    
+    return $framecnt;
+}
+
+function SeperateTimeHours($tm) {
+    if (substr_count($tm, ":") == 3) {
+        $tmar = explode(":", $tm);
+        //print_r($tmar);
+        return($tmar[0]);
+    } else {
+        return 0;
+    }
+}
+
+function SeperateTimeMinutes($tm) {
+    if (substr_count($tm, ":") >= 2) {
+        $tmar = explode(":", $tm);
+        return($tmar[count($tmar) - 3]);
+    } else {
+        return 0;
+    }
+}
+
+function SeperateTimeSeconds($tm) {
+    if (substr_count($tm, ":") >= 1) {
+        $tmar = explode(":", $tm);
+        return($tmar[count($tmar) - 2]);
+    } else {
+        return 0;
+    }
+}
+
+function SeperateTimeFrames($tm) {
+    if (trim($tm) != "") {
+        if (substr_count($tm, ":") > 0) {
+            $tmar = explode(":", $tm);
+            return($tmar[count($tmar) - 1]);
+        } else {
+            return($tm);
+        }
+    } else {
+        return 0;
+        
+    }
+}

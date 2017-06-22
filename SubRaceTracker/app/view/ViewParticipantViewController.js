@@ -29,7 +29,7 @@ Ext.define('Admin.view.ViewParticipantViewController', {
                     action: 'update',
                     dataset: 'participants'
                 },
-                //waitMsg: 'Saving new DLP Exception...',
+
                 success: function(fp, o) {
                     Ext.getStore('ParticipantsStore').load();
                     Ext.getCmp('ViewParticipantWindow').close();
@@ -68,7 +68,7 @@ Ext.define('Admin.view.ViewParticipantViewController', {
             }
         });
 
-        Ext.getStore('ParticipantHistoryStore').load({params: {dataset: 'participantActivity', participantID: ID}});
+        Ext.getStore('ParticipantPersonalHistoryStore').load({params: {dataset: 'participantActivity', participantID: ID}});
     }
 
 });

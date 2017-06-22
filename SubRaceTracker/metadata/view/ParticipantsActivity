@@ -134,7 +134,11 @@
                     "userConfig": {
                         "fn": "RowDblClick",
                         "implHandler": [
-                            "Ext.create('Admin.view.ViewParticipant').show();"
+                            "e.stopEvent();",
+                            "selectedvalue = record.get('uid');",
+                            "selectedrec = record;",
+                            "popup = Ext.create('Admin.view.ActivityPanelMenu');",
+                            "popup.showAt(e.getXY());"
                         ],
                         "name": "rowdblclick",
                         "scope": "me"
@@ -161,7 +165,7 @@
                             "e.stopEvent();",
                             "selectedvalue = record.get('uid');",
                             "selectedrec = record;",
-                            "popup = Ext.create('Admin.view.ParticipantsPanelMenu');",
+                            "popup = Ext.create('Admin.view.ActivityPanelMenu');",
                             "popup.showAt(e.getXY());"
                         ],
                         "name": "itemcontextmenu",
@@ -291,7 +295,7 @@
                     "designerId": "992cbf51-f9c6-486a-b9ac-9e60e6c43b0b"
                 },
                 {
-                    "type": "Ext.grid.column.Number",
+                    "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",
                         "type": "array"
@@ -305,7 +309,7 @@
                         "dataIndex": "datafield",
                         "text": "string"
                     },
-                    "name": "MyNumberColumn1",
+                    "name": "MyColumn5",
                     "designerId": "03822bd5-2b53-49c1-89b3-f1af6ff9bf00"
                 }
             ]

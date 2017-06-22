@@ -80,7 +80,14 @@
             echo "\"Class\":\"" . $rs['Class'] . "\",";
             echo "\"ClassText\":\"" . GetListData(5, $rs['Class']) . "\",";
             echo "\"RaceDate\":\"" . $rs['RaceDate'] . "\",";
-            echo "\"Notes\":\"" . $rs['Notes'] . "\"";
+            echo "\"Speed1\":\"" . $rs['Speed1'] . "\",";
+            echo "\"Speed2\":\"" . $rs['Speed2'] . "\",";
+            echo "\"Speed3\":\"" . $rs['Speed3'] . "\",";
+            echo "\"Speed4\":\"" . $rs['Speed4'] . "\",";
+            echo "\"TotalSpeed\":\"" . $rs['TotalSpeed'] . "\",";
+            echo "\"BestSpeed\":\"" . $rs['BestSpeed'] . "\",";
+            echo "\"LowestSpeed\":\"" . $rs['LowestSpeed'] . "\",";
+            echo "\"Notes\":" . json_encode($rs['Notes']);
             echo "}";
 	}
 	echo "]}";

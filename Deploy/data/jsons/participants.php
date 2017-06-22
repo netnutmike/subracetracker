@@ -4,6 +4,13 @@
 	
 	if (isset($_REQUEST['participantID']) && trim($_REQUEST['participantID']) != "")
 		$query = "SELECT * from Participants where uid='" . trim($_REQUEST['participantID']) . "'";
+        
+        else if (isset($_REQUEST['status']) && trim($_REQUEST['status']) != "")
+		$query = "SELECT * from Participants where Status='" . trim($_REQUEST['status']) . "'";
+        
+        else if (isset($_REQUEST['teamID']) && trim($_REQUEST['teamID']) != "")
+		$query = "SELECT * from Participants where TeamID='" . trim($_REQUEST['teamID']) . "'";
+        
 	else
 		$query = "SELECT * from Participants";
                 
@@ -46,7 +53,8 @@
             echo "\"uid\":" . $rs['uid'] . ",";
             echo "\"TeamID\":\"" . $rs['TeamID'] . "\",";	
             echo "\"TeamName\":" . json_encode($teamRS['TeamName']) . ",";	
-            echo "\"DiverName\":" . json_encode($rs['DiverName']) . ",";	
+            echo "\"DiverName\":" . json_encode($rs['DiverName']) . ",";
+            echo "\"DiverID\":" . json_encode($rs['DiverID']) . ",";
             echo "\"Status\":\"" . $rs['Status'] . "\",";	
             echo "\"StatusText\":\"" . GetListData(2, $rs['Status']) . "\"";
             echo "}";

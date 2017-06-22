@@ -1,0 +1,74 @@
+{
+    "type": "Ext.menu.Menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "viewteamparticipantspanelmenu",
+        "designer|userClassName": "ViewTeamParticipantsPanelMenu",
+        "height": 38,
+        "width": 192
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "TeamsPanelMenu1",
+    "designerId": "0038306a-667d-47dd-b10d-7c3277aa979d",
+    "viewControllerInstanceId": "1af42a07-f979-4aa6-8f8d-fae290d93aa8",
+    "viewModelInstanceId": "44697f20-9401-4e2c-8ef3-bb7470b83f7d",
+    "cn": [
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/edit.png",
+                "text": "View / Edit Participant"
+            },
+            "configAlternates": {
+                "text": "string",
+                "icon": "string"
+            },
+            "name": "MyMenuItem",
+            "designerId": "50485942-0746-4ab9-9b8d-be307a95cee6",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "e.stopEvent();",
+                            "var ParticipantWindow = Ext.create('Admin.view.ViewParticipant');",
+                            "ParticipantWindow.show();",
+                            "ParticipantWindow.fireEvent('loadRecord',{ID: selectedvalue});"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "9ff1dcbc-36a7-4f9e-8ac9-f893e0987524"
+                }
+            ]
+        }
+    ]
+}

@@ -79,6 +79,35 @@ Ext.define('Admin.view.ViewRunViewController', {
             },
             failure: function(form, action) {
                 Ext.Msg.alert("Load failed", action.result.errorMessage);
+            },
+            success: function(form, action) {
+                if (action.result.data.Status == 4) {
+                    Ext.getCmp('RunTimingFieldsID').setHidden(false);
+
+                    if (action.result.data.TotalSpeed == action.result.data.BestSpeed) {
+                        Ext.getCmp('RunTotalSpeedID').setHtml("<p align=\"center\"><FONT color=\"#00FF00\">" + action.result.data.TotalSpeed + "</FONT></p>");
+                    } else {
+                        Ext.getCmp('RunTotalSpeedID').setHtml("<p align=\"center\">" + action.result.data.TotalSpeed + "</p>");
+                    }
+
+                    if (action.result.data.Speed1 == action.result.data.BestSpeed) {
+                        Ext.getCmp('RunSpeed1ID').setHtml("<p align=\"center\"><FONT color=\"#00FF00\">" + action.result.data.Speed1 + "</FONT></p>");
+                    } else {
+                        Ext.getCmp('RunSpeed1ID').setHtml("<p align=\"center\">" + action.result.data.Speed1 + "</p>");
+                    }
+
+                    if (action.result.data.Speed2 == action.result.data.BestSpeed) {
+                        Ext.getCmp('RunSpeed2ID').setHtml("<p align=\"center\"><FONT color=\"#00FF00\">" + action.result.data.Speed2 + "</FONT></p>");
+                    } else {
+                        Ext.getCmp('RunSpeed2ID').setHtml("<p align=\"center\">" + action.result.data.Speed2 + "</p>");
+                    }
+
+                    if (action.result.data.Speed3 == action.result.data.BestSpeed) {
+                        Ext.getCmp('RunSpeed3ID').setHtml("<p align=\"center\"><FONT color=\"#00FF00\">" + action.result.data.Speed3 + "</FONT></p>");
+                    } else {
+                        Ext.getCmp('RunSpeed3ID').setHtml("<p align=\"center\">" + action.result.data.Speed3 + "</p>");
+                    }
+                }
             }
         });
     }

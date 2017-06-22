@@ -42,6 +42,7 @@ Ext.define('Admin.view.UploadParticipants', {
             xtype: 'form',
             id: 'uploadParticipantFileForm',
             bodyPadding: 10,
+            standardSubmit: false,
             layout: {
                 type: 'vbox',
                 align: 'stretch'
@@ -59,7 +60,8 @@ Ext.define('Admin.view.UploadParticipants', {
                 {
                     xtype: 'filefield',
                     fieldLabel: 'File',
-                    labelWidth: 75
+                    labelWidth: 75,
+                    name: 'filename'
                 },
                 {
                     xtype: 'hiddenfield',
@@ -79,7 +81,7 @@ Ext.define('Admin.view.UploadParticipants', {
                 {
                     xtype: 'button',
                     handler: 'uploadButtonClicked',
-                    icon: '/images/upload.png',
+                    icon: '/images/database_upload.png',
                     text: 'Upload'
                 },
                 {

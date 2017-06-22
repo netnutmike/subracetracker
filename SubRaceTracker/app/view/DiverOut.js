@@ -68,6 +68,7 @@ Ext.define('Admin.view.DiverOut', {
             items: [
                 {
                     xtype: 'textfield',
+                    id: 'DiverOutID',
                     width: 251,
                     fieldLabel: 'Diver #',
                     labelWidth: 75,

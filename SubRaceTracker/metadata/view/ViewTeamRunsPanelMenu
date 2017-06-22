@@ -1,0 +1,74 @@
+{
+    "type": "Ext.menu.Menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "viewteamrunspanelmenu",
+        "designer|userClassName": "ViewTeamRunsPanelMenu",
+        "height": 38,
+        "width": 192
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "RunsPanelMenu1",
+    "designerId": "f723c476-b8c0-41df-86c1-fd9b67d186a9",
+    "viewControllerInstanceId": "ceea39d6-1e35-47b2-8ec2-b2526c189461",
+    "viewModelInstanceId": "2460aef9-640d-40cc-9518-72435cdebdfb",
+    "cn": [
+        {
+            "type": "Ext.menu.Item",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "icon": "/images/edit.png",
+                "text": "View / Edit Run"
+            },
+            "configAlternates": {
+                "text": "string",
+                "icon": "string"
+            },
+            "name": "MyMenuItem",
+            "designerId": "21f1d909-0650-4fab-bf5d-f09bede30d07",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item",
+                            "e"
+                        ],
+                        "fn": "handler",
+                        "implHandler": [
+                            "e.stopEvent();",
+                            "var ScoringWindow = Ext.create('Admin.view.ViewRun');",
+                            "ScoringWindow.show();",
+                            "ScoringWindow.fireEvent('loadRecord',{RunID: selectedvalue});"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "handler",
+                    "designerId": "9b50cc62-6ded-4606-86a3-e51f120ad870"
+                }
+            ]
+        }
+    ]
+}

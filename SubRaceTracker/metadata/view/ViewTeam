@@ -93,7 +93,7 @@
                                     "            action: 'update',",
                                     "            dataset: 'teams'",
                                     "        },",
-                                    "        //waitMsg: 'Saving new DLP Exception...',",
+                                    "        ",
                                     "        success: function(fp, o) {",
                                     "            Ext.getStore('TeamsStore').load();",
                                     "            Ext.getCmp('ViewTeamWindow').close();",
@@ -603,14 +603,36 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "DiverName",
-                                        "text": "Diver Name"
+                                        "text": "Diver Name",
+                                        "width": 183
                                     },
                                     "configAlternates": {
                                         "dataIndex": "datafield",
-                                        "text": "string"
+                                        "text": "string",
+                                        "width": "auto"
                                     },
                                     "name": "MyColumn27",
                                     "designerId": "4541406d-62f9-4800-93f7-44177856bee5"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "DiverID",
+                                        "text": "Diver #",
+                                        "width": 92
+                                    },
+                                    "configAlternates": {
+                                        "dataIndex": "datafield",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyColumn52",
+                                    "designerId": "9c3ed227-748d-445a-aae5-070f5de7bfee"
                                 },
                                 {
                                     "type": "Ext.grid.column.Column",
@@ -629,6 +651,61 @@
                                     },
                                     "name": "MyColumn28",
                                     "designerId": "f89d9292-ca72-4cda-bfda-3ef06cf0b48c"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelRowDblClick",
+                                        "implHandler": [
+                                            "e.stopEvent();",
+                                            "var ParticipantWindow = Ext.create('Admin.view.ViewParticipant');",
+                                            "ParticipantWindow.show();",
+                                            "ParticipantWindow.fireEvent('loadRecord',{ID: record.get('uid')});"
+                                        ],
+                                        "name": "rowdblclick",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onGridpanelRowDblClick",
+                                    "designerId": "873d050a-15a6-4beb-9095-920d8d0e1ce7"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelRowContextMenu",
+                                        "implHandler": [
+                                            "e.stopEvent();",
+                                            "selectedvalue = record.get('uid');",
+                                            "selectedrec = record;",
+                                            "popup = Ext.create('Admin.view.ViewTeamParticipantsPanelMenu');",
+                                            "popup.showAt(e.getXY());"
+                                        ],
+                                        "name": "rowcontextmenu",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onGridpanelRowContextMenu",
+                                    "designerId": "993841f2-dc71-4475-af37-61f5c1374863"
                                 }
                             ]
                         }
@@ -723,8 +800,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "dataIndex": "StartTime",
-                                        "text": "Start Time"
+                                        "dataIndex": "BestSpeed",
+                                        "text": "Best Speed"
                                     },
                                     "configAlternates": {
                                         "dataIndex": "datafield",
@@ -732,64 +809,6 @@
                                     },
                                     "name": "MyColumn29",
                                     "designerId": "8fba9e50-260b-4047-81e0-7cbaf9f429e6"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "FinishTime",
-                                        "text": "Finish Time"
-                                    },
-                                    "configAlternates": {
-                                        "dataIndex": "datafield",
-                                        "text": "string"
-                                    },
-                                    "name": "MyColumn30",
-                                    "designerId": "8144f930-2e16-4ea1-81e1-d9d8b1aec185"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "Time1",
-                                        "text": "Time1",
-                                        "width": 67
-                                    },
-                                    "configAlternates": {
-                                        "dataIndex": "datafield",
-                                        "text": "string",
-                                        "width": "auto"
-                                    },
-                                    "name": "MyColumn31",
-                                    "designerId": "5b999f54-7f98-4b22-af99-5719075532c5"
-                                },
-                                {
-                                    "type": "Ext.grid.column.Column",
-                                    "reference": {
-                                        "name": "columns",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dataIndex": "Time2",
-                                        "text": "Time2",
-                                        "width": 73
-                                    },
-                                    "configAlternates": {
-                                        "dataIndex": "datafield",
-                                        "text": "string",
-                                        "width": "auto"
-                                    },
-                                    "name": "MyColumn32",
-                                    "designerId": "a7b10486-b1d8-46f8-8097-4e02a195fa5a"
                                 },
                                 {
                                     "type": "Ext.grid.column.Column",
@@ -862,6 +881,61 @@
                                     },
                                     "name": "MyColumn36",
                                     "designerId": "be298096-6bf3-4831-8855-94aa612e9063"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelRowDblClick1",
+                                        "implHandler": [
+                                            "e.stopEvent();",
+                                            "var ScoringWindow = Ext.create('Admin.view.ViewRun');",
+                                            "ScoringWindow.show();",
+                                            "ScoringWindow.fireEvent('loadRecord',{RunID: record.get('uid')});"
+                                        ],
+                                        "name": "rowdblclick",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onGridpanelRowDblClick1",
+                                    "designerId": "e3ffb93c-3aa1-4f9e-bf48-abad36cc25c9"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelRowContextMenu1",
+                                        "implHandler": [
+                                            "e.stopEvent();",
+                                            "selectedvalue = record.get('uid');",
+                                            "selectedrec = record;",
+                                            "popup = Ext.create('Admin.view.ViewTeamRunsPanelMenu');",
+                                            "popup.showAt(e.getXY());"
+                                        ],
+                                        "name": "rowcontextmenu",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onGridpanelRowContextMenu1",
+                                    "designerId": "35dfeaf1-cff3-47a5-831c-dbc220b8d1fb"
                                 }
                             ]
                         }
@@ -967,7 +1041,7 @@
                                     "designerId": "dbe0e445-cc4e-4779-bf87-24442674408d"
                                 },
                                 {
-                                    "type": "Ext.grid.column.Number",
+                                    "type": "Ext.grid.column.Column",
                                     "reference": {
                                         "name": "columns",
                                         "type": "array"
@@ -983,7 +1057,7 @@
                                         "text": "string",
                                         "width": "auto"
                                     },
-                                    "name": "MyNumberColumn3",
+                                    "name": "MyColumn51",
                                     "designerId": "8095c4b0-e4bf-4d4e-b573-7a8e96aa9ebd"
                                 },
                                 {
@@ -1041,6 +1115,54 @@
                                     },
                                     "name": "MyColumn48",
                                     "designerId": "9390a21a-ab48-4c81-8291-f1641b771411"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelRowDblClick2",
+                                        "implHandler": [
+                                            "e.stopEvent();"
+                                        ],
+                                        "name": "rowdblclick",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onGridpanelRowDblClick2",
+                                    "designerId": "2fb12ea8-41e9-43d7-82ab-e833a8da3d01"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridpanelRowContextMenu2",
+                                        "implHandler": [
+                                            "e.stopEvent();"
+                                        ],
+                                        "name": "rowcontextmenu",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onGridpanelRowContextMenu2",
+                                    "designerId": "241d18ae-2701-4af3-8934-1bd7ae109931"
                                 }
                             ]
                         }

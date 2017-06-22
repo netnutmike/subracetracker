@@ -136,7 +136,7 @@
                     "userConfig": {
                         "dataIndex": "RaceID",
                         "format": "00",
-                        "text": "Race Id",
+                        "text": "Run ID",
                         "width": 70
                     },
                     "configAlternates": {
@@ -176,109 +176,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "StartTime",
-                        "text": "Start Time",
-                        "width": 80
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string",
-                        "width": "auto"
-                    },
-                    "name": "MyColumn5",
-                    "designerId": "3797aaa9-fea9-40cb-a9bb-c884948a3d26"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "FinishTime",
-                        "text": "Finish Time",
-                        "width": 89
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string",
-                        "width": "auto"
-                    },
-                    "name": "MyColumn6",
-                    "designerId": "bd692ef0-bad8-4dab-9bcf-fe53270861bb"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "Time1",
-                        "text": "Time1",
-                        "width": 74
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string",
-                        "width": "auto"
-                    },
-                    "name": "MyColumn7",
-                    "designerId": "a18f2368-a5d3-4b1e-b71c-5bcc8e3229d1"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "Time2",
-                        "text": "Time2",
-                        "width": 69
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string",
-                        "width": "auto"
-                    },
-                    "name": "MyColumn8",
-                    "designerId": "8510e2b6-1eb7-4240-b391-e7995cdc863c"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "Time3",
-                        "text": "Time3",
-                        "width": 64
-                    },
-                    "configAlternates": {
-                        "dataIndex": "datafield",
-                        "text": "string",
-                        "width": "auto"
-                    },
-                    "name": "MyColumn9",
-                    "designerId": "28835105-3f3c-4955-826f-513d77419f1b"
-                },
-                {
-                    "type": "Ext.grid.column.Column",
-                    "reference": {
-                        "name": "columns",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "dataIndex": "Time4",
-                        "text": "Time4",
-                        "width": 62
+                        "dataIndex": "BestSpeed",
+                        "text": "Speed",
+                        "width": 82
                     },
                     "configAlternates": {
                         "dataIndex": "datafield",

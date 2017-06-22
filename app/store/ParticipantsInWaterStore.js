@@ -33,6 +33,7 @@ Ext.define('Admin.store.ParticipantsInWaterStore', {
                 type: 'ajax',
                 extraParams: {
                     dataset: 'participants',
+                    sortBy: 'team',
                     status: '1'
                 },
                 url: '/data/getjson.php',
@@ -40,7 +41,22 @@ Ext.define('Admin.store.ParticipantsInWaterStore', {
                     type: 'json',
                     rootProperty: 'participants'
                 }
+            },
+            listeners: {
+                load: {
+                    fn: me.onJsonstoreLoad,
+                    scope: me
+                }
             }
         }, cfg)]);
+    },
+
+    onJsonstoreLoad: function(store, records, successful, operation, eOpts) {
+        //if (records.length > 0) {
+        //    Ext.getCmp('ScoringNavigation').setRowCls('nav-tree-badge nav-tree-badge-new');
+        //} else {
+        //    Ext.getCmp('ScoringNavigation').setRowCls('nav-tree-badge');
+        //}
     }
+
 });

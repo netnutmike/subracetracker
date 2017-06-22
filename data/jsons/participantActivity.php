@@ -45,7 +45,7 @@
             $teamRequest = mysql_query($teamquery);
             $teamRS = mysql_fetch_array($teamRequest);
             
-            $diverquery = "select DiverName from Participants where uid = '" . $rs['ParticipantID'] . "'";
+            $diverquery = "select DiverName, DiverID from Participants where uid = '" . $rs['ParticipantID'] . "'";
             //echo $teamquery;
             $diverRequest = mysql_query($diverquery);
             $diverRS = mysql_fetch_array($diverRequest);
@@ -61,11 +61,12 @@
             echo "\"TeamName\":" . json_encode($teamRS['TeamName']) . ",";	
             echo "\"ParticipantID\":\"" . $rs['ParticipantID'] . "\",";	
             echo "\"ParticipantName\":" . json_encode($diverRS['DiverName']) . ",";
-            echo "\"Action\":\"" . $rs['Status'] . "\",";	
-            echo "\"ActionText\":\"" . GetListData(4, $rs['Status']) . "\",";
+            echo "\"Action\":\"" . $rs['Action'] . "\",";	
+            echo "\"ActionText\":\"" . GetListData(4, $rs['Action']) . "\",";
             echo "\"TrackedTime\":\"" . $rs['TrackedTime'] . "\",";
             echo "\"Timestamp\":\"" . $rs['Timestamp'] . "\",";
-            echo "\"RaceID\":\"" . $rs['RaceID'] . "\"";
+            echo "\"RaceID\":\"" . $rs['RaceID'] . "\",";
+            echo "\"DiverID\":\"" . $diverRS['DiverID'] . "\"";
             echo "}";
 	}
 	echo "]}";

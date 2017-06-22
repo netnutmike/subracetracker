@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "viewteamparticipantspanelmenu",
+        "designer|userClassName": "TeamsPanelMenuViewController1"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "TeamsPanelMenuViewController1",
+    "designerId": "1af42a07-f979-4aa6-8f8d-fae290d93aa8"
+}

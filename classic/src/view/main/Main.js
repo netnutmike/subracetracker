@@ -32,7 +32,7 @@ Ext.define('Admin.view.main.Main', {
                     xtype: 'component',
                     reference: 'senchaLogo',
                     cls: 'sencha-logo',
-                    html: '<div class="main-logo"><!-- <img src="resources/images/hamclub-logo.png"> -->Sub Race Tracker</div>',
+                    html: '<div class="main-logo"><img src="/images/sublogo2.png"></div>',
                     width: 250
                 },
                 {

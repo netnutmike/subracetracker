@@ -6,6 +6,13 @@
 //	echo $querytext;	
 		
 	$result3 = mysql_query($querytext) or   die(mysql_error());
+        
+        $querytext = "INSERT INTO ParticipantHistory (TeamID, Action, Timestamp) "
+                . "VALUES ('" .
+		$_POST['uid'] . "', '" . $_POST['Status'] . "', '" .  date("Y-m-d H:i:s")
+                . "')";
+	
+	$result3 = mysql_query($querytext) or   die(mysql_error());
 	
 	echo '{"success" : true}';
 

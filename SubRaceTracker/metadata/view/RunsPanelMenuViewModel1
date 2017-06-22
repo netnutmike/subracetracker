@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "options",
-        "designer|userClassName": "OptionsViewModel"
+        "designer|userAlias": "viewteamrunspanelmenu",
+        "designer|userClassName": "RunsPanelMenuViewModel1"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "name": "NewRunViewModel3",
-    "designerId": "d96183d0-cd9c-41aa-b854-718e4a77f327"
+    "name": "RunsPanelMenuViewModel1",
+    "designerId": "2460aef9-640d-40cc-9518-72435cdebdfb"
 }

@@ -13,8 +13,8 @@
 	//UserLogEntry($_POST['EID'], LOG_TRACKING, $logtext, LOG_API);
 	//echo $ds;
         
-        if ($_POST['ak'] != $auk)
-            $ds = "Invalid Session";
+        //if (!isset($_POST['ak']) || $_POST['ak'] != $auk)
+        //    $ds = "Invalid Session";
         
 	switch ($ds) {
 	

@@ -26,7 +26,13 @@ Ext.application({
         'Lists',
         'Participants',
         'Races',
-        'Teams'
+        'Teams',
+        'Leaderboard',
+        'ClassesSummary',
+        'RunsByDay',
+        'RunTimes',
+        'RunsSummary',
+        'ReadyQueue'
     ],
     stores: [
         'ListDataStore',
@@ -46,7 +52,14 @@ Ext.application({
         'RacesStoreNotScored',
         'RacesStoreScored',
         'ParticipantsInWaterStore',
-        'TeamParticipantHistoryStore'
+        'TeamParticipantHistoryStore',
+        'LeaderboardStore',
+        'ClassesSummaryStore',
+        'RunsByDayStore',
+        'RunTimesStore',
+        'RunsSummaryStore',
+        'ParticipantPersonalHistoryStore',
+        'ReadyQueueStore'
     ],
     views: [
         'DivePanel',
@@ -57,7 +70,7 @@ Ext.application({
         'ScoringPanel',
         'TeamsPanel',
         'ParticipantsPanel',
-        'Options',
+        'OptionsPanel',
         'Scoring',
         'NewTeam',
         'DiverIn',
@@ -73,7 +86,11 @@ Ext.application({
         'DiveMaster',
         'ParticipantsActivity',
         'LeaderBoard',
-        'ViewRun'
+        'ViewRun',
+        'ViewTeamParticipantsPanelMenu',
+        'ViewTeamRunsPanelMenu',
+        'LeadersPanelMenu',
+        'ActivityPanelMenu'
     ],
     name: 'Admin',
 
