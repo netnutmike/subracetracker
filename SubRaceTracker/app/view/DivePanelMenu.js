@@ -42,7 +42,7 @@ Ext.define('Admin.view.DivePanelMenu', {
                 form.submit({
                     url:'/data/actions.php',
                     params: {
-                        action: 'new',
+                        action: 'update',
                         DiverAction: '0',
                         dataset: 'participantsWater'
                     },

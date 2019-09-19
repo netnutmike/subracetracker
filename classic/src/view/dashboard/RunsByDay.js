@@ -11,7 +11,7 @@ Ext.define('Admin.view.dashboard.RunsByDay', {
 
     title: 'Runs By Day',
     ui: 'light',
-    iconCls: 'x-fa fa-briefcase',
+    iconCls: 'x-fa fa-bar-chart',
     headerPosition: 'bottom',
 
     cls: 'quick-graph-panel shadow',
@@ -58,11 +58,6 @@ Ext.define('Admin.view.dashboard.RunsByDay', {
                     yField: [
                         'cnt'
                     ]
-                }
-            ],
-            interactions: [
-                {
-                    type: 'panzoom'
                 }
             ]
         }

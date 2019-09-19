@@ -30,7 +30,7 @@ Ext.define('Admin.view.dashboard.Dashboard', {
             userCls: 'big-20 small-50'
         },
         {
-            xtype: 'earnings',
+            xtype: 'divetimes',
             userCls: 'big-20 small-50'
         },
         {

@@ -1,19 +1,18 @@
-Ext.define('Admin.view.dashboard.RunSpeeds', {
-    extend: 'Ext.panel.Panel',
-    xtype: 'runspeeds',
+Ext.define('Admin.view.dashboard.DiveTimes', {
+    extend: 'Ext.Panel',
+    xtype: 'divetimes',
 
     requires: [
         'Ext.chart.CartesianChart',
         'Ext.chart.axis.Category',
         'Ext.chart.axis.Numeric',
-        'Ext.chart.series.Area',
+        'Ext.chart.series.Line',
         'Ext.chart.interactions.PanZoom'
-
     ],
 
-    title: 'Run Speeds',
+    title: 'Dive Times',
     ui: 'light',
-    iconCls: 'x-fa fa-tachometer',
+    iconCls: 'x-fa fa-clock-o',
     headerPosition: 'bottom',
 
     cls: 'quick-graph-panel shadow',
@@ -24,20 +23,26 @@ Ext.define('Admin.view.dashboard.RunSpeeds', {
         {
             xtype: 'cartesian',
             animation : !Ext.isIE9m && Ext.os.is.Desktop,
-            constrain: true,
-            constrainHeader: true,
-            background: '#70bf73',
+            background: '#35baf6',
             colors: [
-                '#a9d9ab'
+                '#483D8B',
+                '#94ae0a',
+                '#a61120',
+                '#ff8809',
+                '#ffd13e',
+                '#a61187',
+                '#24ad9a',
+                '#7c7474',
+                '#a66111'
             ],
             bind: {
-                store: 'RunTimesStore'
+                store: 'DiveTimesStore'
             },
             axes: [
                 {
                     type: 'category',
                     fields: [
-                        'RaceID'
+                        'DiverID'
                     ],
                     hidden: true,
                     position: 'bottom'
@@ -45,7 +50,7 @@ Ext.define('Admin.view.dashboard.RunSpeeds', {
                 {
                     type: 'numeric',
                     fields: [
-                        'BestSpeed'
+                        'TrackedTime'
                     ],
                     grid: {
                         odd: {
@@ -58,15 +63,14 @@ Ext.define('Admin.view.dashboard.RunSpeeds', {
             ],
             series: [
                 {
-                    type: 'area',
+                    type: 'line',
                     style: {
                         stroke: '#FFFFFF',
                         'stroke-width': '2px'
                     },
-                    useDarkerStrokeColor: false,
-                    xField: 'RaceID',
+                    xField: 'DiverID',
                     yField: [
-                        'BestSpeed'
+                        'TrackedTime'
                     ]
                 }
             ],
@@ -75,6 +79,12 @@ Ext.define('Admin.view.dashboard.RunSpeeds', {
                     type: 'panzoom'
                 }
             ]
+        }
+    ],
+    tools: [
+        {
+            xtype: 'tool',
+            cls: 'quick-graph-panel-tool x-fa fa-ellipsis-v'
         }
     ]
 });

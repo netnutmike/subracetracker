@@ -1,1 +1,1 @@
-{"_comment":"Please don't edit. This is Architect data.","name":"Admin","resources":[],"requires":["font-awesome"],"theme":"theme-triton-9454b171-2481-408f-b138-4681fa4ed33b","classpath":null,"css":[],"js":[]}
+{"_comment":"Please don't edit. This is Architect data.","name":"Admin","resources":[],"requires":["sencha-charts","font-awesome"],"theme":"theme-triton-9454b171-2481-408f-b138-4681fa4ed33b","classpath":null,"css":[],"js":[]}

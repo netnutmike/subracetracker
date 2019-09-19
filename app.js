@@ -30,7 +30,8 @@ Ext.application({
         'RunsByDay',
         'RunTimes',
         'RunsSummary',
-        'ReadyQueue'
+        'ReadyQueue',
+        'DiveTimes'
     ],
     stores: [
         'ListDataStore',
@@ -57,7 +58,8 @@ Ext.application({
         'RunTimesStore',
         'RunsSummaryStore',
         'ReadyQueueStore',
-        'ParticipantPersonalHistoryStore'
+        'ParticipantPersonalHistoryStore',
+        'DiveTimesStore'
     ],
     views: [
         'DivePanel'

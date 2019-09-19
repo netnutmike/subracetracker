@@ -18,7 +18,8 @@
             "RunsByDay",
             "RunTimes",
             "RunsSummary",
-            "ReadyQueue"
+            "ReadyQueue",
+            "DiveTimes"
         ],
         "name": "Admin",
         "stores": [
@@ -46,7 +47,8 @@
             "RunTimesStore",
             "RunsSummaryStore",
             "ParticipantPersonalHistoryStore",
-            "ReadyQueueStore"
+            "ReadyQueueStore",
+            "DiveTimesStore"
         ],
         "views": [
             "DivePanel",

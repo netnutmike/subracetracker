@@ -72,4 +72,6 @@ Ext.define('Admin.view.chart.RunStatus', {
             type: 'panzoom'
         }
     ]
+
+
 });

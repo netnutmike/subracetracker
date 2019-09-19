@@ -10,7 +10,7 @@ Ext.define('Admin.view.dashboard.Classes', {
 
     title: 'Classes',
     ui: 'light',
-    iconCls: 'x-fa fa-video-camera',
+    iconCls: 'x-fa fa-user',
     headerPosition: 'bottom',
 
     cls: 'quick-graph-panel shadow',
